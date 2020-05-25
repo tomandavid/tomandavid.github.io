@@ -11,25 +11,32 @@ html {
 body{
 	margin: auto;
     background: #e7e2dd;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+
 }
 
 header {
     height: 100vh;
     width: auto;
-    scroll-snap-align: start;
-    overflow: scroll;
 }
 
 section {
     height: 100vh;
-    scroll-snap-align: start;
-    overflow: scroll;
 }
 
 .scroll-snap-box {
-    
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow: auto;
+}
+
+.scroll-snap1 {
+    scroll-snap-align: start;
+
+}
+
+.scroll-snap2 {
+    scroll-snap-align: start;
+
 }
 
 .tribar {
@@ -40,6 +47,7 @@ section {
     position: fixed;
     display: flex;
     justify-content: center;
+    
     
 }
 .tribar-items {
