@@ -12,17 +12,25 @@
     <body>
             <header>
                 <div class="section">
-                    <p style="position: fixed" id="demo"></p> <br>
-                    <p style="position: fixed" id="demoo"></p>
 
                     <div class="tribar">
-                        <img class="tribar-items z-0" id="left" src="img/tribar_left.png">
-                        <img class="tribar-items z-1" id="right" src="img/tribar_right.png">
-                        <img class="tribar-items z-2" id="bottom" src="img/tribar_bottom.png">
+                        <img class="tribar-items z-0" id="left" src="img/tribar_left.svg">
+                        <img class="tribar-items z-1" id="right" src="img/tribar_right.svg">
+                        <img class="tribar-items z-2" id="bottom" src="img/tribar_bottom.svg">
                     </div>
     
                     
                     <div class="tribar-head">
+                        <div class="box">
+                            <div class="tribar-text">MUSIC</div>
+                            <p class="box-text">The tale of the tones allows</p> 
+                            <p class="box-text">its guests to comfortably</p>
+                            <p class="box-text">glide through the decorated</p>
+                            <p class="box-text">canvases. The crowd </p>
+                            <p class="box-text">complements its master </p>
+                            <p class="box-text">through their movements.</p>
+                        </div>
+                        
                         <div class="box">
                             <div class="tribar-text">PEOPLE</div>
                             <p class = "box-text">People carry one another. People share energies and create universes together.If the frequencies on which beings move sync - then the world syncs with them.</p>
@@ -32,18 +40,16 @@
                             <div class="tribar-text">DECORATIONS</div>
                             <p class="box-text">Deco is the icebreaker needed to link people together. The crowd gets activated by the burst of sensorial sensations thrown at it, unifying its members.</p>
                         </div>
-                        
-                        <div class="box">
-                            <div class="tribar-text">MUSIC</div>
-                            <p class="box-text">The tale of the tones allows its guests to comfortably glide through the decorated canvases. The crowd complements its master through their movements.</p>
-                        </div>
+                    </div>
+                    
+                    <div class="cabana-libre">
+                        <p>CABANA LIBRE</p>
                     </div>
                     
                 </div>
             </header>
             <section>
                 <div class="section">
-                    <br><br>
                     scroll
                 </div>
             </section>
@@ -83,21 +89,21 @@
         else {
             $('#left').css({ 
                 marginLeft: - Math.min(theta * 173 * 3.3, 400 / height_fix),
-                marginTop: - Math.min(theta * 100 * 5, 470 / 2 / height_fix),
-                transform: 'rotate(-' + Math.min(theta * 120 * 1.1 * height_fix, 120) + 'deg)' 
+                marginTop: - Math.min(theta * 100 * 4, 470 / 2 / 1.53 / height_fix),
+                transform: 'rotate(-' + Math.min(theta * 120 * height_fix, 120) + 'deg)' 
             });
             $('#right').css({ 
                 marginLeft: Math.min(theta * 100 * 5, 400 / height_fix), 
-                marginTop: - Math.min(theta * 173 * 3, 464 / 2 / height_fix),
+                marginTop: - Math.min(theta * 173 * 2, 470 / 2 / 1.52 / height_fix),
                 transform: 'rotate(' + Math.min(theta * 120 * height_fix, 120) + 'deg)' 
             });
             $('#bottom').css({ 
                 marginLeft: - Math.min(theta2 * 40  - phase * 100 * 2, 0),
-                marginTop: - Math.min(theta2 * 173 * 4 - phase * 173 * 2, 280 / height_fix),
+                marginTop: - Math.min(theta2 * 173 * 3 - phase * 173 * 2, 275 / 1.43 / height_fix),
                 transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
             });
         }
-        document.getElementById("demo").innerHTML = $(window).scrollTop() + "   ;   " + window.innerHeight + "   ;   " + theta/2.0944*Math.PI + "   ;   " + Math.sin(theta/2.0944*Math.PI) + "   ;   " + height_fix + "   ;   " +  $(window).scrollTop() / window.innerHeight ;
+    
         });
     </script>
 
@@ -108,11 +114,26 @@
                     $( ".tribar-head" ).addClass( "roll-animation" ),
                     $( ".tribar-text" ).addClass( "fade-in" ),
                     $( ".box-text" ).addClass( "fade-in" );
+                
+                    $( ".tribar-head" ).removeClass("rollout-animation" ),
+                    $( ".tribar-text" ).removeClass( "fade-out" ),
+                    $( ".box-text" ).removeClass( "fade-out" ),
+                
+                    $( ".cabana-libre" ).addClass( "fade-out" ),
+                    $( ".cabana-libre" ).removeClass( "fade-in" );
                 }
             else {
                     $( ".tribar-head" ).removeClass("roll-animation" ),
                     $( ".tribar-text" ).removeClass( "fade-in" ),
-                    $( ".box-text" ).removeClass( "fade-in" );
+                    $( ".box-text" ).removeClass( "fade-in" ),
+                        
+                    $( ".tribar-head" ).addClass("rollout-animation" ),
+                    $( ".tribar-text" ).addClass( "fade-out" ),
+                    $( ".box-text" ).addClass( "fade-out" ),
+                        
+                    $( ".cabana-libre" ).addClass( "fade-in" ),
+                    $( ".cabana-libre" ).removeClass( "fade-out" );
+                        
             }
             
             

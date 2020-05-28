@@ -28,7 +28,7 @@ section {
 .tribar {
     width: 50vw;
     height: 50vh;
-    margin-top: 25vh;
+    margin-top: 15vh;
     margin-left: 25vw;
     position: fixed;
     display: flex;
@@ -47,28 +47,25 @@ section {
     position: fixed;
     justify-content: center;
     display: flex;
-    margin-top: 36.5vh;
-    margin-left: 3.6vh;
+    margin-top: 37vh;
+    margin-left: 3vh;
     width: 100%;
-    height: 30%;
+    height: 27%;
 }
 
 
 
 .tribar-head .box {
-    width: 39vh;
+    width: 40vh;
     height: 100%;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0.1px;
+    border-bottom-right-radius: 1.5vh;
     border-color: black;
-    margin-right: 6.7vh;
+    margin-right: 6vh;
+    box-shadow: 5px 10px 10px #888888
 }
 
-.roll-animation {
-    animation-name: box-roll;
-    animation-duration: 0.5s;
-    opacity: 1;
-}
 
 .z-0 {
     z-index: 0;
@@ -89,20 +86,58 @@ section {
     font-weight: 300;
     letter-spacing: 1vh;
     font-size: 5vh;
+    text-shadow: 0 0 10px #f1f1f1;
     opacity: 1;
 }
 
-.fade-in {
-    animation-name: fade-in;
-    animation-duration: 1s;
-}
-
 .box-text {
-    padding: 1vh;
+    padding-left: 1vh;
     font-size: 2.5vh;
     font-weight: 100;
-    letter-spacing: 0.5vh;
+    letter-spacing: 0.6vh;
+    
 
+}
+
+.cabana-libre {
+    position: fixed;
+    font-weight: 100;
+    font-size: 10vh;
+    letter-spacing: 2vh;
+    width: 100vw;
+    margin-top: 70vh;
+    text-align: center;
+}
+
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 2s;
+    opacity: 1;
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+    opacity: 0;
+}
+
+.roll-animation {
+    animation-name: box-roll;
+    animation-duration: 0.5s;
+    opacity: 1;
+}
+
+.rollout-animation {
+    animation-name: box-rollout;
+    animation-duration: 0.25s;
+    opacity: 0;
+}
+
+
+
+.delay1 {
+    animation-delay: 1s;
 }
 
 
@@ -112,19 +147,40 @@ section {
     }
 
   100%   {
-      height: 30%;
+      height: 27%;
       opacity: 100%;
+    }
+}
+
+@keyframes box-rollout {
+  0%   {
+      height: 27%;
+      opacity: 100%;
+    }
+
+  100%   {
+      height: 0%;
     }
 }
 
 @keyframes fade-in {
   0%   {
       opacity: 0%;
-      
     }
 
   100%   {
+      opacity: 100% ;
+      
+    }
+}
+
+@keyframes fade-out {
+  0%   {
       opacity: 100%;
+    }
+
+  100%   {
+      opacity: 0% ;
       
     }
 }
