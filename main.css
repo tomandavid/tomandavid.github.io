@@ -110,6 +110,14 @@ section {
 }
 
 
+
+.tribar:hover,
+.tribar:active {
+    animation-name: hover;
+    animation-duration: 1s;
+}
+
+
 .fade-in {
     animation-name: fade-in;
     animation-duration: 2s;
@@ -137,7 +145,7 @@ section {
 
 
 .delay1 {
-    animation-delay: 1s;
+    animation-delay: 0s;
 }
 
 
@@ -182,5 +190,18 @@ section {
   100%   {
       opacity: 0% ;
       
+    }
+}
+
+@keyframes hover {
+  0%   {
+
+                margin-left: 0;
+                margin-Top: 0;
+    }
+
+  100%   {
+      margin-left: - 173;
+      margin-Top: - 100; 
     }
 }
