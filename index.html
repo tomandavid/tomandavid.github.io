@@ -137,8 +137,8 @@
                 transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
             });
             $('#bottom').css({ 
-                marginLeft: + Math.min(theta2 * 20 / height_fix - 100 * phase, 0 / height_fix),
-                marginTop: - Math.min(theta2 * 173 * 1.3 / height_fix - 173 * phase, 192 / height_fix),
+                marginLeft: + Math.min((theta2 * 20 - 100 * phase ) / height_fix, 0 / height_fix),
+                marginTop: - Math.min((theta2 * 173 * 1.3 - 173 * phase ) / height_fix, 192 / height_fix),
                 transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)' 
             });
             $('#center').css({
