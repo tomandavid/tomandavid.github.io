@@ -1,6 +1,5 @@
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    <script>
+
         $(window).scroll(function() {
         var phase = 0.16;
         var theta = ($(window).scrollTop() / window.innerHeight);
@@ -44,7 +43,7 @@
         }
     
         });
-    </script>
+
 
     
     <script>

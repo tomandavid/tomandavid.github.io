@@ -12,34 +12,57 @@
     <body>
             <header>
                 <div class="section">
+                    
+                    <p id="demo" style="position: fixed"></p><br>
+                    <p id="demoo" style="position: fixed"></p>
 
-                    <div class="tribar">
-                        <img class="tribar-items z-0" id="left" src="img/tribar_left.svg">
-                        <img class="tribar-items z-1" id="right" src="img/tribar_right.svg">
-                        <img class="tribar-items z-2" id="bottom" src="img/tribar_bottom.svg">
-                    </div>
+                    <div class="tribar" id="tribar">
+                        <img class="tribar-items z-4 flower-background" id="center" src="img/flower.png">
+                        <img class="tribar-items z-1" id="left" src="img/tribar_left.png">
+                        <img class="tribar-items z-2" id="right" src="img/tribar_right.png">
+                        <img class="tribar-items z-3" id="bottom" src="img/tribar_bottom.png">
+                    
     
                     
-                    <div class="tribar-head">
-                        <div class="box">
-                            <div class="tribar-text">MUSIC</div>
-                            <p class="box-text">The tale of the tones allows</p> 
-                            <p class="box-text">its guests to comfortably</p>
-                            <p class="box-text">glide through the decorated</p>
-                            <p class="box-text">canvases. The crowd </p>
-                            <p class="box-text">complements its master </p>
-                            <p class="box-text">through their movements.</p>
+                        <div class="tribar-head">
+                            <div class="box">
+                                <div class="tribar-text">MUSIC</div>
+                                <p class="box-text">The tale of the tones allows</p> 
+                                <p class="box-text">its guests to comfortably</p>
+                                <p class="box-text">glide through the decorated</p>
+                                <p class="box-text">canvases. The crowd </p>
+                                <p class="box-text">complements its master </p>
+                                <p class="box-text">through their movements.</p>
+                            </div>
+
+                            <div class="box">
+                                <div class="tribar-text">PEOPLE</div>
+                                <p class = "box-text">People carry one another. People share energies and create universes together.If the frequencies on which beings move sync - then the world syncs with them.</p>
+                            </div>
+
+                            <div class="box">
+                                <div class="tribar-text">DECORATIONS</div>
+                                <p class="box-text">Deco is the icebreaker needed to link people together. The crowd gets activated by the burst of sensorial sensations thrown at it, unifying its members.</p>
+                            </div>
                         </div>
                         
-                        <div class="box">
-                            <div class="tribar-text">PEOPLE</div>
-                            <p class = "box-text">People carry one another. People share energies and create universes together.If the frequencies on which beings move sync - then the world syncs with them.</p>
+                        <div class="tribar-core">
+                            <div class="box">
+                                <div class="core-text">Make <br> No Assumptions</div>
+                                <p class = "box-text"> The danger of working on assumptions is that it can lead to miscommunication. Be honest. We'd rather have you call us up in the middle of the night than seeing the project go in a different way than you wanted.</p>
+                            </div>
+
+                            <div class="box">
+                                <div class="core-text">No Idea <br> is too Crazy</div>
+                                <p class = "box-text">If we start with all the possibilities, we don't limit ourselves cognitively, leading to more radical ideas. Once an idea is formed, we can work on its applicability. We should never stop our creative juices from flowing just because "this might not work".</p>
+                            </div>
+
+                            <div class="box">
+                                <div class="core-text">Save <br> the Whales</div>
+                                <p class="box-text">That we have grossly underestimated our effect on this planet has become indisputable. However, we neither have an option for zero impact on our planet.Yet, it is still of the utmost importance that we at least try to relieve earth of some of the stress so that we may be here a bit longer. We are doing this by using sustainable materials for all our decorations and constantl recycling.</p>
+                            </div>
                         </div>
                         
-                        <div class="box">
-                            <div class="tribar-text">DECORATIONS</div>
-                            <p class="box-text">Deco is the icebreaker needed to link people together. The crowd gets activated by the burst of sensorial sensations thrown at it, unifying its members.</p>
-                        </div>
                     </div>
                     
                     <div class="cabana-libre">
@@ -50,9 +73,19 @@
             </header>
             <section>
                 <div class="section">
-                    scroll
+                    <br><br>
+                    scroll1
                 </div>
             </section>
+        
+            <section>
+                <div class="section">
+                    <br><br>
+                    scroll2
+                </div>
+            </section>
+        
+
         
 
         
@@ -63,84 +96,157 @@
 
     <script>
         $(window).scroll(function() {
-        var phase = 0.16;
+        var phase = 0.2;
         var theta = ($(window).scrollTop() / window.innerHeight);
-        var theta2 = theta - phase;
+        var theta2 = (theta - phase) / (1 - phase);
         var height_fix = 821 / window.innerHeight
             
         
         if (theta < phase) {
             $('#left').css({ 
-                marginLeft: - theta * 173 * 3.3 , 
-                marginTop: - theta * 100 * 5, 
-                transform: 'rotate(-' + Math.min(theta * 120 , 120) + 'deg)' 
+                marginLeft: - theta * 100  , 
+                marginTop: - theta * 173  , 
+                transform: 'rotate(-' + Math.min(theta * 0 , 120) + 'deg)' 
             });
             $('#right').css({ 
-                marginLeft: theta * 100 * 5, 
-                marginTop: - theta * 173 * 3,
-                transform: 'rotate(' + Math.min(theta * 120, 120) + 'deg)' 
+                marginLeft: theta * 173 , 
+                marginTop: - theta * 100 * 0 ,
+                transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
             });
             $('#bottom').css({ 
-                marginLeft: theta * 100 * 2, 
-                marginTop: theta * 173 * 2,
+                marginLeft: - theta * 100, 
+                marginTop:  theta * 173 ,
                 transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
+            });
+            $('#center').css({
+                opacity: 1 - theta * 5,
+                marginLeft: theta * 0.7,
+                marginTop: - window.innerHeight * 0.07 + theta * 250 ,
+                height: window.innerHeight * 0.7 - theta * 400
             });
         }
         else {
             $('#left').css({ 
-                marginLeft: - Math.min(theta * 173 * 3.3, 400 / height_fix),
-                marginTop: - Math.min(theta * 100 * 4, 470 / 2 / 1.53 / height_fix),
-                transform: 'rotate(-' + Math.min(theta * 120 * height_fix, 120) + 'deg)' 
+                marginLeft: - Math.min(phase * 100 + theta2 * 100 * 4 / height_fix, 173 * 2.31 / height_fix),
+                marginTop: - Math.min(phase * 173 + theta2 * 173, 470 / 2 / 1.53 / height_fix),
+                transform: 'rotate(-' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
             });
             $('#right').css({ 
-                marginLeft: Math.min(theta * 100 * 5, 400 / height_fix), 
-                marginTop: - Math.min(theta * 173 * 2, 470 / 2 / 1.52 / height_fix),
-                transform: 'rotate(' + Math.min(theta * 120 * height_fix, 120) + 'deg)' 
+                marginLeft: Math.min(phase * 173 + theta2 * 173 * 2.3 / height_fix, 100 * 4 / height_fix), 
+                marginTop: - Math.min(theta2 * 100 * 1.55/ height_fix, 470 / 2 / 1.53 / height_fix ),
+                transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
             });
             $('#bottom').css({ 
-                marginLeft: - Math.min(theta2 * 40  - phase * 100 * 2, 0),
-                marginTop: - Math.min(theta2 * 173 * 3 - phase * 173 * 2, 275 / 1.43 / height_fix),
-                transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
+                marginLeft: + Math.min(theta2 * 20 / height_fix - 100 * phase, 0 / height_fix),
+                marginTop: - Math.min(theta2 * 173 * 1.3 / height_fix - 173 * phase, 192 / height_fix),
+                transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)' 
+            });
+            $('#center').css({
+                opacity: 0
             });
         }
-    
+    document.getElementById("demo").innerHTML = $(window).scrollTop() + "   ;   " + window.innerHeight +  "   ;   " +  $(window).scrollTop() / window.innerHeight ;
         });
     </script>
 
     
     <script>
+        var position = $(window).scrollTop();
         $(window).scroll(function() {
-            if (($(window).scrollTop() / window.innerHeight) == 1) {
+            
+                var theta = ($(window).scrollTop() / window.innerHeight);
+                var height_fix = 821 / window.innerHeight;
+                 
+            
+            if (($(window).scrollTop() / window.innerHeight) > 1) {
+                   $('.tribar').css({ 
+                        marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix),
+                    }); 
+                    var scroll = $(window).scrollTop();
+                    if (scroll > position) {
+                    $( ".tribar-head" ).addClass("rollout-animation" ),
+                    $( ".tribar-core" ).addClass("roll-core-animation" ),
+                    $( ".core-text" ).addClass( "fade-in-delay" ),
+                    $( ".box-text" ).addClass( "fade-in-delay" );
+                    }
+                    else {
+                    $( ".tribar-head" ).removeClass("rollout-animation" ),
+                    $( ".tribar-core" ).removeClass("roll-core-animation" ),
+                    $( ".core-text" ).removeClass( "fade-in-delay" ),
+                    $( ".box-text" ).removeClass( "fade-in-delay" );
+                    }
+            }
+            
+            else if (($(window).scrollTop() / window.innerHeight) == 1) {
+                   
                     $( ".tribar-head" ).addClass( "roll-animation" ),
                     $( ".tribar-text" ).addClass( "fade-in" ),
-                    $( ".box-text" ).addClass( "fade-in" );
+                    $( ".box-text" ).addClass( "fade-in" ),
                 
                     $( ".tribar-head" ).removeClass("rollout-animation" ),
                     $( ".tribar-text" ).removeClass( "fade-out" ),
                     $( ".box-text" ).removeClass( "fade-out" ),
                 
-                    $( ".cabana-libre" ).addClass( "fade-out" ),
-                    $( ".cabana-libre" ).removeClass( "fade-in" );
+                    $( ".tribar-head" ).removeClass("rollout-animation" ),
+                    $( ".tribar-core" ).removeClass("roll-core-animation" ),
+                    $( ".core-text" ).removeClass( "fade-in-delay" ),
+                    $( ".box-text" ).removeClass( "fade-in-delay" );
+                
+                    
                 }
-            else {
+            
+            else if (($(window).scrollTop() / window.innerHeight) > 0) {
+                
+
                     $( ".tribar-head" ).removeClass("roll-animation" ),
                     $( ".tribar-text" ).removeClass( "fade-in" ),
-                    $( ".box-text" ).removeClass( "fade-in" ),
+                    $( ".box-text" ).removeClass( "fade-in" );
+                                    
+                    $( ".cabana-libre" ).addClass( "fade-out" ),
+                    $( ".cabana-libre" ).removeClass( "fade-in" );
                         
-                        
+            }
+            
+            else if (($(window).scrollTop() / window.innerHeight) == 0) {
+                
                     $( ".cabana-libre" ).addClass( "fade-in" ),
                     $( ".cabana-libre" ).removeClass( "fade-out" );
                         
             }
-            
-            
+              
+            document.getElementById("demoo").innerHTML = position;
+             position = scroll;
         });
 
     </script>
     
-
+    <script>
+    
+        $( ".tribar" ).hover(
+          function() {
+              $( ".z-0" ).addClass( "tribar-hover" );
+          }
+        );
+        
+    </script>
      
+    <script>
 
+    var position = $(window).scrollTop(); 
+
+    // should start at 0
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll > position) {
+            console.log('scrollDown');
+            
+        } else {
+             console.log('scrollUp');
+        }
+        position = scroll;
+    });
+    </script>
     
     <script>
         (function($) {
@@ -223,4 +329,4 @@
 </html>
 
 
-                    
+    
