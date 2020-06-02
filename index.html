@@ -183,7 +183,7 @@
             });
             
             $('#navbar-element').css({
-                marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220
+                marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220 / height_fix
             });
         }
     document.getElementById("demo").innerHTML = $(window).scrollTop() + "   ;   " + window.innerHeight +  "   ;   " +  $(window).scrollTop() / window.innerHeight ;
