@@ -226,7 +226,7 @@
             
             if (($(window).scrollTop() / window.innerHeight) > 2) {
                 $('.tribar').css({ 
-                    marginTop: - Math.min(95 + (theta - 2) * 1000 / height_fix, 9500),
+                    marginTop: - Math.min((110 + (theta - 2) * 1000) / height_fix, 9500),
                 }); 
                 
             }
@@ -242,7 +242,7 @@
                     if (scroll > position) {
                         
                         $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix, 95),
+                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 110 / height_fix),
                         }); 
                         
                         $( ".tribar-head" ).addClass("rollout-animation" ),
@@ -266,7 +266,7 @@
                     else {
                         
                         $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix, 95),
+                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 110 / height_fix),
                         }); 
                         
                         $( ".tribar-head" ).removeClass("rollout-animation" ),
