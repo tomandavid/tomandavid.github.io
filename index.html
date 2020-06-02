@@ -7,13 +7,13 @@
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
         
+
+        
+        <script src="js/script.js"></script>        
+        
     </head>
     
     <body>
-            
-        
-        
-            <header>
                 <nav class="navigation-bar" id="navbar">
                         <img class="navbar-element opacity-0" id="navbar-element-core" src="img/navbar-element-core.png">
                         <img class="navbar-element" id="navbar-element" src="img/navbar-element.png">
@@ -24,11 +24,13 @@
                         <p class="navbar-item core">Members</p>
                         <p class="navbar-item contact">Contact</p>
                 
-                    </nav>
+                </nav>
                 
                 <div class="section">
                     
                     
+                    
+                  <header>  
                   
                     <p id="demo" style="position: fixed"></p><br>
                     <p id="demoo" style="position: fixed"></p>
@@ -87,24 +89,23 @@
                     <div class="cabana-libre">
                         <p>CABANA LIBRE</p>
                     </div>
-                    
+                   </header> 
                 </div>
-            </header>
-            <section>
+            
+            
                 <div class="section">
                     <br><br>
                     scroll1
                 </div>
-            </section>
+            
         
-            <section>
+
                 <div class="section">
                     <br><br>
                     scroll2
                 </div>
-            </section>
-            
-            <section>
+
+
                 <div class="section">
                     <div class="members">
                         <div class="member-line1">
@@ -131,10 +132,6 @@
                     </div>
                     
                 </div>
-            </section>
-
-        
-
         
     </body>
     
@@ -367,101 +364,42 @@
         
     </script>
      
+
+
+
+
+    
+
+    
+    <script src="scrollify/jquery.scrollify.js"></script>
     <script>
-
-    var position = $(window).scrollTop(); 
-
-    // should start at 0
-
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        if(scroll > position) {
-            console.log('scrollDown');
-            
-        } else {
-             console.log('scrollUp');
-        }
-        position = scroll;
-    });
+        $(document).ready(function() {
+            $.scrollify({
+                section : ".section",
+            });
+        });
     </script>
     
     <script>
-        (function($) {
-          var selector = ".section";
-
-          var $slides = $(selector);
-
-          var currentSlide = 0;
-          var isAnimating = false;
-
-          var stopAnimation = function() {
-            setTimeout(function() {
-              isAnimating = false;
-            }, 300);
-          };
-
-          var bottomIsReached = function($elem) {
-            var rect = $elem[0].getBoundingClientRect();
-            return rect.bottom <= $(window).height();
-          };
-
-          var topIsReached = function($elem) {
-            var rect = $elem[0].getBoundingClientRect();
-            return rect.top >= 0;
-          };
-
-          document.addEventListener(
-            "wheel",
-            function(event) {
-              var $currentSlide = $($slides[currentSlide]);
-
-              if (isAnimating) {
-                event.preventDefault();
-                return;
-              }
-
-              var direction = -event.deltaY;
-
-              if (direction < 0) {
-                // next
-                if (currentSlide + 1 >= $slides.length) return;
-                if (!bottomIsReached($currentSlide)) return;
-                event.preventDefault();
-                currentSlide++;
-                var $slide = $($slides[currentSlide]);
-                var offsetTop = $slide.offset().top;
-                isAnimating = true;
-                $("html, body").animate(
-                  {
-                    scrollTop: offsetTop
-                  },
-                  1000,
-                  stopAnimation
-                );
-              } else {
-                // back
-                if (currentSlide - 1 < 0) return;
-                if (!topIsReached($currentSlide)) return;
-                event.preventDefault();
-                currentSlide--;
-                var $slide = $($slides[currentSlide]);
-                var offsetTop = $slide.offset().top;
-                isAnimating = true;
-                $("html, body").animate(
-                  {
-                    scrollTop: offsetTop
-                  },
-                  1000,
-                  stopAnimation
-                );
-              }
-            },
-            { passive: false }
-          );
-        })(jQuery);
-
+          $.scrollify({
+            section : "section",
+            sectionName : "section-name",
+            interstitialSection : "",
+            easing: "easeOutExpo",
+            scrollSpeed: 1000,
+            offset : 0,
+            scrollbars: true,
+            standardScrollElements: "",
+            setHeights: true,
+            overflowScroll: true,
+            updateHash: true,
+            touchScroll:true,
+            before:function() {},
+            after:function() {},
+            afterResize:function() {},
+            afterRender:function() {}
+          });
     </script>
-    
     
 </html>
 

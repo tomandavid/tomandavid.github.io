@@ -23,7 +23,7 @@ header {
     background-size: cover;
 }
 
-section {
+.section {
     height: 100vh;
     width: 100vw;
     align-content: center;
@@ -417,3 +417,23 @@ section {
       margin-Top: + 100; 
     }
 }
+
+
+$.scrollify({
+    section : "section",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1100,
+    offset : 0,
+    scrollbars: true,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+  });
