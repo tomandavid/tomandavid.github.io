@@ -147,6 +147,7 @@ section {
     border-color: black;
     margin-right: 6vh;
     box-shadow: 5px 10px 10px #888888;
+    background-color: white;
     
 }
 
@@ -162,13 +163,13 @@ section {
 }
 
 .core-text {
-    margin-top: -9vh;
-    margin-left: -2vh;
+    margin-top: -8vh;
+    margin-left: 2vh;
     text-align: center;
     font-weight: 300;
     color: aliceblue;
     letter-spacing: 1vh;
-    font-size: 3vh;
+    font-size: 2.5vh;
     text-shadow: 0 0 5px #f1f1f1;
     opacity: 1;
 }
@@ -179,8 +180,11 @@ section {
     font-weight: 100;
     letter-spacing: 0.2vh;
     margin-top: 2.5vh;
-    
+}
 
+.box-text-img {
+    width: 90%;
+    margin-left: 5%;
 }
 
 .section-sticky {
