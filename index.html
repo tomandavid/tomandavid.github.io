@@ -15,19 +15,21 @@
         
             <header>
                 <nav class="navigation-bar" id="navbar">
-                
+                        <img class="navbar-element opacity-0" id="navbar-element-core" src="img/navbar-element-core.png">
                         <img class="navbar-element" id="navbar-element" src="img/navbar-element.png">
+                        
                         <img class="navbar-logo-mini" src="img/logo-mini.png">
-                        <p class="navbar-item cabana"> Cabana Libre</p>
-                        <p class="navbar-item core"> Core values</p>
-                        <p class="navbar-item contact"> Contact</p>
+                        <p class="navbar-item cabana">Cabana Libre</p>
+                        <p class="navbar-item core">Core values</p>
+                        <p class="navbar-item core">Members</p>
+                        <p class="navbar-item contact">Contact</p>
                 
                     </nav>
                 
                 <div class="section">
                     
                     
-                    
+                  
                     <p id="demo" style="position: fixed"></p><br>
                     <p id="demoo" style="position: fixed"></p>
 
@@ -99,7 +101,35 @@
                     scroll2
                 </div>
             </section>
-        
+            
+            <section>
+                <div class="section">
+                    <div class="members">
+                        <div class="member-line1">
+                            <div class="member">
+                                <img class="member-photo" src="img/members/member1.png">
+                                <p>Member 1</p>
+                            </div>
+                            <div class="member">
+                                <img class="member-photo" src="img/members/member2.png">
+                                <p>Member 2</p>
+                            </div>
+                        </div>
+                        <div class="member-line2">
+
+                            <div class="member">
+                                <img class="member-photo" src="img/members/member3.png">
+                                <p>Member 3</p>
+                            </div>
+                            <div class="member">
+                                <img class="member-photo" src="img/members/member4.png">
+                                <p>Member 4</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
 
         
 
@@ -177,7 +207,7 @@
                 opacity: 0
             });
             
-            $('#navbar-element').css({
+            $('.navbar-element').css({
                 marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220 / height_fix
             });
         }
@@ -194,13 +224,27 @@
                 var height_fix = 821 / window.innerHeight;
                  
             
-            if (($(window).scrollTop() / window.innerHeight) > 1) {
-                   $('.tribar').css({ 
-                        marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix, 85),
-                    }); 
+            if (($(window).scrollTop() / window.innerHeight) > 2) {
+                $('.tribar').css({ 
+                    marginTop: - Math.min(95 + (theta - 2) * 1000 / height_fix, 9500),
+                }); 
+                
+            }
+            
+            else if (($(window).scrollTop() / window.innerHeight) == 2) {
+                     
+            }
+            
+            else if (($(window).scrollTop() / window.innerHeight) > 1) {
+                   
                 
                     var scroll = $(window).scrollTop();
                     if (scroll > position) {
+                        
+                        $('.tribar').css({ 
+                            marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix, 95),
+                        }); 
+                        
                         $( ".tribar-head" ).addClass("rollout-animation" ),
                         $( ".tribar-core" ).addClass("roll-core-animation" ),
                         $( ".core-text" ).addClass( "fade-in-delay" ),
@@ -213,8 +257,18 @@
                         $( "#left-core" ).removeClass( "opacity-0" ),
                         $( "#right-core" ).removeClass( "opacity-0" ),
                         $( "#bottom-core" ).removeClass( "opacity-0" );
+                        
+                        $( "#navbar-element" ).addClass( "fade-out" );
+                        $( "#navbar-element" ).removeClass( "fade-in" );
+                        
+                        $( "#navbar-element-core" ).removeClass( "opacity-0" );
                     }
                     else {
+                        
+                        $('.tribar').css({ 
+                            marginTop: - Math.min(-122 + (theta - 1) * 260 / height_fix, 95),
+                        }); 
+                        
                         $( ".tribar-head" ).removeClass("rollout-animation" ),
                         $( ".tribar-core" ).removeClass("roll-core-animation" ),
                         $( ".core-text" ).removeClass( "fade-in-delay" ),
@@ -227,6 +281,11 @@
                         $( "#left-core" ).addClass( "opacity-0" ),
                         $( "#right-core" ).addClass( "opacity-0" ),
                         $( "#bottom-core" ).addClass( "opacity-0" );
+                        
+                        $( "#navbar-element" ).addClass( "fade-in" );
+                        $( "#navbar-element" ).removeClass( "fade-out" );
+                        
+                        
                     }
                 
                     $( ".core" ).addClass( "blur" );
@@ -255,6 +314,7 @@
                     $( ".cabana" ).addClass( "blur" );
                     $( ".core" ).removeClass( "blur" );
                 
+                    $( "#navbar-element-core" ).addClass( "opacity-0" );
                     
                 }
             
@@ -270,12 +330,12 @@
                 
                     var scroll = $(window).scrollTop();
                     if (scroll > position) {
-                    $( ".navigation-bar" ).addClass( "fade-in" );
-                    $( ".navigation-bar" ).removeClass( "fade-out" );
+                        $( ".navigation-bar" ).addClass( "fade-in" );
+                        $( ".navigation-bar" ).removeClass( "fade-out" );
                     }
                     else {
-                    $( ".navigation-bar" ).removeClass( "fade-in" );
-                    $( ".navigation-bar" ).addClass( "fade-out" );
+                        $( ".navigation-bar" ).removeClass( "fade-in" );
+                        $( ".navigation-bar" ).addClass( "fade-out" );
                     }
                 
                     
