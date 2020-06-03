@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 html {
     font-family: 'Poppins', sans-serif;
 }
@@ -22,6 +23,7 @@ header {
     background-image: url("img/stone_background.png");
     background-size: cover;
 }
+
 
 .section {
     height: 100vh;

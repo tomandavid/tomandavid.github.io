@@ -11,10 +11,19 @@
         
         <script src="js/script.js"></script>        
         
+
+        
     </head>
     
     <body>
+
+  
+
+                <section class="section">
+                    
+  
                 <nav class="navigation-bar" id="navbar">
+                        <img class="navbar-element opacity-0" id="navbar-element-member" src="img/navbar-element-member.png">
                         <img class="navbar-element opacity-0" id="navbar-element-core" src="img/navbar-element-core.png">
                         <img class="navbar-element" id="navbar-element" src="img/navbar-element.png">
                         
@@ -23,17 +32,15 @@
                         <p class="navbar-item core">Core values</p>
                         <p class="navbar-item core">Members</p>
                         <p class="navbar-item contact">Contact</p>
+                        <var id="lastpage">0</var>
                 
                 </nav>
-                
-                <div class="section">
-                    
-                    
                     
                   <header>  
                   
                     <p id="demo" style="position: fixed"></p><br>
-                    <p id="demoo" style="position: fixed"></p>
+                    <p id="demoo" style="position: fixed"></p><br>
+                    <p id="demooo" style="position: fixed"></p>
 
                     <div class="tribar" id="tribar">
                         <img class="tribar-items z-4 flower-background" id="center" src="img/flower.png">
@@ -90,23 +97,23 @@
                         <p>CABANA LIBRE</p>
                     </div>
                    </header> 
-                </div>
+                </section>
             
             
-                <div class="section">
+                <section class="section">
                     <br><br>
                     scroll1
-                </div>
+                </section>
             
         
 
-                <div class="section">
+                <section class="section">
                     <br><br>
                     scroll2
-                </div>
+                </section>
 
 
-                <div class="section">
+                <section class="section">
                     <div class="members">
                         <div class="member-line1">
                             <div class="member">
@@ -131,8 +138,7 @@
                         </div>
                     </div>
                     
-                </div>
-        
+                </section>
     </body>
     
     
@@ -216,32 +222,77 @@
 
     
     <script>
+        
         var position = $(window).scrollTop();
         $(window).scroll(function() {
+            
+
+                    <!--last page-->
+                    if (($(window).scrollTop() / window.innerHeight) == 0) {
+                        document.getElementById("lastpage").innerHTML = 0;
+                    }
+                    else if (($(window).scrollTop() / window.innerHeight) == 1) {
+                        document.getElementById("lastpage").innerHTML = 1;
+                    }
+                    else if (($(window).scrollTop() / window.innerHeight) == 2) {
+                        document.getElementById("lastpage").innerHTML = 2;
+                    }
+                    else if (($(window).scrollTop() / window.innerHeight) == 3) {
+                        document.getElementById("lastpage").innerHTML = 3;
+                    }
+                    else if (($(window).scrollTop() / window.innerHeight) == 4) {
+                        document.getElementById("lastpage").innerHTML = 4;
+                    }
+
+                    var lastpagestr = document.getElementById("lastpage").outerHTML;
+
+                    var lastpagestr = lastpagestr.substr(lastpagestr.length - 7, 1);
+
+                    console.log(lastpagestr);
+            
             
                 var theta = ($(window).scrollTop() / window.innerHeight);
                 var height_fix = 821 / window.innerHeight;
                  
             
-            if (($(window).scrollTop() / window.innerHeight) > 2) {
-                $('.tribar').css({ 
-                    marginTop: - Math.min((100 + (theta - 2) * 1000) / height_fix, 9500),
-                }); 
+            if (($(window).scrollTop() / window.innerHeight) == 3) {
+                $( "#navbar-element-core" ).addClass( "opacity-0" );
+                
                 
             }
             
+           else if (($(window).scrollTop() / window.innerHeight) > 2) {
+                $('.tribar').css({ 
+                    marginTop: - Math.min((120 + (theta - 2) * 1000) / height_fix, 9500),
+                }); 
+                
+                    if (lastpagestr == 2) {
+                         $( "#navbar-element-core" ).addClass( "fade-out" );
+                        $( "#navbar-element-core" ).removeClass( "fade-in" );
+
+                        
+                        $( "#navbar-element-member" ).removeClass( "opacity-0" );
+                    }
+                    else {
+                         $( "#navbar-element-core" ).addClass( "fade-in" );
+                        $( "#navbar-element-core" ).removeClass( "fade-out" );
+
+                       
+                    }
+            }
+            
             else if (($(window).scrollTop() / window.innerHeight) == 2) {
-                     
+                      $( "#navbar-element-member" ).addClass( "opacity-0" );
             }
             
             else if (($(window).scrollTop() / window.innerHeight) > 1) {
                    
                 
-                    var scroll = $(window).scrollTop();
-                    if (scroll > position) {
+
+                    if (lastpagestr == 1) {
                         
                         $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 100 / height_fix),
+                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 120 / height_fix),
                         }); 
                         
                         $( ".tribar-head" ).addClass("rollout-animation" ),
@@ -265,7 +316,7 @@
                     else {
                         
                         $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 100 / height_fix),
+                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 120 / height_fix),
                         }); 
                         
                         $( ".tribar-head" ).removeClass("rollout-animation" ),
@@ -296,20 +347,22 @@
             
             else if (($(window).scrollTop() / window.innerHeight) == 1) {
                    
-                    $( ".tribar-head" ).addClass( "roll-animation" ),
-                    $( ".tribar-text" ).addClass( "fade-in" ),
+                    
+                    
+                        
                     $( ".box-text" ).addClass( "fade-in" ),
-                
-                    $( ".tribar-head" ).removeClass("rollout-animation" ),
-                    $( ".tribar-text" ).removeClass( "fade-out" ),
                     $( ".box-text" ).removeClass( "fade-out" ),
                 
+                    $( ".tribar-head" ).addClass( "roll-animation" ),
                     $( ".tribar-head" ).removeClass("rollout-animation" ),
-                    $( ".tribar-core" ).removeClass("roll-core-animation" ),
-                    $( ".core-text" ).removeClass( "fade-in-delay" ),
-                    $( ".box-text" ).removeClass( "fade-in-delay" );
+                      
+                    $( ".tribar-text" ).addClass( "fade-in" ),
+                    $( ".tribar-text" ).removeClass( "fade-out" ),
                 
-                    $( ".navigation-bar" ).addClass( "fade-in" ),
+                    $( ".tribar-core" ).removeClass("roll-core-animation" ),
+
+                    $( ".box" ).removeClass( "fade-in-delay" );
+                
                     $( ".cabana" ).addClass( "blur" );
                     $( ".core" ).removeClass( "blur" );
                 
@@ -327,71 +380,64 @@
                     $( ".cabana-libre" ).addClass( "fade-out" ),
                     $( ".cabana-libre" ).removeClass( "fade-in" );
                 
-                    var scroll = $(window).scrollTop();
-                    if (scroll > position) {
+
+                    if (lastpagestr == 0) {
                         $( ".navigation-bar" ).addClass( "fade-in" );
                         $( ".navigation-bar" ).removeClass( "fade-out" );
+                        
+                        $( ".cabana-libre" ).removeClass( "fade-in" );
                     }
-                    else {
+                    else if (lastpagestr == 1) {
                         $( ".navigation-bar" ).removeClass( "fade-in" );
                         $( ".navigation-bar" ).addClass( "fade-out" );
+                        
+                        $( ".cabana-libre" ).addClass( "fade-in" );
+                        $( ".cabana-libre" ).removeClass( "fade-out" );
                     }
                 
-                    
-                        
             }
             
             else if (($(window).scrollTop() / window.innerHeight) == 0) {
                 
-                    $( ".cabana-libre" ).addClass( "fade-in" ),
-                    $( ".cabana-libre" ).removeClass( "fade-out" );
+                 $( ".navigation-bar" ).removeClass( "fade-in" );
                         
             }
               
             document.getElementById("demoo").innerHTML = position;
-             position = scroll;
+            
+            
+                        
         });
+        
 
     </script>
     
-    <script>
-    
-        $( ".tribar" ).hover(
-          function() {
-              $( ".z-0" ).addClass( "tribar-hover" );
-          }
-        );
-        
-    </script>
      
 
 
-
-
-    
-
     
     <script src="scrollify/jquery.scrollify.js"></script>
+    
     <script>
-        $(document).ready(function() {
-            $.scrollify({
-                section : ".section",
-            });
+        $(function() {
+          $.scrollify({
+            section : ".section",
+          });
         });
-    </script>
+      </script>
     
     <script>
           $.scrollify({
             section : "section",
-            sectionName : "section-name",
-            interstitialSection : "",
+            sectionName : "section",
+            interstitialSection : "navigation-bar",
             easing: "easeOutExpo",
-            scrollSpeed: 1000,
+            scrollSpeed: 1100,
             offset : 0,
             scrollbars: true,
             standardScrollElements: "",
             setHeights: true,
-            overflowScroll: true,
+            overflowScroll: false,
             updateHash: true,
             touchScroll:true,
             before:function() {},
@@ -400,6 +446,10 @@
             afterRender:function() {}
           });
     </script>
+
+
+
+    
     
 </html>
 
