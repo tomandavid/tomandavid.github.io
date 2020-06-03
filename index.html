@@ -15,6 +15,7 @@
     
     <body>
                 <nav class="navigation-bar" id="navbar">
+                        <img class="navbar-element opacity-0" id="navbar-element-member" src="img/navbar-element-member.png">
                         <img class="navbar-element opacity-0" id="navbar-element-core" src="img/navbar-element-core.png">
                         <img class="navbar-element" id="navbar-element" src="img/navbar-element.png">
                         
@@ -25,8 +26,10 @@
                         <p class="navbar-item contact">Contact</p>
                 
                 </nav>
-                
-                <div class="section">
+        
+  
+
+                <section class="snap section">
                     
                     
                     
@@ -90,23 +93,23 @@
                         <p>CABANA LIBRE</p>
                     </div>
                    </header> 
-                </div>
+                </section>
             
             
-                <div class="section">
+                <section class="snap section">
                     <br><br>
                     scroll1
-                </div>
+                </section>
             
         
 
-                <div class="section">
+                <section class="snap section">
                     <br><br>
                     scroll2
-                </div>
+                </section>
 
 
-                <div class="section">
+                <section class="snap section">
                     <div class="members">
                         <div class="member-line1">
                             <div class="member">
@@ -131,8 +134,7 @@
                         </div>
                     </div>
                     
-                </div>
-        
+                </section>
     </body>
     
     
@@ -228,6 +230,20 @@
                     marginTop: - Math.min((100 + (theta - 2) * 1000) / height_fix, 9500),
                 }); 
                 
+                
+                 var scroll = $(window).scrollTop();
+                    if (scroll > position) {
+                         $( "#navbar-element-core" ).addClass( "fade-out" );
+                        $( "#navbar-element-core" ).removeClass( "fade-in" );
+
+                        $( "#navbar-element-member" ).removeClass( "opacity-0" );
+                    }
+                    else {
+                         $( "#navbar-element-core" ).addClass( "fade-in" );
+                        $( "#navbar-element-core" ).removeClass( "fade-out" );
+
+                        $( "#navbar-element-member" ).addClass( "opacity-0" );
+                    }
             }
             
             else if (($(window).scrollTop() / window.innerHeight) == 2) {
@@ -366,40 +382,16 @@
      
 
 
+    
+<script src="js/jquery-scroll-snap.js"></script>
 
 
-    
+ <script>
+    $( '.snap' ).scrollSnap({
+  speed: 400
+});
+</script>   
 
-    
-    <script src="scrollify/jquery.scrollify.js"></script>
-    <script>
-        $(document).ready(function() {
-            $.scrollify({
-                section : ".section",
-            });
-        });
-    </script>
-    
-    <script>
-          $.scrollify({
-            section : "section",
-            sectionName : "section-name",
-            interstitialSection : "",
-            easing: "easeOutExpo",
-            scrollSpeed: 1000,
-            offset : 0,
-            scrollbars: true,
-            standardScrollElements: "",
-            setHeights: true,
-            overflowScroll: true,
-            updateHash: true,
-            touchScroll:true,
-            before:function() {},
-            after:function() {},
-            afterResize:function() {},
-            afterRender:function() {}
-          });
-    </script>
     
 </html>
 
