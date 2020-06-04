@@ -4,18 +4,18 @@
     
     <head>
         
+        
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
         
-
         
         <script src="js/script.js"></script>        
-        
-
-        
+        <div style="display:none">
+        <var id="lastpage">0</var>
+        </div>
     </head>
     
-    <body>
+    <body class="body opacity-0">
 
         
   
@@ -31,17 +31,16 @@
                         <img class="navbar-logo-mini" src="img/logo-mini.png">
                         <p class="navbar-item cabana">Cabana Libre</p>
                         <p class="navbar-item core">Core values</p>
-                        <p class="navbar-item core">Members</p>
-                        <p class="navbar-item contact">Contact</p>
-                        <var id="lastpage">0</var>
+                        <p class="navbar-item core contact">Contact</p>
+                        
                 
                 </nav>
                     
                   <header>  
                   
-                    <p id="demo" style="position: fixed"></p><br>
-                    <p id="demoo" style="position: fixed"></p><br>
-                    <p id="demooo" style="position: fixed"></p>
+   
+                    
+                    
 
                     <div class="tribar" id="tribar">
                         <img class="tribar-items z-4 flower-background" id="center" src="img/flower.png">
@@ -59,17 +58,38 @@
                         <div class="tribar-head">
                             <div class="box">
                                 <div class="tribar-text">MUSIC</div>
-                                <p class="box-text">The tale of the tones allows its guests to comfortably glide through the decorated canvases. The crowd complements its master through their movements.</p>
+                                <div class="tibar-box-text">
+                                    <p class="box-text line-one">The tale of the tones allows</p> 
+                                    <p class="box-text line-two">its guests to comfortably</p>
+                                    <p class="box-text line-three">glide through the decorated</p>
+                                    <p class="box-text line-four">canvases. The crowd </p>
+                                    <p class="box-text line-five">complements its master </p>
+                                    <p class="box-text line-six">through their movements.</p>
+                                </div>
                             </div>
 
                             <div class="box">
                                 <div class="tribar-text">PEOPLE</div>
-                                <p class = "box-text">People carry one another. People share energies and create universes together.If the frequencies on which beings move sync - then the world syncs with them.</p>
+                                <div class="tibar-box-text">
+                                    <p class = "box-text line-one">People carry one another.</p>
+                                    <p class="box-text line-two">People share energies and</p>
+                                    <p class="box-text line-three">create universes together.</p>
+                                    <p class="box-text line-four">If the frequencies on which</p>
+                                    <p class="box-text line-five">beings move sync - then</p>
+                                    <p class="box-text line-six">the world syncs with them.</p>
+                                </div>
                             </div>
 
                             <div class="box">
                                 <div class="tribar-text">DECORATIONS</div>
-                                <p class="box-text">Deco is the icebreaker needed to link people together. The crowd gets activated by the burst of sensorial sensations thrown at it, unifying its members.</p>
+                                <div class="tibar-box-text">
+                                    <p class = "box-text line-one">Deco is the icebreaker 
+                                    <p class = "box-text line-two">needed to link people
+                                    <p class = "box-text line-three">together. The crowd gets
+                                    <p class = "box-text line-four">activated by the burst
+                                    <p class = "box-text line-five">of sensorial sensations thrown
+                                    <p class = "box-text line-six">at it, unifying its members.</p>
+                                </div>
                             </div>
                         </div>
                         
@@ -102,49 +122,62 @@
             
             
                 <section class="section">
-                    <br><br>
-                    scroll1
+                   
                 </section>
             
         
 
                 <section class="section">
-                    <br><br>
-                    scroll2
+                
                 </section>
 
 
                 <section class="section">
-                    <div class="members">
-                        <div class="member-line1">
-                            <div class="member">
-                                <img class="member-photo" src="img/members/member1.png">
-                                <p>Member 1</p>
-                            </div>
-                            <div class="member">
-                                <img class="member-photo" src="img/members/member2.png">
-                                <p>Member 2</p>
-                            </div>
-                        </div>
-                        <div class="member-line2">
+                    
+                    <div id="container">
+                      <h1>&bull; Cabana Libre Post &bull;</h1>
 
-                            <div class="member">
-                                <img class="member-photo" src="img/members/member3.png">
-                                <p>Member 3</p>
-                            </div>
-                            <div class="member">
-                                <img class="member-photo" src="img/members/member4.png">
-                                <p>Member 4</p>
-                            </div>
+
+                      <form action="#" method="post" id="contact_form">
+                        <div class="name">
+                          <label for="name"></label>
+                          <input type="text" placeholder="My name is" name="name" id="name_input" required>
                         </div>
-                    </div>
+                        <div class="email">
+                          <label for="email"></label>
+                          <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+                        </div>
+                        <div class="telephone">
+                          <label for="name"></label>
+                          <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+                        </div>
+                        <div class="subject">
+                          <label for="subject"></label>
+                          <select placeholder="Subject line" name="subject" id="subject_input" required>
+                            <option disabled hidden selected>Subject line</option>
+                            <option>I'd like to start a project</option>
+                            <option>I'd like to ask a question</option>
+                            <option>I'd like to make a proposal</option>
+                          </select>
+                        </div>
+                        <div class="message">
+                          <label for="message"></label>
+                          <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+                        </div>
+                        <div class="submit">
+                          <input type="submit" value="Send Message" id="form_button" />
+                        </div>
+                      </form><!-- // End form -->
+                    </div><!-- // End #container -->
                     
                 </section>
+        
+
     </body>
     
     
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
+    <script src="scrollify/jquery.scrollify.js"></script>
     <script>
         $(window).scroll(function() {
         var phase = 0.2;
@@ -217,7 +250,6 @@
                 marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220 / height_fix
             });
         }
-    document.getElementById("demo").innerHTML = $(window).scrollTop() + "   ;   " + window.innerHeight +  "   ;   " +  $(window).scrollTop() / window.innerHeight ;
         });
     </script>
 
@@ -264,7 +296,7 @@
             
            else if (($(window).scrollTop() / window.innerHeight) > 2) {
                 $('.tribar').css({ 
-                    marginTop: - Math.min((120 + (theta - 2) * 1000) / height_fix, 9500),
+                    marginTop: - Math.min((70 + (theta - 2) * 1000) / height_fix, 9500),
                 }); 
                 
                     if (lastpagestr == 2) {
@@ -283,23 +315,28 @@
             }
             
             else if (($(window).scrollTop() / window.innerHeight) == 2) {
-                     
+                     $('.tribar').css({ 
+                            marginTop: - ($(window).scrollTop() / window.innerHeight) * 10,
+                            position: fixed
+                        });
             }
             
             else if (($(window).scrollTop() / window.innerHeight) > 1) {
                    
-                
+                        $('.tribar').css({ 
+                            marginTop: - Math.min(-122 + (theta - 1) * 400 / height_fix, 70 / height_fix ),
+                            
+                        });
+
 
                     if (lastpagestr == 1) {
                         
-                        $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 120 / height_fix),
-                        }); 
+
                         
                         $( ".tribar-head" ).addClass("rollout-animation" ),
                         $( ".tribar-core" ).addClass("roll-core-animation" ),
-                        $( ".core-text" ).addClass( "fade-in-delay" ),
-                        $( ".box-text" ).addClass( "fade-in-delay" );
+                        $( ".core-text" ).addClass( "fade-in" ),
+                        $( ".box-text" ).addClass( "fade-in" );
 
                         $( "#left" ).addClass( "fade-out" ),
                         $( "#right" ).addClass( "fade-out" ),
@@ -316,14 +353,12 @@
                     }
                     else {
                         
-                        $('.tribar').css({ 
-                            marginTop: - Math.min(-122 + (theta - 1) * 300 / height_fix, 120 / height_fix),
-                        }); 
+                        
                         
                         $( ".tribar-head" ).removeClass("rollout-animation" ),
                         $( ".tribar-core" ).removeClass("roll-core-animation" ),
-                        $( ".core-text" ).removeClass( "fade-in-delay" ),
-                        $( ".box-text" ).removeClass( "fade-in-delay" );
+                        $( ".core-text" ).removeClass( "fade-in" ),
+                        $( ".box-text" ).removeClass( "fade-in" );
 
                         $( "#left" ).removeClass( "fade-out" ),
                         $( "#right" ).removeClass( "fade-out" ),
@@ -350,8 +385,14 @@
                    
                     
                     
-                        
-                    $( ".box-text" ).addClass( "fade-in" ),
+                     
+                    $( ".line-one" ).addClass( "line-one-fade-in" ),
+                    $( ".line-two" ).addClass( "line-two-fade-in" ),
+                    $( ".line-three" ).addClass( "line-three-fade-in" ),
+                    $( ".line-four" ).addClass( "line-four-fade-in" ),
+                    $( ".line-five" ).addClass( "line-five-fade-in" ),
+                    $( ".line-six" ).addClass( "line-six-fade-in" );
+
                     $( ".box-text" ).removeClass( "fade-out" ),
                 
                     $( ".tribar-head" ).addClass( "roll-animation" ),
@@ -362,7 +403,7 @@
                 
                     $( ".tribar-core" ).removeClass("roll-core-animation" ),
 
-                    $( ".box" ).removeClass( "fade-in-delay" );
+                    
                 
                     $( ".cabana" ).addClass( "blur" );
                     $( ".core" ).removeClass( "blur" );
@@ -372,6 +413,13 @@
                 }
             
             else if (($(window).scrollTop() / window.innerHeight) > 0) {
+                
+                    $( ".line-one" ).removeClass( "line-one-fade-in" ),
+                    $( ".line-two" ).removeClass( "line-two-fade-in" ),
+                    $( ".line-three" ).removeClass( "line-three-fade-in" ),
+                    $( ".line-four" ).removeClass( "line-four-fade-in" ),
+                    $( ".line-five" ).removeClass( "line-five-fade-in" ),
+                    $( ".line-six" ).removeClass( "line-six-fade-in" );
                 
 
                     $( ".tribar-head" ).removeClass("roll-animation" ),
@@ -404,7 +452,6 @@
                         
             }
               
-            document.getElementById("demoo").innerHTML = position;
             
             
                         
@@ -433,7 +480,7 @@
             sectionName : "section",
             interstitialSection : "navigation-bar",
             easing: "easeOutExpo",
-            scrollSpeed: 1100,
+            scrollSpeed: 1500,
             offset : 0,
             scrollbars: true,
             standardScrollElements: "",
@@ -449,7 +496,9 @@
     </script>
 
 
-
+<script>
+    $( ".body" ).removeClass( "opacity-0" );
+</script>
 
     
 </html>

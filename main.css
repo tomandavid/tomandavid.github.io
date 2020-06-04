@@ -81,10 +81,9 @@ header {
 /*-----TRIANGLE-----*/
 
 .tribar {
-    width: 50vw;
-    height: 50vh;
+    width: 100vw;
+    height: 100vh;
     margin-top: 15vh;
-    margin-left: 25vw;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -92,7 +91,7 @@ header {
     
 }
 .tribar-items {
-    height: 100%;
+    height: 50%;
     display: inline-block;
     position: absolute;
 }
@@ -163,6 +162,8 @@ header {
     font-size: 4vh;
     text-shadow: 0 0 5px #f1f1f1;
     opacity: 1;
+    color: white;
+    mix-blend-mode: difference;
 }
 
 .core-text {
@@ -177,12 +178,16 @@ header {
     opacity: 1;
 }
 
+.tibar-box-text {
+    margin-top: 2vh;
+}
+
 .box-text {
     padding-left: 1vh;
-    font-size: 2.4vh;
+    font-size: 2.2vh;
     font-weight: 100;
     letter-spacing: 0.2vh;
-    margin-top: 2.5vh;
+    margin-top: 0.5vh;
 }
 
 .box-text-img {
@@ -260,6 +265,10 @@ header {
     opacity: 0;
 }
 
+.opacity-1 {
+    opacity: 1;
+}
+
 
 
 /*-----ANIMATIONS SETTINGS-----*/
@@ -296,7 +305,7 @@ header {
 
 .roll-core-animation {
     animation-name: box-core-roll;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     opacity: 1;
 }
 
@@ -318,6 +327,37 @@ header {
     animation-delay: 0s;
 }
 
+
+.line-one-fade-in {
+    animation: fade-in-one;
+    animation-duration: 0.5s;
+}
+
+.line-two-fade-in {
+    animation: fade-in-two;
+    animation-duration: 0.5s;
+}
+
+.line-three-fade-in {
+    animation: fade-in-three;
+    animation-duration: 0.5s;
+}
+
+.line-four-fade-in {
+    animation: fade-in-four;
+    animation-duration: 0.5s;
+}
+
+.line-five-fade-in {
+    animation: fade-in-five;
+    animation-duration: 0.5s;
+}
+
+.line-six-fade-in {
+    animation: fade-in-six;
+    animation-duration: 0.5s;
+    
+}
 /*-----ANIMATIONS-----*/
 
 @keyframes box-roll {
@@ -421,22 +461,330 @@ header {
     }
 }
 
+@keyframes fade-in-one {
+    0%   {
+      opacity: 0%;
+    }
+    
+    0%   {
+      opacity: 0%;
+    }
+    20%   {
+      opacity: 100%;
+    }
 
-$.scrollify({
-    section : "section",
-    sectionName : "section-name",
-    interstitialSection : "",
-    easing: "easeOutExpo",
-    scrollSpeed: 1100,
-    offset : 0,
-    scrollbars: true,
-    standardScrollElements: "",
-    setHeights: true,
-    overflowScroll: true,
-    updateHash: true,
-    touchScroll:true,
-    before:function() {},
-    after:function() {},
-    afterResize:function() {},
-    afterRender:function() {}
-  });
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+@keyframes fade-in-two {
+    0%   {
+      opacity: 0%;
+    }
+    
+    20%   {
+      opacity: 0%;
+    }
+    40%   {
+      opacity: 100%;
+    }
+
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+@keyframes fade-in-three {
+    0%   {
+      opacity: 0%;
+    }
+    
+    40%   {
+      opacity: 0%;
+    }
+    60%   {
+      opacity: 100%;
+    }
+
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+@keyframes fade-in-four {
+    0%   {
+      opacity: 0%;
+    }
+    
+    60%   {
+      opacity: 0%;
+    }
+    80%   {
+      opacity: 100%;
+    }
+
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+@keyframes fade-in-five {
+    0%   {
+      opacity: 0%;
+    }
+    
+    70%   {
+      opacity: 0%;
+    }
+    90%   {
+      opacity: 100%;
+    }
+
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+@keyframes fade-in-six {
+    0%   {
+      opacity: 0%;
+    }
+    
+    80%   {
+      opacity: 0%;
+    }
+    100%   {
+      opacity: 100%;
+    }
+
+    100%   {
+      opacity: 100% ;
+
+    }
+}
+
+
+
+
+/*-----CONTACT-----*/
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  color: #5A5A5A;
+  font: 'Poppins';
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+#container {
+  width: 80%;
+    height: 80%;
+  margin-top: 5%;
+    margin-left: 10%;
+  position: absolute;
+}
+
+form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #474544;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+
+}
+
+.underline {
+  border-bottom: solid 2px #474544;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.icon {
+  display: block;
+  fill: #474544;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #474544;
+	color: #474544;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+.message {
+	float: none;
+}
+
+.name {
+	float: left;
+	width: 45%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.subject {
+  width: 100%;
+}
+
+.telephone {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 150px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: #474544;
+}
+
+:-moz-placeholder { 
+	color: #474544;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #474544;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #474544;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #474544;
+  color: #474544;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #474544;
+  color: #F2F3EB;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  .underline {
+    width: 68px;
+  }
+  
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .underline {
+    width: 53px;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
+
+
+
