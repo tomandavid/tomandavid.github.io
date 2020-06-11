@@ -10,8 +10,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
         
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="scrollify/jquery.scrollify.js"></script>
-        
+        <!--<script src="scrollify/jquery.scrollify.js"></script>-->
+        <script type="text/javascript" src="js/fullpage.js"></script>
    
         <div style="display:none">
             <var id="lastpage">0</var>
@@ -21,9 +21,9 @@
     <body>
 
         
-  
+            <div id="fullpage">
 
-                <section class="section">
+                <div class="section">
                     
   
                 <nav class="navigation-bar desktop" id="navbar">
@@ -136,19 +136,19 @@
                         <p>CABANA LIBRE</p>
                     </div>
                    </header> 
-                </section>
+                </div>
             
             
-                <section class="section">
+                <div class="section">
                    
-                </section>
+                </div>
             
         
 
                 
 
 
-                <section class="section" id="contact">
+                <div class="section" id="contact">
                     
                     <div id="container">
                       <h1>&bull; Cabana Libre Post &bull;</h1>
@@ -186,9 +186,22 @@
                       </form><!-- // End form -->
                     </div><!-- // End #container -->
                     
-                </section>
+                </div>
         
+        </div>
+        
+        <script>
+        $(document).ready(function() {
+        $('#fullpage').fullpage({
+            //options here
+            scrollBar:true,
+            scrollSpeed: 500,
+        });
 
+        $.fn.fullpage.setAllowScrolling(true);
+        });
+        </script>
+        
     </body>
     
     
