@@ -3,7 +3,8 @@
 <html>
     
     <head>
-        
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="scrollify/jquery.scrollify.js"></script>
         
         <link rel="stylesheet" href="main.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;700&display=swap" rel="stylesheet">
@@ -11,13 +12,13 @@
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="scrollify/jquery.scrollify.js"></script>
         
-        <script src="js/script.js"></script>        
+   
         <div style="display:none">
-        <var id="lastpage">0</var>
+            <var id="lastpage">0</var>
         </div>
     </head>
     
-    <body class="body opacity-0">
+    <body>
 
         
   
@@ -25,7 +26,7 @@
                 <section class="section">
                     
   
-                <nav class="navigation-bar" id="navbar">
+                <nav class="navigation-bar desktop" id="navbar">
                         <img class="navbar-element opacity-0" id="navbar-element-member" src="img/navbar-element-member.png">
                         <img class="navbar-element opacity-0" id="navbar-element-core" src="img/navbar-element-core.png">
                         <img class="navbar-element" id="navbar-element" src="img/navbar-element.png">
@@ -58,8 +59,13 @@
     
                     
                         <div class="tribar-head">
-                            <div class="box">
-                                <div class="tribar-text">MUSIC</div>
+                            <div class="box mobile">
+                                <div class="tribar-text">CABANA LIBRE</div>
+                                
+                            </div>
+                            
+                            <div class="box" id="music">
+                                <div class="tribar-text">Music</div>
                                 <div class="tibar-box-text">
                                     <p class="box-text line-one">The tale of the tones allows</p> 
                                     <p class="box-text line-two">its guests to comfortably</p>
@@ -70,8 +76,8 @@
                                 </div>
                             </div>
 
-                            <div class="box">
-                                <div class="tribar-text">PEOPLE</div>
+                            <div class="box" id="people">
+                                <div class="tribar-text">People</div>
                                 <div class="tibar-box-text">
                                     <p class = "box-text line-one">People carry one another.</p>
                                     <p class="box-text line-two">People share energies and</p>
@@ -82,8 +88,8 @@
                                 </div>
                             </div>
 
-                            <div class="box">
-                                <div class="tribar-text">DECORATIONS</div>
+                            <div class="box" id="deco">
+                                <div class="tribar-text">Decorations</div>
                                 <div class="tibar-box-text">
                                     <p class = "box-text line-one">Deco is the icebreaker 
                                     <p class = "box-text line-two">needed to link people
@@ -95,23 +101,33 @@
                             </div>
                         </div>
                         
+                        
                         <div class="tribar-core">
-                            <div class="box">
+                            <div class="box mobile" id="core">
+                                <div class="tribar-text">CORE VALUES</div>
+                                
+                            </div>
+                            <div class="box" id="make">
                                 <div class="core-text">Make <br> No Assumptions</div>
                                 <p class = "box-text"> The danger of working on assumptions is that it can lead to miscommunication. Be honest. We'd rather have you call us up in the middle of the night than seeing the project go in a different way than you wanted.</p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" id="idea">
                                 <div class="core-text">No Idea <br> is too Crazy</div>
                                 <p class = "box-text">If we start with all the possibilities, we don't limit ourselves cognitively, leading to more radical ideas.</p>
                                 <img class="box-text box-text-img" src="img/core_img.png">
                                 <p class = "box-text">Once an idea is formed, we can work on its applicability. We should never stop our creative juices from flowing just because "this might not work".</p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" id="save">
                                 <div class="core-text">Save <br> the Whales</div>
                                 <p class="box-text">That we have grossly underestimated our effect on this planet has become indisputable. However, we neither have an option for zero impact on our planet.Yet, it is still of the utmost importance that we at least try to relieve earth of some of the stress so that we may be here a bit longer. We are doing this by using sustainable materials for all our decorations and constantl recycling.</p>
                             </div>
+                            
+                            <div class="box mobile">
+                                <div class="tribar-text" id="post">Cabana Libre Post</div>
+                            </div>
+                            
                         </div>
                         
                     </div>
@@ -129,12 +145,10 @@
             
         
 
-                <section class="section">
                 
-                </section>
 
 
-                <section class="section">
+                <section class="section" id="contact">
                     
                     <div id="container">
                       <h1>&bull; Cabana Libre Post &bull;</h1>
@@ -182,84 +196,88 @@
     
     <script>
         $(window).scroll(function() {
-        var phase = 0.2;
-        var theta = ($(window).scrollTop() / window.innerHeight);
-        var theta2 = (theta - phase) / (1 - phase);
-        var height_fix = 821 / window.innerHeight
             
-        
-        if (theta < phase) {
-            $('#left').css({ 
-                marginLeft: - theta * 100  , 
-                marginTop: - theta * 173  , 
-                transform: 'rotate(-' + Math.min(theta * 0 , 120) + 'deg)' 
-            });
-            $('#right').css({ 
-                marginLeft: theta * 173 , 
-                marginTop: - theta * 100 * 0 ,
-                transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
-            });
-            $('#bottom').css({ 
-                marginLeft: - theta * 100, 
-                marginTop:  theta * 173 ,
-                transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
-            });
-            $('#center').css({
-                opacity: 1 - theta * 5,
-                marginLeft: theta * 0.7,
-                marginTop: - window.innerHeight * 0.07 + theta * 250 ,
-                height: window.innerHeight * 0.7 - theta * 400
-            });
-        }
-        else {
-            $('#left').css({ 
-                marginLeft: - Math.min(phase * 100 + theta2 * 100 * 4 / height_fix, 173 * 2.31 / height_fix),
-                marginTop: - Math.min(phase * 173 + theta2 * 173, 470 / 2 / 1.53 / height_fix),
-                transform: 'rotate(-' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
-            });
-            $('#right').css({ 
-                marginLeft: Math.min(phase * 173 + theta2 * 173 * 2.3 / height_fix, 100 * 4 / height_fix), 
-                marginTop: - Math.min(theta2 * 100 * 1.55/ height_fix, 470 / 2 / 1.53 / height_fix ),
-                transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
-            });
-            $('#bottom').css({ 
-                marginLeft: + Math.min((theta2 * 20 - 100 * phase ) / height_fix, 0 / height_fix),
-                marginTop: - Math.min((theta2 * 173 * 1.3 - 173 * phase ) / height_fix, 192 / height_fix),
-                transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)'
-            });
-            
-            $('#left-core').css({ 
-                marginLeft: - Math.min(phase * 100 + theta2 * 100 * 4 / height_fix, 173 * 2.31 / height_fix),
-                marginTop: - Math.min(phase * 173 + theta2 * 173, 470 / 2 / 1.53 / height_fix),
-                transform: 'rotate(-' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
-            });
-            $('#right-core').css({ 
-                marginLeft: Math.min(phase * 173 + theta2 * 173 * 2.3 / height_fix, 100 * 4 / height_fix), 
-                marginTop: - Math.min(theta2 * 100 * 1.55/ height_fix, 470 / 2 / 1.53 / height_fix ),
-                transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
-            });
-            $('#bottom-core').css({ 
-                marginLeft: + Math.min((theta2 * 20 - 100 * phase ) / height_fix, 0 / height_fix),
-                marginTop: - Math.min((theta2 * 173 * 1.3 - 173 * phase ) / height_fix, 192 / height_fix),
-                transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)' 
-            });
-            
-            $('#center').css({
-                opacity: 0
-            });
-            
-            $('.navbar-element').css({
-                marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220 / height_fix
-            });
-        }
+            if (window.innerWidth > 1000) {  <!-- DESKTOP VERSION -->
+                
+                var phase = 0.2;
+                var theta = ($(window).scrollTop() / window.innerHeight);
+                var theta2 = (theta - phase) / (1 - phase);
+                var height_fix = 821 / window.innerHeight
+
+
+                if (theta < phase) {
+                    $('#left').css({ 
+                        marginLeft: - theta * 100  , 
+                        marginTop: - theta * 173  , 
+                        transform: 'rotate(-' + Math.min(theta * 0 , 120) + 'deg)' 
+                    });
+                    $('#right').css({ 
+                        marginLeft: theta * 173 , 
+                        marginTop: - theta * 100 * 0 ,
+                        transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
+                    });
+                    $('#bottom').css({ 
+                        marginLeft: - theta * 100, 
+                        marginTop:  theta * 173 ,
+                        transform: 'rotate(' + Math.min(theta * 0, 120) + 'deg)' 
+                    });
+                    $('#center').css({
+                        opacity: 1 - theta * 5,
+                        marginLeft: theta * 0.7,
+                        marginTop: - window.innerHeight * 0.07 + theta * 250 ,
+                        height: window.innerHeight * 0.7 - theta * 400
+                    });
+                }
+                else {
+                    $('#left').css({ 
+                        marginLeft: - Math.min(phase * 100 + theta2 * 100 * 4 / height_fix, 173 * 2.31 / height_fix),
+                        marginTop: - Math.min(phase * 173 + theta2 * 173, 470 / 2 / 1.53 / height_fix),
+                        transform: 'rotate(-' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
+                    });
+                    $('#right').css({ 
+                        marginLeft: Math.min(phase * 173 + theta2 * 173 * 2.3 / height_fix, 100 * 4 / height_fix), 
+                        marginTop: - Math.min(theta2 * 100 * 1.55/ height_fix, 470 / 2 / 1.53 / height_fix ),
+                        transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
+                    });
+                    $('#bottom').css({ 
+                        marginLeft: + Math.min((theta2 * 20 - 100 * phase ) / height_fix, 0 / height_fix),
+                        marginTop: - Math.min((theta2 * 173 * 1.3 - 173 * phase ) / height_fix, 192 / height_fix),
+                        transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)'
+                    });
+
+                    $('#left-core').css({ 
+                        marginLeft: - Math.min(phase * 100 + theta2 * 100 * 4 / height_fix, 173 * 2.31 / height_fix),
+                        marginTop: - Math.min(phase * 173 + theta2 * 173, 470 / 2 / 1.53 / height_fix),
+                        transform: 'rotate(-' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
+                    });
+                    $('#right-core').css({ 
+                        marginLeft: Math.min(phase * 173 + theta2 * 173 * 2.3 / height_fix, 100 * 4 / height_fix), 
+                        marginTop: - Math.min(theta2 * 100 * 1.55/ height_fix, 470 / 2 / 1.53 / height_fix ),
+                        transform: 'rotate(' + Math.min(theta2 * 120 * height_fix, 120) + 'deg)' 
+                    });
+                    $('#bottom-core').css({ 
+                        marginLeft: + Math.min((theta2 * 20 - 100 * phase ) / height_fix, 0 / height_fix),
+                        marginTop: - Math.min((theta2 * 173 * 1.3 - 173 * phase ) / height_fix, 192 / height_fix),
+                        transform: 'rotate(' + Math.min(theta2 * 0, 120) + 'deg)' 
+                    });
+
+                    $('#center').css({
+                        opacity: 0
+                    });
+
+                    $('.navbar-element').css({
+                        marginLeft: window.innerHeight * 0.06 + (theta - 1) * 220 / height_fix
+                    });
+                }
+                };
         });
     </script>
 
     
     <script>
-        
         var position = $(window).scrollTop();
         $(window).scroll(function() {
+            
             
 
                     <!--last page-->
@@ -286,6 +304,8 @@
                     console.log(lastpagestr);
             
             
+            if (window.innerWidth > 1000) {    <!-- DESKTOP VERSION -->
+                                           
                 var theta = ($(window).scrollTop() / window.innerHeight);
                 var height_fix = 821 / window.innerHeight;
                  
@@ -454,18 +474,338 @@
                         
             }
               
+            }
             
-            
+            else {
+                if (($(window).scrollTop() / window.innerHeight) == 2) {
+                    $('.box').css({ 
+                        opacity: 0
+                    });
+                    
+                    $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                    $( ".tribar" ).removeClass( "tribar-mobile-top2");
+                }
+                
+                else if (($(window).scrollTop() / window.innerHeight) > 1) {
+                    $('.box').css({ 
+                        opacity: 1
+                    });
+                    if (lastpagestr == 1) {
+                        $( ".tribar" ).addClass( "tribar-mobile-top2");
+                        $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                    }
+                    else {
+                        $( ".tribar" ).removeClass( "tribar-mobile-top2");
+                        $( ".tribar" ).addClass( "tribar-mobile-bottom2");
+                    }
+                }
+                
+                
+                else if (($(window).scrollTop() / window.innerHeight) == 1) {
+                
+                    $( ".box" ).removeClass( "tribar-mobile-top");
+                    
+                    $( ".tribar" ).removeClass( "tribar-mobile-top2");
+                    $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                
+                }
+                
+                else if (($(window).scrollTop() / window.innerHeight) > 0) {
+                
+                    $( ".tribar-items" ).addClass( "fade-out" );
+                    $( ".tribar-items" ).removeClass( "fade-in" );
+                    
+                    $( ".cabana-libre" ).addClass( "fade-out" );
+                    $( ".cabana-libre" ).removeClass( "fade-in" );
+                    
+                    
+                    
+                    if (lastpagestr == 0) {
+                        $('.box').css({ 
+                            opacity: 1
+                        });
                         
+                        
+                        
+                        $( ".tribar-head" ).addClass( "tribar-mobile-top");
+                        $( ".tribar-head" ).removeClass( "tribar-mobile-bottom");
+                        $( ".box" ).addClass( "tribar-mobile-top");
+                    }
+                    else {
+                        $( ".tribar-items" ).addClass( "fade-in" );
+                        $( ".tribar-items" ).removeClass( "fade-out" );
+                    
+                        $( ".cabana-libre" ).addClass( "fade-in" );
+                        $( ".cabana-libre" ).removeClass( "fade-out" );
+                        
+                        $( ".tribar-head" ).addClass( "tribar-mobile-bottom");
+                        $( ".tribar-head" ).removeClass( "tribar-mobile-top");
+                    }
+                    
+                }
+                
+                else if (($(window).scrollTop() / window.innerHeight) == 0) {
+                
+                    
+                    
+                    $( ".box" ).addClass( "opacity-0" );
+                    
+                    $( ".box" ).removeClass( "tribar-mobile-top");
+                    
+                     $('.box').css({ 
+                            opacity: 0
+                    });
+                }
+            }
         });
-        
+
 
     </script>
     
      
-
+    <script>
+        $('#music').click(function() {
+            var items = [ "#people", "#deco"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#music").hasClass("rollout-mobile")) {
+                $( "#music" ).addClass( "rollin-mobile" );
+                $( "#music" ).removeClass( "rollout-mobile" );
+                console.log("ahoj")
+            }
+            else {
+                $( "#music" ).addClass( "rollout-mobile" );
+                $( "#music" ).removeClass( "rollin-mobile" );
+            }
+        });
+        
+        $('#people').click(function() {
+            
+            var items = [ "#music", "#deco"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#people").hasClass("rollout-mobile")) {
+                $( "#people" ).addClass( "rollin-mobile" );
+                $( "#people" ).removeClass( "rollout-mobile" );
+            }
+            else {
+                $( "#people" ).addClass( "rollout-mobile" );
+                $( "#people" ).removeClass( "rollin-mobile" );
+            }
+        });
+        
+        $('#deco').click(function() {
+            
+            var items = [ "#music", "#people"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#deco").hasClass("rollout-mobile")) {
+                $( "#deco" ).addClass( "rollin-mobile" );
+                $( "#deco" ).removeClass( "rollout-mobile" );
+            }
+            else {
+                $( "#deco" ).addClass( "rollout-mobile" );
+                $( "#deco" ).removeClass( "rollin-mobile" );
+            }
+        });
+        
+        
+        
+        
+        
+        $('#core').click(function() {
+            var items = [ "#music", "#people", "#deco", "#make", "#idea", "#save"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($( ".tribar" ).hasClass( "core-move-top" )) {
+                $( ".tribar" ).addClass( "core-move-bottom" );
+                $( ".tribar" ).removeClass( "core-move-top" );
+                
+                $( "#make" ).addClass( "rollin-mobile" );
+                $( "#make" ).removeClass( "rollout-mobile" );
+            }
+            else {
+                $( ".tribar" ).removeClass( "core-move-bottom" );
+                $( ".tribar" ).addClass( "core-move-top" );
+                
+                $( "#make" ).removeClass( "rollin-mobile" );
+                $( "#make" ).addClass( "rollout-mobile" );
+            }
+        });
 
     
+        $('#make').click(function() {
+            var items = [ "#idea", "#save"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#make").hasClass("rollout-mobile")) {
+                $( "#make" ).addClass( "rollin-mobile" );
+                $( "#make" ).removeClass( "rollout-mobile" );
+                
+                $( ".tribar" ).removeClass( "core-move-top" );
+                $( ".tribar" ).addClass( "core-move-bottom" );
+            }
+            else {
+                $( "#make" ).addClass( "rollout-mobile" );
+                $( "#make" ).removeClass( "rollin-mobile" );
+                
+                $( ".tribar" ).addClass( "core-move-top" );
+                $( ".tribar" ).removeClass( "core-move-bottom" );
+            }
+        });
+        
+        $('#idea').click(function() {
+            var items = [ "#make", "#save"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#idea").hasClass("rollout-mobile")) {
+                $( "#idea" ).addClass( "rollin-mobile" );
+                $( "#idea" ).removeClass( "rollout-mobile" );
+                
+                $( ".tribar" ).removeClass( "core-move-top" );
+                $( ".tribar" ).addClass( "core-move-bottom" );
+            }
+            else {
+                $( "#idea" ).addClass( "rollout-mobile" );
+                $( "#idea" ).removeClass( "rollin-mobile" );
+                
+                $( ".tribar" ).addClass( "core-move-top" );
+                $( ".tribar" ).removeClass( "core-move-bottom" );
+            }
+        });
+        
+        $('#save').click(function() {
+            var items = [ "#make", "#idea"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            if ($("#save").hasClass("rollout-mobile")) {
+                $( "#save" ).addClass( "rollin-mobile" );
+                $( "#save" ).removeClass( "rollout-mobile" );
+                
+                $( ".tribar" ).removeClass( "core-move-top" );
+                $( ".tribar" ).addClass( "core-move-bottom" );
+            }
+            else {
+                $( "#save" ).addClass( "rollout-mobile" );
+                $( "#save" ).removeClass( "rollin-mobile" );
+                
+                $( ".tribar" ).addClass( "core-move-top" );
+                $( ".tribar" ).removeClass( "core-move-bottom" );
+            }
+        });
+        
+        $('#post').click(function() {
+            var items = [ "#make", "#idea", "#save"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+            }
+            
+            $('html, body').animate({
+                scrollTop: $("#contact").offset().top
+            }, 500);
+            
+        });
+        
+    </script>
+    
+    
+  <!--  
+    <script>
+        
+        var lastclick;
+        $('#music').click(function() {
+            
+            $( "#music" ).addClass( "rollout-mobile" );
+            $( "#music" ).removeClass( "rollin-mobile" );
+            
+            if (lastclick == "music") {
+                $( "#music" ).addClass( "rollin-mobile" );
+                $( "#music" ).removeClass( "rollout-mobile" );
+                lastclick = "";
+            } 
+            
+            else if (lastclick == "people") {
+                $( "#people" ).addClass( "rollin-mobile" );
+                $( "#people" ).removeClass( "rollout-mobile" );
+            }
+            
+            else {
+                
+            lastclick = "music";
+            }
+            
+            
+            console.log(lastclick);
+        });
+        
+        $('#people').click(function() {
+            
+            $( "#people" ).addClass( "rollout-mobile" );
+            $( "#people" ).removeClass( "rollin-mobile" );
+            
+            if (lastclick == "people") {
+                $( "#people" ).addClass( "rollin-mobile" );
+                $( "#people" ).removeClass( "rollout-mobile" );
+                lastclick = "";
+            } 
+            
+            else if (lastclick == "music") {
+                $( "#music" ).addClass( "rollin-mobile" );
+                $( "#music" ).removeClass( "rollout-mobile" );
+                lastclick = "people";
+            }
+
+            else {
+                lastclick = "people";
+            }
+            
+            console.log(lastclick);
+        });
+        
+
+        
+    
+    </script>
+
+    -->
     
     
     <script>

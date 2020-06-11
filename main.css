@@ -8,6 +8,8 @@
 
 html {
     font-family: 'Poppins', sans-serif;
+
+    
 }
 
 body{
@@ -15,8 +17,8 @@ body{
     background: #e7e2dd;
     background-image: url("img/stone_background.png");
     background-size: cover;
-
 }
+
 
 header {
     height: 100vh;
@@ -99,11 +101,12 @@ header {
 .flower-background {
     height: 70vh;
     margin-top: -7vh;
-    margin-left: 2%;
+    position: fixed;
+
 }
 
 .tribar-head {
-    opacity: 0;
+    opacity: 1;
     position: fixed;
     justify-content: center;
     display: flex;
@@ -113,16 +116,29 @@ header {
     height: 27%;
 }
 
+.tribar-flower1 {
+    height: 20%;
+    margin-top: 0%;
+    margin-left: -43vh;
+    position: fixed;
+    z-index: -10;
+}
+
+.tribar-flower2 {
+    height: 30%;
+    margin-top: 2vh;
+    margin-left: -39vh;
+    position: fixed;
+    z-index: -11;
+    transform: rotate(-10deg)
+}
 
 
 .tribar-head .box {
     background-color: white;
     width: 40vh;
     height: 100%;
-    border-style: solid;
-    border-width: 0.1px;
     border-bottom-right-radius: 1.5vh;
-    border-color: black;
     margin-right: 6vh;
     box-shadow: 5px 10px 10px #888888;
 }
@@ -143,10 +159,7 @@ header {
 .tribar-core .box {
     width: 40vh;
     height: 100%;
-    border-style: solid;
-    border-width: 0.1px;
     border-bottom-right-radius: 1.5vh;
-    border-color: black;
     margin-right: 6vh;
     box-shadow: 5px 10px 10px #888888;
     background-color: white;
@@ -157,7 +170,7 @@ header {
     margin-top: -7vh;
     margin-left: 3vh;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 1vh;
     font-size: 4vh;
     text-shadow: 0 0 5px #f1f1f1;
@@ -261,6 +274,10 @@ header {
     z-index: -4;
 }
 
+.z-5 {
+    z-index: -5;
+}
+
 .opacity-0 {
     opacity: 0;
 }
@@ -356,8 +373,40 @@ header {
 .line-six-fade-in {
     animation: fade-in-six;
     animation-duration: 0.5s;
-    
 }
+
+.rollout-mobile {
+    animation: rollout-mobile 0.5s forwards
+}
+
+.rollin-mobile {
+    animation: rollin-mobile 0.5s 
+}
+
+.core-move-top {
+    animation: core-move-top 0.5s forwards
+}
+
+.core-move-bottom {
+     animation: core-move-bottom 0.5s forwards
+}
+
+ .tribar-mobile-top {
+    animation: tribar-mobile-top 0.5s;
+}
+
+ .tribar-mobile-bottom {
+    animation: tribar-mobile-bottom 1s forwards;
+}
+
+ .tribar-mobile-top2 {
+    animation: tribar-mobile-top2 0.5s forwards;
+}
+
+ .tribar-mobile-bottom2 {
+    animation: tribar-mobile-bottom2 0.9s forwards;
+}
+
 /*-----ANIMATIONS-----*/
 
 @keyframes box-roll {
@@ -569,6 +618,89 @@ header {
     }
 }
 
+@keyframes rollout-mobile {
+    0%   {
+      height: 9.9vh;
+    }
+
+    100%   {
+      height: 53.5vh ;
+
+    }
+}
+
+@keyframes rollin-mobile {
+    0%   {
+      height: 53.5vh;
+    }
+
+    100%   {
+      height: 9.9vh ;
+
+    }
+}
+
+@keyframes core-move-top {
+    0%   {
+      margin-top: 2vh;
+    }
+
+    100%   {
+      margin-top: -43vh;
+
+    }
+}
+
+@keyframes core-move-bottom {
+    0%   {
+      margin-top: -43vh;
+    }
+
+    100%   {
+      margin-top: 2vh;
+
+    }
+}
+
+@keyframes tribar-mobile-top {
+    0%   {
+      margin-top: 100vh;
+    }
+
+    100%   {
+      margin-top: 2vh;
+    }
+}
+
+@keyframes tribar-mobile-top2 {
+    0%   {
+      margin-top: 2vh;
+    }
+
+    100%   {
+      margin-top: -100vh;
+    }
+}
+
+@keyframes tribar-mobile-bottom {
+    0%   {
+      margin-top: 2vh;
+    }
+
+    100%   {
+      margin-top: 100vh;
+    }
+}
+
+@keyframes tribar-mobile-bottom2 {
+    0%   {
+      margin-top: -100vh;
+    }
+
+    100%   {
+      margin-top: 2vh;
+    }
+}
 
 
 
@@ -611,7 +743,7 @@ form {
 
 h1 {
   color: #474544;
-  font-size: 32px;
+  font-size: ;
   font-weight: 700;
   letter-spacing: 7px;
   text-align: center;
@@ -786,5 +918,177 @@ textarea {
   }
 }
 
+.mobile {
+        display:none;
+    }
 
 
+/*-----SMALL SCREEN----*/
+
+
+@media only screen and (max-width: 1000px) {
+    
+    .desktop {
+        display: none;
+    }
+    
+    .mobile {
+        display:inherit;
+    }
+    
+    .tribar {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 2vh;
+    position:fixed;
+    display: block;
+    justify-content: center;
+    
+    }
+    
+    .tribar-items {
+        height: 50vw;
+        margin-top: 20vh;
+        margin-left: 25vw;
+
+    }
+
+    .flower-background {
+        width: 85vw;
+        height: auto;
+        margin-top: 13vh;
+        margin-left: 9vw;
+
+    }
+
+    .cabana-libre {
+        position: fixed;
+        font-weight: 100;
+        font-size: 5vh;
+        letter-spacing: 2vw;
+        width: 100vw;
+        margin-top: 70vh;
+        text-align: center
+    }
+
+    .tribar-head {
+        opacity: 1;
+        position: relative;
+        justify-content: center;
+        display: block;
+        margin-top: 0vh;
+        margin-left: 10%;
+        width: 100%;
+        height: auto;
+    }
+
+
+    .tribar-head .box {
+        
+        margin-bottom: 1vh;
+        background-color: white;
+        width: 80%;
+        height: 9.9vh;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 5px 10px 10px #888888;
+    }
+    
+     
+    .tribar-head .box .box-text  {
+        display: none;
+    }
+    
+    .tribar-head .box:nth-child() {
+        background-color: #27d20e;
+    }
+     
+  .tribar-head .box:nth-child(1) .tribar-text {
+        font-size: 4vh;
+        font-weight: 200;
+        padding-top: 2vh
+    }
+    
+    .tribar-text {
+        padding-top: 3vh;
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+        font-weight: 200;
+        letter-spacing: 1vh;
+        font-size: 2.5vh;
+        text-shadow: 0 0 5px #f1f1f1;
+        opacity: 1;
+        color: white;
+        mix-blend-mode: difference;
+    }
+    
+    .box-text {
+        padding-left: 1vh;
+        font-size: 2.2vh;
+        font-weight: 100;
+        letter-spacing: 0.2vh;
+        margin-top: 0.5vh;
+    }
+    
+    
+    
+    .tribar-core {
+        opacity: 1;
+        position: relative;
+        justify-content: center;
+        display: block;
+        margin-top: 0;
+        margin-left: 10%;
+        width: 100%;
+        height: 30%;
+    }
+    
+    .tribar-core .box {
+        margin-bottom: 1vh;
+        background-color: white;
+        width: 80%;
+        height: 9.9vh;
+        border-bottom-right-radius: 1.5vh;
+        box-shadow: 5px 10px 10px #888888;
+        
+    }
+    
+  
+    .box {
+        opacity: 0;
+    }
+
+     
+    .tribar-core .box .box-text  {
+        display: none;
+    }
+    
+    .tribar-core .box:nth-child(1) .tribar-text {
+        font-size: 4vh;
+        font-weight: 200;
+        padding-top: 2vh
+    }
+    
+     
+    .tribar-core .box:nth-child() .box-text  {
+        opacity: 1
+    }
+    
+    .core-text {
+        padding-top: 1vh;
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+        font-weight: 200;
+        letter-spacing: 1vh;
+        font-size: 2.5vh;
+        text-shadow: 0 0 5px #f1f1f1;
+        opacity: 1;
+        color: white;
+        mix-blend-mode: difference;
+    }
+    
+    .section {
+        height: 100vh;
+    }
+}
