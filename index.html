@@ -679,7 +679,7 @@
             }
         });
         
-        $('#idea').click(function() {
+        $('#idea').on('click touchstart', function () {
             var items = [ "#make", "#save"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
