@@ -400,11 +400,11 @@ header {
 }
 
  .tribar-mobile-top2 {
-    animation: tribar-mobile-top2 0.5s forwards;
+    animation: tribar-mobile-top2 0.7s forwards;
 }
 
  .tribar-mobile-bottom2 {
-    animation: tribar-mobile-bottom2 0.7s forwards;
+    animation: tribar-mobile-bottom2 0.8s forwards;
 }
 
 /*-----ANIMATIONS-----*/
@@ -953,6 +953,7 @@ html {
         height: 50vw;
         margin-top: 20vh;
         margin-left: 25vw;
+        
 
     }
 

@@ -453,6 +453,8 @@
                     $( ".core" ).removeClass( "blur" );
                 
                     $( "#navbar-element-core" ).addClass( "opacity-0" );
+                
+                    $( ".box" ).removeClass( "opacity-0" );
                     
                 }
             
@@ -493,7 +495,7 @@
             else if (($(window).scrollTop() / window.innerHeight) == 0) {
                 
                  $( ".navigation-bar" ).removeClass( "fade-in" );
-                        
+                $( ".box" ).addClass( "opacity-0" );
             }
               
             }
@@ -506,19 +508,34 @@
                     
                     $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
                     $( ".tribar" ).removeClass( "tribar-mobile-top2");
+                    
+                    $( ".tribar-items" ).css({opacity:0});
                 }
                 
                 else if (($(window).scrollTop() / window.innerHeight) > 1) {
                     $('.box').css({ 
                         opacity: 1
                     });
+                    
+                    var items = [ "#music", "#people", "#deco", "#make", "#idea",                  "#save"];    
+                    for (i = 0; i < items.length; i++) { 
+                        if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                            $( items[i] ).addClass( "rollin-mobile" );
+                            $( items[i] ).removeClass( "rollout-mobile" );
+                        }
+                    }
+                    
+                    
+                    
                     if (lastpagestr == 1) {
                         $( ".tribar" ).addClass( "tribar-mobile-top2");
                         $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                        
                     }
                     else {
                         $( ".tribar" ).removeClass( "tribar-mobile-top2");
                         $( ".tribar" ).addClass( "tribar-mobile-bottom2");
+                        
                     }
                 }
                 
@@ -529,6 +546,8 @@
                     
                     $( ".tribar" ).removeClass( "tribar-mobile-top2");
                     $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                    
+                    $( ".tribar-head" ).addClass( "tribar-mobile-top");
                 
                 }
                 
@@ -557,12 +576,13 @@
                         });
                         
                         
-                        
+                        $( ".tribar-items" ).css({opacity:0});
                         $( ".tribar-head" ).addClass( "tribar-mobile-top");
                         $( ".tribar-head" ).removeClass( "tribar-mobile-bottom");
                         $( ".box" ).addClass( "tribar-mobile-top");
                     }
                     else {
+                        $( ".tribar-items" ).css({opacity:1});
                         $( ".tribar-items" ).addClass( "fade-in" );
                         $( ".tribar-items" ).removeClass( "fade-out" );
                     
@@ -780,34 +800,6 @@
     
 
     
-    <script>
-        $(function() {
-          $.scrollify({
-            section : ".section",
-          });
-        });
-      </script>
-    
-    <script>
-          $.scrollify({
-            section : "section",
-            sectionName : "section",
-            interstitialSection : "navigation-bar",
-            easing: "swing",
-            scrollSpeed: 500,
-            offset : 0,
-            scrollbars: true,
-            standardScrollElements: "",
-            setHeights: true,
-            overflowScroll: false,
-            updateHash: true,
-            touchScroll:true,
-            before:function() {},
-            after:function() {},
-            afterResize:function() {},
-            afterRender:function() {}
-          });
-    </script>
 
 
 <script>
