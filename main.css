@@ -388,7 +388,7 @@ header {
 }
 
 .core-move-bottom {
-     animation: core-move-bottom 0.5s forwards
+     animation: core-move-bottom 0.5s forwards;
 }
 
  .tribar-mobile-top {
