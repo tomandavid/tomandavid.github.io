@@ -155,7 +155,7 @@
                       <h1>&bull; Cabana Libre Post &bull;</h1>
 
 
-                      <form action="#" method="post" id="contact_form">
+                      <form action="#" method="post" id="contact_form" class="contact-form">
                         <div class="name">
                           <label for="name"></label>
                           <input type="text" placeholder="My name is" name="name" id="name_input" required>
@@ -511,6 +511,9 @@
             }
             
             else {
+                
+                
+                
                 if (($(window).scrollTop() / window.innerHeight) > 1.9) {
                     $('.box').css({ 
                         opacity: 0
@@ -565,6 +568,8 @@
                 
                 else if (($(window).scrollTop() / window.innerHeight) > 0) {
                 
+                    $( ".tribar" ).removeClass( "core-move-top" );
+                    
                     $( ".tribar-items" ).addClass( "fade-out" );
                     $( ".tribar-items" ).removeClass( "fade-in" );
                     
@@ -580,15 +585,14 @@
                             $( items[i] ).removeClass( "rollout-mobile" );
                         }
                     }
-                    $( ".tribar" ).removeClass( "core-move-bottom" );
-                    $( ".tribar" ).removeClass( "core-move-top" );
+                    
                     
                     
                     if (lastpagestr == 0) {
                         
                         
                         $('.box').css({ 
-                            opacity: 1
+                            opacity: 1,
                         });
                         
                         
