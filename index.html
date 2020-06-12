@@ -319,7 +319,8 @@
                     else if (($(window).scrollTop() / window.innerHeight) == 1) {
                         document.getElementById("lastpage").innerHTML = 1;
                     }
-                    else if (($(window).scrollTop() / window.innerHeight) == 2) {
+                    else if (($(window).scrollTop() / window.innerHeight) > 1.9 &&
+                            ($(window).scrollTop() / window.innerHeight) <= 2) {
                         document.getElementById("lastpage").innerHTML = 2;
                     }
                     else if (($(window).scrollTop() / window.innerHeight) == 3) {
@@ -523,6 +524,7 @@
                     $( ".tribar" ).removeClass( "tribar-mobile-top2");
                     
                     $( ".tribar-items" ).css({opacity:0});
+                    $( ".cabana-libre" ).css({opacity:0});
                 }
                 
                 else if (($(window).scrollTop() / window.innerHeight) > 1 && ($(window).scrollTop() / window.innerHeight) < 1.9) {
@@ -552,6 +554,7 @@
                     }
                     
                     $( ".box" ).removeClass( "rollin-mobile" );
+                    $( ".tribar" ).removeClass( "core-move-top" )
                 }
                 
                 
