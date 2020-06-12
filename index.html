@@ -197,8 +197,9 @@
     
     <script>
     
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        $(document).ready(function(){
+            $(this).scrollTop(0);
+        });
         
     </script>
     
@@ -518,7 +519,7 @@
                         opacity: 1
                     });
                     
-                    var items = [ "#music", "#people", "#deco", "#make", "#idea",                  "#save"];    
+                    var items = [ "#music", "#people", "#deco", "#make", "#idea", "#save"];    
                     for (i = 0; i < items.length; i++) { 
                         if ($( items[i] ).hasClass( "rollout-mobile" )) {
                             $( items[i] ).addClass( "rollin-mobile" );
