@@ -60,7 +60,7 @@
     
                     
                         <div class="tribar-head">
-                            <div class="box mobile">
+                            <div class="box mobile" id="cabana">
                                 <div class="tribar-text">CABANA LIBRE</div>
                                 
                             </div>
@@ -636,6 +636,17 @@
     
      
     <script>
+        $('#cabana').click(function() {
+            var items = [ "#music", "#people", "#deco", "#make", "#idea", "#save"];    
+            for (i = 0; i < items.length; i++) { 
+                if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                    $( items[i] ).addClass( "rollin-mobile" );
+                    $( items[i] ).removeClass( "rollout-mobile" );
+                }
+                    
+            }
+        });
+            
         $('#music').click(function() {
             var items = [ "#people", "#deco"];    
             for (i = 0; i < items.length; i++) { 
@@ -643,6 +654,7 @@
                     $( items[i] ).addClass( "rollin-mobile" );
                     $( items[i] ).removeClass( "rollout-mobile" );
                 }
+                    
             }
             
             if ($("#music").hasClass("rollout-mobile")) {

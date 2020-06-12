@@ -624,14 +624,14 @@ header {
     }
 
     100%   {
-      height: 43.2vh ;
+      height: 60vh ;
 
     }
 }
 
 @keyframes rollin-mobile {
     0%   {
-      height: 43.2vh;
+      height: 60vh;
     }
 
     100%   {
@@ -1002,7 +1002,6 @@ html {
         background-color: white;
         width: 90%;
         height: 8vh;
-        height: calc(var(--vh, 1vh) * 9.9);
         border-bottom-right-radius: 1.5vh;
         box-shadow: 5px 10px 10px #888888;
     }
