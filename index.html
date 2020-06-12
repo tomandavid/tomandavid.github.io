@@ -43,7 +43,7 @@
                   <header>  
                   
    
-                    
+                    <div id="check" style="position: fixed">0</div>
                     
 
                     <div class="tribar" id="tribar">
@@ -301,9 +301,9 @@
     <script>
         var position = $(window).scrollTop();
         $(window).scroll(function() {
+            document.getElementById("lastpage").innerHTML = 0;
             
-            
-
+             document.getElementById("check").innerHTML = ($(window).scrollTop() / window.innerHeight);
                     <!--last page-->
                     if (($(window).scrollTop() / window.innerHeight) == 0) {
                         document.getElementById("lastpage").innerHTML = 0;
@@ -363,7 +363,7 @@
             else if (($(window).scrollTop() / window.innerHeight) == 2) {
                      $('.tribar').css({ 
                             marginTop: - ($(window).scrollTop() / window.innerHeight) * 10,
-                            position: fixed
+                            
                         });
             }
             
