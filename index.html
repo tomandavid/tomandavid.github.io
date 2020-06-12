@@ -573,17 +573,17 @@
                     
                     $( ".box" ).removeClass( "rollin-mobile" );
                     
+                    var items = [ "#music", "#people", "#deco", "#make", "#idea", "#save"];    
+                    for (i = 0; i < items.length; i++) { 
+                        if ($( items[i] ).hasClass( "rollout-mobile" )) {
+                            $( items[i] ).addClass( "rollin-mobile" );
+                            $( items[i] ).removeClass( "rollout-mobile" );
+                        }
+                    }
                     
                     
                     if (lastpagestr == 0) {
                         
-                        var items = [ "#music", "#people", "#deco", "#make", "#idea", "#save"];    
-                        for (i = 0; i < items.length; i++) { 
-                            if ($( items[i] ).hasClass( "rollout-mobile" )) {
-                                $( items[i] ).addClass( "rollin-mobile" );
-                                $( items[i] ).removeClass( "rollout-mobile" );
-                            }
-                        }
                         
                         $('.box').css({ 
                             opacity: 1
