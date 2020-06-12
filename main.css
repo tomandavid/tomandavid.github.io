@@ -993,7 +993,7 @@ html {
         margin-bottom: 1vh;
         background-color: white;
         width: 90%;
-        height: 9.9vh;
+        height: 8vh;
         height: calc(var(--vh, 1vh) * 9.9);
         border-bottom-right-radius: 1.5vh;
         box-shadow: 5px 10px 10px #888888;
@@ -1053,7 +1053,7 @@ html {
         margin-bottom: 1vh;
         background-color: white;
         width: 90%;
-        height: 9.9vh;
+        height: 8vh;
         border-bottom-right-radius: 1.5vh;
         box-shadow: 5px 10px 10px #888888;
         
