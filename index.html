@@ -522,7 +522,7 @@
                     $( ".tribar-items" ).css({opacity:0});
                 }
                 
-                else if (($(window).scrollTop() / window.innerHeight) > 1) {
+                else if (($(window).scrollTop() / window.innerHeight) > 1 && ($(window).scrollTop() / window.innerHeight) < 1.9) {
                     $('.box').css({ 
                         opacity: 1
                     });
