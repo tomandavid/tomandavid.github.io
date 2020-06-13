@@ -209,9 +209,9 @@
     
     <script>
     
-        $(document).ready(function(){
-            $(this).scrollTop(0);
-        });
+        window.onbeforeunload = function () {
+          window.scrollTo(0, 0);
+        }
         
     </script>
     
@@ -511,8 +511,7 @@
                         opacity: 0
                     });
                     
-                    $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
-                    $( ".tribar" ).removeClass( "tribar-mobile-top2");
+                    
                     
                     $( ".tribar-items" ).css({opacity:0});
                     $( ".cabana-libre" ).css({opacity:0});
@@ -534,13 +533,13 @@
                     
                     
                     if (lastpagestr == 7) {
-                        $( ".tribar" ).addClass( "tribar-mobile-top2");
-                        $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
                         
+                        $( ".tribar" ).removeClass( "tribar-mobile-bottom2");
+                        $( ".tribar" ).addClass( "tribar-mobile-top2");
                     }
                     else {
                         $( ".tribar" ).removeClass( "tribar-mobile-top2");
-                        $( ".tribar" ).addClass( "tribar-mobile-bottom2");
+                        
                         
                     }
                     
@@ -557,6 +556,9 @@
                     else {
                         $("#save").addClass( "rollout-mobile" );
                         $("#save").removeClass( "rollin-mobile" );
+                        
+                        
+                        $( ".tribar" ).removeClass( "tribar-mobile-bottom");
                         
                     }
                 }
@@ -664,12 +666,12 @@
                 
                 
                 else if (($(window).scrollTop() / window.innerHeight) == 4) {
-                    if ($("#make").hasClass("rollout-mobile")) {
+                    if ($("#deco").hasClass("rollout-mobile")) {
                         
                     }
                     else {
-                        $("#make").addClass( "rollout-mobile" );
-                        $("#make").removeClass( "rollin-mobile" );
+                        $("#deco").addClass( "rollout-mobile" );
+                        $("#deco").removeClass( "rollin-mobile" );
                     }
                 }
                 
@@ -870,7 +872,7 @@
             var elmnt = document.getElementById("section3");
             elmnt.scrollIntoView();
             
-            var items = [ "#people", "#deco"];    
+            var items =  [ "#people", "#deco", "#make", "#idea", "#save"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -895,7 +897,7 @@
             var elmnt = document.getElementById("section4");
             elmnt.scrollIntoView();
             
-            var items = [ "#music", "#deco"];    
+            var items =  [ "#music", "#deco", "#make", "#idea", "#save"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -918,7 +920,7 @@
             var elmnt = document.getElementById("section5");
             elmnt.scrollIntoView();
             
-            var items = [ "#music", "#people"];    
+            var items =  [ "#music", "#people", "#make", "#idea", "#save"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -972,7 +974,7 @@
             var elmnt = document.getElementById("section6");
             elmnt.scrollIntoView();
             
-            var items = [ "#idea", "#save"];    
+            var items = [ "#music", "#people", "#deco", "#idea", "#save"];     
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -1001,7 +1003,7 @@
             var elmnt = document.getElementById("section7");
             elmnt.scrollIntoView();
             
-            var items = [ "#make", "#save"];    
+            var items =  [ "#music", "#people", "#deco", "#make", "#save"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -1030,7 +1032,7 @@
             var elmnt = document.getElementById("section8");
             elmnt.scrollIntoView();
             
-            var items = [ "#make", "#idea"];    
+            var items =  [ "#music", "#people", "#deco", "#make", "#idea"];    
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
@@ -1055,7 +1057,7 @@
         });
         
         $('#post').click(function() {
-            var items = [ "#make", "#idea", "#save"];    
+            var items =  [ "#music", "#people", "#deco", "make", "#idea", "#save"];  
             for (i = 0; i < items.length; i++) { 
                 if ($( items[i] ).hasClass( "rollout-mobile" )) {
                     $( items[i] ).addClass( "rollin-mobile" );
