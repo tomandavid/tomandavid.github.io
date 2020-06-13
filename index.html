@@ -61,12 +61,14 @@
                     
                         <div class="tribar-head">
                             <div class="box mobile" id="cabana">
+                                <img class="box-image mobile z-0" src="img/mobile-tribar1.png">
                                 <div class="tribar-text">CABANA LIBRE</div>
                                 
                             </div>
                             
-                            <div class="box" id="music">
-                                <div class="tribar-text">Music</div>
+                            <div class="box z-1" id="music">
+                                <img class="box-image mobile z-0" src="img/mobile-tribar2.png">
+                                <div class="tribar-text z-0">Music</div>
                                 <div class="tibar-box-text">
                                     <p class="box-text line-one">The tale of the tones allows</p> 
                                     <p class="box-text line-two">its guests to comfortably</p>
@@ -78,6 +80,7 @@
                             </div>
 
                             <div class="box" id="people">
+                                <img class="box-image mobile z-0" src="img/mobile-tribar3.png">
                                 <div class="tribar-text">People</div>
                                 <div class="tibar-box-text">
                                     <p class = "box-text line-one">People carry one another.</p>
@@ -90,6 +93,7 @@
                             </div>
 
                             <div class="box" id="deco">
+                                <img class="box-image mobile z-0" src="img/mobile-tribar4.png">
                                 <div class="tribar-text">Decorations</div>
                                 <div class="tibar-box-text">
                                     <p class = "box-text line-one">Deco is the icebreaker 
@@ -540,7 +544,9 @@
                     else {
                         $( ".tribar" ).removeClass( "tribar-mobile-top2");
                         
-                        
+                        $("#save").addClass( "rollout-mobile" );
+                        $("#save").removeClass( "rollin-mobile" );
+                       
                     }
                     
                     $( ".box" ).removeClass( "rollin-mobile" );

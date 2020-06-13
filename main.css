@@ -1070,6 +1070,13 @@ html {
     .box {
         opacity: 0;
     }
+    
+    .box-image {
+        height: 8vh;
+        width: 90%;
+        position: fixed;
+        border-bottom-right-radius: 1.5vh;
+    }
 
      
     .tribar-core .box .box-text  {
