@@ -1,13 +1,25 @@
 
+$(document).ready( function() {
+    window.addEventListener( 'touchstart', function() {
+        window.touchstart_scroll = $(window).scrollTop()
+    });
+    window.addEventListener("touchend", function() {
+        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 1) {
+            movetop(lstpg, 500);
+        }
+    });
+});
+
 var check = true
 function movetop() {
+    console.log(arguments[1])
     var body = $("html, body");
     if ($(window).scrollTop() < $(window).height() * arguments[0]) {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, 100, 'linear', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'linear', function() { 
         });
     } 
     else {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, 100, 'linear', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'linear', function() { 
         });
     };
 };
@@ -22,23 +34,8 @@ $(window).scroll(function(){
     else {
         clearTimeout(v);
         v = setTimeout(function() {
-            movetop(lstpg);
+            movetop(lstpg, 100);
         }, 500);
     }
     
 });
-$(document).ready( function() {
-    window.addEventListener( 'touchstart', function() {
-        window.touchstart_scroll = $(window).scrollTop()
-    });
-    window.addEventListener("touchend", function() {
-        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 1) {
-            movetop(lstpg);
-        }
-    });
-
-    window.addEventListener("", function() {
-        console.log("neco")
-    });
-});
-
