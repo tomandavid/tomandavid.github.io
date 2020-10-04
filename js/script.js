@@ -40,6 +40,11 @@ $(window).resize(function() {
 })
 
 function reload_fix() {
+    if (theta == 0) {
+        $(".book_01, .book_02, .book_03, book_04").css({
+            display: "none"
+        });
+    }
     if (theta >= 1) {
         $(".line_01").css({
             transform: "rotate(" + (- 1 * 180) + "deg)",
@@ -53,9 +58,6 @@ function reload_fix() {
             height: 90 + "vh"
         });
         $(".my-name").css({
-            display: "none"
-        });
-        $(".book_01, .book_02, .book_03, book_04").css({
             display: "none"
         });
     }
