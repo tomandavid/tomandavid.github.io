@@ -55,6 +55,9 @@ function reload_fix() {
         $(".my-name").css({
             display: "none"
         });
+        $(".book_01, .book_02, .book_03, book_04").css({
+            display: "none"
+        });
     }
     if (theta == 5) {
         $(".line_01").css({
