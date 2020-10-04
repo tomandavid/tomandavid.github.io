@@ -438,6 +438,10 @@ a {
         width: 100%;
     }
 
+    .background-rectangle {
+        height: 100%;
+    }
+
     .flex-container {
         display: block;
     }
