@@ -14,7 +14,7 @@ var check = true
 function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0] || $(window).scrollTop() == max_scroll_ios_fix) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0] || theta == max_scroll_ios_fix) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'swing', function() { 
         });
     } 
@@ -24,11 +24,11 @@ function movetop() {
             });
         }
     };
-    console.log("lstpg: " + $(window).scrollTop() )
 };
 var v
 var lstpg = 0
 $(window).scroll(function(){
+    console.log("lstpg: " + theta)
     if (theta % 1 == 0) {
         clearTimeout(v)
         window.check = false
