@@ -91,8 +91,7 @@ function scroll_animation() {
             });
         }
     
-        if (theta == 5) {
-            console.log("tady")
+        if (theta >= 5) {
             $(".contact-grid").css({
                 display: "grid"
             });
