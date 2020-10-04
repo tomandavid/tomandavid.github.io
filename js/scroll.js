@@ -15,7 +15,7 @@ var max_scroll_ios_fix = 5
 var check = true
 function movetop() {
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == arguments[2] && arguments[2] == -1)) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == max_scroll_ios_fix && arguments[2] == -1)) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
         });
     } 
