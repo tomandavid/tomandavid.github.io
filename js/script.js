@@ -20,6 +20,7 @@ $(window).scroll(function(){
     window.theta = Math.round($(window).scrollTop() / ($(window).height() )*100)/100;
     scroll_animation()
     name_fade()
+    console.log($(screen).height())
 })
 
 $(window).resize(function() {
@@ -67,7 +68,6 @@ function reload_fix() {
     $(".second-page").css({
         height: 5 * $(screen).height() + "px"
     });
-    console.log($(screen).height())
 }
 
 function scroll_animation() {
