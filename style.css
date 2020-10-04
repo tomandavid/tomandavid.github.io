@@ -140,6 +140,10 @@ a {
     animation-duration: 0.5s;
 }
 
+.book_01, .book_02, .book_03, .book_04 {
+    display: "none"
+}
+
 .background-rectangle {
     position: absolute;
     width: 100%;
