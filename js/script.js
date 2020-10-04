@@ -20,7 +20,7 @@ $(window).scroll(function(){
     window.theta = Math.round($(window).scrollTop() / ($(window).height() )*100)/100;
     scroll_animation()
     name_fade()
-    console.log((typeof window.outerHeight != 'undefined')?Math.max(window.outerHeight, $(window).height()):$(window).height())
+    console.log(document.documentElement.clientHeight)
 })
 
 $(window).resize(function() {
@@ -66,7 +66,7 @@ function reload_fix() {
         });
     }
     $(".second-page").css({
-        height: 5 * $(screen).height() + "px"
+        height: 5 * document.documentElement.clientHeight + "px"
     });
 }
 
