@@ -35,9 +35,6 @@ $(window).resize(function() {
             height: 90 + "vw"
         });
     }
-    $(".second-page").css({
-        height: 5 * $(screen).height() + "px"
-    });
 })
 
 function reload_fix() {
@@ -67,6 +64,9 @@ function reload_fix() {
             right: 5 + 45 + "%"
         });
     }
+    $(".second-page").css({
+        height: 5 * $(screen).height() + "px"
+    });
 }
 
 function scroll_animation() {
