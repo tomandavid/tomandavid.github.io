@@ -244,6 +244,9 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
+    window.addEventListener( 'touchstart', function() {
+        window.touchstart_scroll = $(window).scrollTop()
+    });
     window.addEventListener( 'touchleave', function() {
        console.log("touch")
     });
