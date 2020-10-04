@@ -320,16 +320,17 @@ a {
 
 @media only all and (max-width: 1000px) {
     .book h2 {
-        font-size: 4vw;
+        font-size: 5vw;
         margin: 1vw
     }
     .book h3 {
-        font-size: 3vw;
+        font-size: 4vw;
         margin: 3vw;
-        line-height: 3vw;
+        line-height: 5vw;
     }
     p {
         font-size: 3vw;
+        line-height: 4vw;
     }
     
     .grid-container {
@@ -354,6 +355,25 @@ a {
         ". ."
         ". ."
         ". .";
+    }
+
+    .card__face--back {
+        width: 100%;
+    }
+
+    .flex-container {
+        display: block;
+    }
+
+    .flex-container .one-fix {
+        height: 150%;
+        width: 95%;
+    }
+
+    .flex-container .two-fix {
+        margin-top: 5vh;
+        height: 250%;
+        width: 95%;
     }
 
     .contact-grid {
