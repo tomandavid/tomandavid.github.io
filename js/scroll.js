@@ -13,7 +13,7 @@ var check = true
 function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0] || theta > max_scroll_ios_fix) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0]) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
         });
     } 
