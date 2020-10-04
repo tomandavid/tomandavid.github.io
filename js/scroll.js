@@ -1,5 +1,3 @@
-
-var max_scroll_ios_fix = 5
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
@@ -10,11 +8,12 @@ $(document).ready( function() {
         }
     });
 });
+var max_scroll_ios_fix = 5
 var check = true
 function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0]) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0] || theta > max_scroll_ios_fix) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'swing', function() { 
         });
     } 

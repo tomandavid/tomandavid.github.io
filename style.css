@@ -457,6 +457,7 @@ a {
     }
 
     .contact-grid {
+        display: none;
         height: 50vh;
         top: 50vh;
         width: 100vw;
