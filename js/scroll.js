@@ -28,8 +28,9 @@ $(window).scroll(function(){
     
 });
 $(document).ready( function() {
-    $(window).addEventListener("touchend", function() {
+    window.addEventListener("touchend", function() {
         console.log("hey")
         movetop(lstpg);
     });
 });
+
