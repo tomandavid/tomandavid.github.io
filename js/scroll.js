@@ -1,9 +1,9 @@
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
-        window.touchstart_scroll = theta
+        window.touchstart_scroll = $(window).scrollTop()
     });
     window.addEventListener("touchend", function() {
-        if (theta - window.touchstart_scroll > 0) {
+        if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg, 500, 1);
         } 
         else {
