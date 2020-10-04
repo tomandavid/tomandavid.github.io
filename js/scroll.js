@@ -24,7 +24,7 @@ function movetop() {
     };
 };
 var v
-var lstpg
+var lstpg = 0
 $(window).scroll(function(){
     if (theta % 1 == 0) {
         clearTimeout(v)
@@ -35,7 +35,7 @@ $(window).scroll(function(){
         clearTimeout(v);
         v = setTimeout(function() {
             movetop(lstpg, 100);
-        }, 500);
+        }, 100);
     }
     
 });

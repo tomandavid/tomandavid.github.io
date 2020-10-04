@@ -104,8 +104,9 @@ a {
     display: flex;
     left: 23%;
     bottom: 53%;
-    top: 37vh;
+    top: 30vh;
 }
+
 .my-name h1{
     font-size: 8vw;
     font-weight: 400;
@@ -474,6 +475,10 @@ a {
 
     .scene {
         height: 130%;
+    }
+
+    .my-name {
+        top: 37vh;
     }
 
     @keyframes pop_up {
