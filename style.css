@@ -214,6 +214,7 @@ a {
 
 
 .contact-grid {
+    padding: 0% 5%;
     position: fixed;
     height: 70vh;
     width: 60vw;
@@ -222,7 +223,7 @@ a {
     margin-top: -35vh;
     margin-left: -30vw;
     display: none;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 25% 50% 25%;
     grid-template-rows: 30% 30% 30%;
     gap: 5% 0%;
     grid-template-areas:
@@ -245,12 +246,6 @@ a {
     color: rgb(225, 225, 225);
 }
 
-.contact-grid div p {
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 3vh;
-    letter-spacing: 0.2vh;
-}
 
 .contact-item {
     opacity: 0;
@@ -267,6 +262,7 @@ a {
 .contact-click:hover {
     cursor: pointer;
 }
+
 
 .contact-icon {
     height: 8vh;
