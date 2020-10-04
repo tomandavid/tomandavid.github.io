@@ -37,5 +37,6 @@ $(window).scroll(function(){
             movetop(lstpg, 100);
         }, 100);
     }
+    console.log("lstpg: "+lstpg)
     
 });
