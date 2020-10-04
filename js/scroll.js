@@ -3,11 +3,11 @@ var check = true
 function movetop() {
     var body = $("html, body");
     if ($(window).scrollTop() < $(window).height() * arguments[0]) {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, 500, 'swing', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, 100, 'linear', function() { 
         });
     } 
     else {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, 500, 'swing', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, 100, 'linear', function() { 
         });
     };
 };
@@ -32,9 +32,13 @@ $(document).ready( function() {
         window.touchstart_scroll = $(window).scrollTop()
     });
     window.addEventListener("touchend", function() {
-        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 10) {
+        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 1) {
             movetop(lstpg);
         }
+    });
+
+    window.addEventListener("", function() {
+        console.log("neco")
     });
 });
 

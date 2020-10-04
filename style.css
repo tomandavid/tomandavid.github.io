@@ -103,10 +103,11 @@ a {
     position: fixed;
     display: flex;
     left: 23%;
-    bottom: 53%
+    bottom: 53%;
+    top: 37vh;
 }
 .my-name h1{
-    font-size: 7vw;
+    font-size: 8vw;
     font-weight: 400;
     color: aliceblue;
     letter-spacing: 0px;

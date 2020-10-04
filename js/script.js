@@ -20,7 +20,6 @@ $(window).scroll(function(){
     window.theta = Math.round($(window).scrollTop() / ($(window).height() )*100)/100;
     scroll_animation()
     name_fade()
-    console.log(window.innerHeight)
 })
 
 $(window).resize(function() {
