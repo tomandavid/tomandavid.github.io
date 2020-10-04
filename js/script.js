@@ -11,6 +11,7 @@ $(document).ready(function(){
         }
     });
     window.theta = Math.round($(window).scrollTop() / ($(window).height() )*100)/100;
+    window.theta = Math.min(window.theta, 5)
     movetop(Math.round(window.theta)-1)
     scroll_animation()
     reload_fix()

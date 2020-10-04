@@ -1,9 +1,9 @@
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
-        window.touchstart_scroll = $(window).scrollTop()
+        window.touchstart_scroll = theta
     });
     window.addEventListener("touchend", function() {
-        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 1) {
+        if (Math.abs(theta - window.touchstart_scroll > 0)) {
             movetop(lstpg, 500);
         }
     });
@@ -14,7 +14,7 @@ function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
     if ($(window).scrollTop() < $(window).height() * arguments[0] || theta > max_scroll_ios_fix) {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'swing', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
         });
     } 
     else {
@@ -36,7 +36,7 @@ $(window).scroll(function(){
     else {
         clearTimeout(v);
         v = setTimeout(function() {
-            movetop(lstpg, 100);
+            movetop(lstpg, 1, 100);
         }, 100);
     }
 });
