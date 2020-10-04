@@ -21,6 +21,7 @@ function movetop() {
     else {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'swing', function() { 
         });
+        console.log("lstpg: "+lstpg)
     };
 };
 var v
@@ -37,6 +38,4 @@ $(window).scroll(function(){
             movetop(lstpg, 100);
         }, 100);
     }
-    console.log("lstpg: "+lstpg)
-    
 });
