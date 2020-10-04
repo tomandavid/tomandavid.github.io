@@ -1,0 +1,439 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #222;
+}
+
+
+h2 {
+    color: aliceblue;
+    font-size: 4vh;
+    margin: 4vh;
+}
+
+h3 {
+    font-size: 3vh;
+    font-weight: 200;
+    line-height: 5vh;
+    padding: 0% 5%;
+}
+
+p {
+    font-size: 2vh;
+    font-weight: 200;
+    letter-spacing: 0.1vh;
+    line-height: 3vh;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 3vh;
+    font-weight: 200;
+}
+
+.landing-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+}
+
+.second-page {
+    width: 100vw;
+    height: 500vh;
+    background-color: #222;
+}
+
+.line_01 {
+    display: block;
+    position: fixed;
+    top: 5%;
+    border: 0;
+    height: 90%;
+    width: 2px;
+    background-image: url("path.png");
+    background-size: 100% 100%;
+    transform: rotate(0deg);
+    left: 20%;
+    z-index: 10
+}
+
+.line_02 {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    border: 0;
+    height: 90%;
+    width: 2px;
+    transform: rotate(90deg);
+    margin-top: -22%;
+    right: 50%;
+    background-image: url("path.png");
+    background-size: 100% 100%;
+    z-index: 10
+}
+
+.curtain_01 {
+    position: fixed;
+    height: 100%;
+    width: 5%;
+    top: 0;
+    left: 0;
+    background-color:#222;
+    z-index: 10;
+}
+
+.curtain_02 {
+    position: fixed;
+    height: 100%;
+    width: 5%;
+    top: 0;
+    right: 0;
+    background-color: #222;
+    z-index: 10;
+}
+
+.my-name {
+    position: fixed;
+    display: flex;
+    left: 23%;
+    bottom: 53%
+}
+.my-name h1{
+    font-size: 7vw;
+    font-weight: 400;
+    color: aliceblue;
+    letter-spacing: 0px;
+}
+
+.book {
+    display: none;
+    position: fixed;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    margin: 0 5% 0 5%;
+    background-color: rgb(255,0,0,0);
+}
+
+.book {
+    text-align: center;
+    color: aliceblue;
+    font-size: 50px;
+    overflow: hidden;
+}
+
+.book h2 {
+    text-align: center;
+}
+
+
+.book_01 {
+    animation-duration: 0.5s;
+}
+
+.background-rectangle {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    opacity: 0.5;
+    margin-top: 5%;
+    z-index: -10;
+}
+
+.grid-container {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    margin-top: 5%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    gap: 5% 5%;
+  grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+    
+}
+
+.grid-item {
+    opacity: 0;
+
+}
+
+
+.grid-item h2{
+    font-size: 50%;
+    font-weight: 300;
+    margin-top: 2vh;
+}
+
+.grid-item img {
+    height: 50%
+}
+
+.item-box {
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    height: 25vw;
+    padding: 0% 10%;
+    margin-top: 5vh;
+}
+
+.flex-container .one-fix {
+    width: 70%;
+    height: 100%;
+
+}
+.flex-container .two-fix {
+    width: 30%;
+    height: 100%;
+
+}
+
+
+.contact-container {
+    position: fixed;
+    height: 30%;
+    width: 30vh;
+    background-color: rgb(255,0,0,0.5);
+}
+
+
+
+.contact-grid {
+    position: fixed;
+    height: 70vh;
+    width: 70vw;
+    top: 50%;
+    left: 50%;
+    margin-top: -35vh;
+    margin-left: -35vw;
+    display: none;
+    grid-template-columns: 40% 20% 40%;
+    grid-template-rows: 30% 30% 30%;
+    gap: 5% 0%;
+    grid-template-areas:
+    ". . ."
+    ". . ."
+    ". . .";
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.blur-me {
+    filter: blur(2px);
+    transition: 0.5s;
+}
+
+.contact-grid div {
+    display: table;
+    height: 100%;
+    text-align: center;
+    color: rgb(225, 225, 225);
+}
+
+.contact-grid div p {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3vh;
+    letter-spacing: 0.2vh;
+}
+
+.contact-item {
+    opacity: 0;
+    height: 50%;
+    background: radial-gradient(circle, rgba(51,51,51,1) 0%, rgba(191,212,234,0) 100%);
+}
+
+
+
+
+.message-me {
+    height: 50px;
+}
+.contact-click:hover {
+    cursor: pointer;
+}
+
+.contact-icon {
+    height: 8vh;
+    margin-bottom: 1vh;
+}
+
+.contact-cancel {
+    height: 10%;
+    float: right;
+    margin: 3%;
+}
+
+.contact-card {
+    backface-visibility: hidden;
+    height: 50px;
+    transform: rotate3d(0, 1, 0, 0deg);
+}
+
+.message-container {
+    opacity: 0;
+    position: fixed;
+    height: 0%;
+    width: 0%;
+    top: 25%;
+    left: 50%;
+    background-color: rgba(80, 80, 80, .7);
+    border-radius: 5vh;
+    z-index: 11;
+    transition: 0.5s;
+}
+
+.message-show {
+    opacity: 1;
+    height: 50%;
+    width: 60%;
+    left: 20%
+}
+
+@media only all and (max-height: 800px) {
+    .grid-container {
+        height: 50%;
+    }
+    .background-rectangle {
+        height: 50%;
+    }
+    .grid-item h2 {
+        font-size: 20%;
+        margin: 0;
+    }
+}
+
+@media only all and (max-width: 1000px) {
+    .book h2 {
+        font-size: 7vw;
+        margin: 1vw
+    }
+    .book h3 {
+        font-size: 5vw;
+        margin: 3vw
+    }
+    
+    .grid-container {
+        height: 50%;
+    }
+    .grid-item h2 {
+        font-size: 3vw;
+        margin: 0;
+    }
+    .grid-item:nth-child(9) {
+        display: none;
+    }
+    .grid-container {
+        height: 70%;
+        margin-top: 10%;
+      display: grid;
+      grid-template-columns: 45% 45%;
+        grid-template-rows: 20% 20% 20% 20%;
+        gap: 0% 5%;
+      grid-template-areas:
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+    }
+
+    .contact-grid {
+        height: 50vh;
+        top: 50vh;
+        margin-top: -25vh
+    }
+
+    .contact-click a {
+        display: none
+    }
+    
+}
+
+@keyframes pop_up {
+    0% {
+        height: 50%;
+        opacity: 0;
+    }
+    50% {
+        height: 125%;
+        opacity: 1;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
+
+@keyframes pop_up_hover {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+    }
+    50% {
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+}
+
+@keyframes fade_out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+.scene {
+    height: 17vh;
+    perspective: 1000px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  .card__face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    padding: 2vh;
+  }
+
+  .card__face--front {
+  }
+  
+  .card__face--back {
+      display: table;
+    background: rgb(44,44,44, 0.5);
+    width: 70%;
+    border-radius: 30px;
+    transform: rotateY( 180deg );
+  }
+
+  .card__face--back p {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+  .card.is-flipped {
+    transform: rotateY(180deg);
+  }
