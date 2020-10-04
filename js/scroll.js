@@ -15,11 +15,11 @@ function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
     if ($(window).scrollTop() < $(window).height() * arguments[0]) {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'linear', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'swing', function() { 
         });
     } 
     else {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'linear', function() { 
+        body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'swing', function() { 
         });
     };
 };
