@@ -280,6 +280,7 @@ a {
 
 .contact-card {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     height: 50px;
     transform: rotate3d(0, 1, 0, 0deg);
 }
@@ -415,6 +416,7 @@ a {
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     padding: 2vh;
   }
 
