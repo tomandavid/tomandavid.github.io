@@ -3,17 +3,19 @@ $(document).ready( function() {
         window.touchstart_scroll = theta
     });
     window.addEventListener("touchend", function() {
-        if (Math.abs(theta - window.touchstart_scroll > 0)) {
-            movetop(lstpg, 500);
+        if (theta - window.touchstart_scroll > 0) {
+            movetop(lstpg, 500, 1);
+        } 
+        else {
+            movetop(lstpg, 500, -1);
         }
     });
 });
 var max_scroll_ios_fix = 5
 var check = true
 function movetop() {
-    console.log(arguments[1])
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0]) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == arguments[2] && arguments[2] == -1)) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
         });
     } 
@@ -36,7 +38,7 @@ $(window).scroll(function(){
     else {
         clearTimeout(v);
         v = setTimeout(function() {
-            movetop(lstpg, 1, 100);
+            movetop(lstpg, 100, 0);
         }, 100);
     }
 });
