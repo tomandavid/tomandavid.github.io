@@ -320,12 +320,16 @@ a {
 
 @media only all and (max-width: 1000px) {
     .book h2 {
-        font-size: 7vw;
+        font-size: 4vw;
         margin: 1vw
     }
     .book h3 {
-        font-size: 5vw;
-        margin: 3vw
+        font-size: 3vw;
+        margin: 3vw;
+        line-height: 3vw;
+    }
+    p {
+        font-size: 3vw;
     }
     
     .grid-container {
@@ -340,11 +344,11 @@ a {
     }
     .grid-container {
         height: 70%;
-        margin-top: 10%;
+        margin-top: 0%;
       display: grid;
-      grid-template-columns: 45% 45%;
+      grid-template-columns: 50% 50%;
         grid-template-rows: 20% 20% 20% 20%;
-        gap: 0% 5%;
+        gap: 10% 0%;
       grid-template-areas:
         ". ."
         ". ."
