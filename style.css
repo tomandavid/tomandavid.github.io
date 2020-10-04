@@ -460,11 +460,18 @@ a {
     .contact-grid {
         height: 50vh;
         top: 50vh;
+        width: 100vw;
+        margin-left: -50vw;
         margin-top: -25vh
     }
 
     .contact-click a {
         display: none
+    }
+
+    .message-show {
+        width: 90%;
+        left: 5%;
     }
     
 }
