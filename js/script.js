@@ -20,7 +20,7 @@ $(window).scroll(function(){
     window.theta = Math.round($(window).scrollTop() / ($(window).height() )*100)/100;
     scroll_animation()
     name_fade()
-    console.log(document.documentElement.clientHeight)
+    console.log(window.innerHeight)
 })
 
 $(window).resize(function() {
@@ -66,7 +66,7 @@ function reload_fix() {
         });
     }
     $(".second-page").css({
-        height: 5 * document.documentElement.clientHeight + "px"
+        height: 5 * window.innerHeight + "px"
     });
 }
 
