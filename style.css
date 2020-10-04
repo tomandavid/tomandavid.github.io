@@ -339,7 +339,7 @@ a {
 
 
 .scene {
-    height: 17vh;
+    height: 100%;
     perspective: 1000px;
   }
   .card {
@@ -471,5 +471,23 @@ a {
         width: 90%;
         left: 5%;
     }
+
+    .scene {
+        height: 130%;
+    }
+
+    @keyframes pop_up {
+        0% {
+            height: 70%;
+            opacity: 0;
+        }
+        50% {
+            height: 150%;
+            opacity: 1;
+        }
+        100% {
+            height: 130%;
+        }
+}
     
 }
