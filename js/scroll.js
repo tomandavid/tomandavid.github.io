@@ -14,7 +14,7 @@ var check = true
 function movetop() {
     console.log(arguments[1])
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0]) {
+    if ($(window).scrollTop() < $(window).height() * arguments[0] || $(window).scrollTop() == max_scroll_ios_fix) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0]-1)}, arguments[1], 'swing', function() { 
         });
     } 
@@ -23,8 +23,8 @@ function movetop() {
             body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'swing', function() { 
             });
         }
-        console.log("lstpg: "+lstpg)
     };
+    console.log("lstpg: " + $(window).scrollTop() )
 };
 var v
 var lstpg = 0
