@@ -105,9 +105,6 @@ function scroll_animation() {
                 right: 5 + 45 + "%"
             });
             if ($(window).width() < 1000) {
-                $(".contact-grid").css({
-                    top: 45+ "%"
-                });
                 $(".line_01").css({
                     top: 0 + "%"
                 });
@@ -137,9 +134,6 @@ function scroll_animation() {
                 opacity: Math.max((theta_loc - 0.8)*5, 0)
             });
             if ($(window).width() < 1000) {
-                $(".contact-grid").css({
-                    top: 50 - 5 * theta_loc + "%"
-                });
                 $(".line_01").css({
                     top: 5 - 5 * theta_loc + "%"
                 });
@@ -289,7 +283,7 @@ function scroll_animation() {
                 animation.goToAndStop(0, true);
                 pop_down()
             }
-            $(".book_01, .book_02, .book_03, book_04").css({
+            $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
                 display: "none"
             });
         };
