@@ -67,6 +67,7 @@ function reload_fix() {
     $(".second-page").css({
         height: 5 * $(screen).height() + "px"
     });
+    console.log($(screen).height())
 }
 
 function scroll_animation() {
