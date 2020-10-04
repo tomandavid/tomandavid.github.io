@@ -36,7 +36,7 @@ $(window).resize(function() {
         });
     }
     $(".second-page").css({
-        height: 5 * $(screen).height()
+        height: 5 * $(screen).height() + "px"
     });
 })
 
