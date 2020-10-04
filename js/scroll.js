@@ -27,8 +27,9 @@ $(window).scroll(function(){
     }
     
 });
-
-$(window).addEventListener("touchend", function() {
-    console.log("hey")
-    movetop(lstpg);
+$(document).ready( function() {
+    $(window).addEventListener("touchend", function() {
+        console.log("hey")
+        movetop(lstpg);
+    });
 });
