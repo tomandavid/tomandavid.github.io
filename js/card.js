@@ -243,6 +243,12 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function(){
+    window.addEventListener( 'touchleave', function() {
+       console.log("touch")
+    });
+});
+
 
 
 

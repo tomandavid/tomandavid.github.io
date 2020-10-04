@@ -28,9 +28,13 @@ $(window).scroll(function(){
     
 });
 $(document).ready( function() {
+    window.addEventListener( 'touchstart', function() {
+        window.touchstart_scroll = $(window).scrollTop()
+    });
     window.addEventListener("touchend", function() {
-        console.log("hey")
-        movetop(lstpg);
+        if (Math.abs(window.touchstart_scroll - $(window).scrollTop()) > 10) {
+            movetop(lstpg);
+        }
     });
 });
 
