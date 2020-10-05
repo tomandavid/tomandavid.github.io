@@ -6,7 +6,7 @@ $(document).ready( function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg, 500, 1);
         } 
-        else {
+        else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
             movetop(lstpg, 500, -1);
         }
     });
