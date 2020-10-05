@@ -7,7 +7,7 @@ $(document).ready( function() {
             movetop(nxtpg + 1, 500);
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-            movetop(nxtpg-1, 500);
+            movetop(nxtpg - 1, 500);
         }
     });
 });
@@ -25,7 +25,7 @@ function movetop() {
             });
         }
     };*/
-    body.stop().animate({scrollTop:window.innerHeight * arguments[0]}, arguments[1], 'swing', function() { 
+    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() { 
     });
 };
 
