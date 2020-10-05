@@ -70,7 +70,7 @@ else {
     }
     if ($(window).width() < 1000) {
         if (theta < 0.5 && theta != 0 && ios_fix == null) {
-            ios_fix_settimeout()
+            
         }
         else {
             ios_fix_cleartimeout()
