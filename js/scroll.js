@@ -4,10 +4,10 @@ $(document).ready( function() {
     });
     window.addEventListener("touchend", function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-            movetop(nxtpg + 1, 500);
+            movetop(lstpg + 1, 500);
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-            movetop(nxtpg - 1, 500);
+            movetop(lstpg - 1, 500);
         }
     });
 });
