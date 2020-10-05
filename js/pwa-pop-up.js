@@ -9,8 +9,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   showInstallPromotion();
 });
 
-var buttonInstall = document.querySelector('.my-name');
-buttonInstall.addEventListener('click', (e) => {
+window.addEventListener('click', (e) => {
     // Hide the app provided install promotion
     hideMyInstallPromotion();
     // Show the install prompt
