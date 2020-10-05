@@ -5,7 +5,7 @@ $(document).ready(function(){
         rederer: "svg",
         loop: false,
         autoplay: false,
-        path: "rectangle_mobile.json",
+        path: "rectangle.json",
         rendererSettings: {
             preserveAspectRatio: 'none'
         }
