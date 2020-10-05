@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
     if ($(window).width() > 1000) {
-        var path_rectangle = "recrtangle.json"
+        var path_rectangle = "rectangle.json"
     }
     else {
         var path_rectangle = "recrtanglemobile.json"
@@ -45,6 +45,12 @@ $(window).resize(function() {
             height: 90 + "vw"
         });
     }
+    $(".line_01").css({
+        height: 90 + "vh"
+    });
+    $(".my-name").css({
+        top: 0.48 * window.innerHeight - 0.1 * window.innerWidth + "px"
+    })
 })
 
 function reload_fix() {
@@ -289,7 +295,7 @@ function scroll_animation() {
             });
             $(".my-name").css({
                 display: "flex",
-                top: 0.43 * window.innerHeight + "px"
+                top: 0.48 * window.innerHeight - 0.1 * window.innerWidth + "px"
             })
             if (theta <= 0.5) {
                 animation.goToAndStop(0, true);
@@ -326,25 +332,6 @@ function name_fade() {
     $(".my-name h1:nth-child(n" + (n+1) + ")").css({
         opacity: 1
     })
-}
-
-window.x = 0
-function coin_rotate() {
-    Math.pow(1-(x-1),4)
-    setTimeout(function(){
-        window.x = window.x + 1
-        if (x < 100) {
-            $(".flex-item").css({
-                transform: "rotate3D(0,1,0,"+ (90 + x * 10) + "deg)"
-            });
-            coin_rotate()
-        }
-        else {
-            $(".flex-item").css({
-                transform: "rotate3D(0,1,0,0deg)"
-            });
-        }
-    }, 20)
 }
 
 function call_pop_up() {
