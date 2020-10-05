@@ -367,9 +367,6 @@ a {
     padding: 2vh;
   }
 
-  .card__face--front {
-  }
-  
   .card__face--back {
       display: table;
     background: rgb(44,44,44, 0.5);
