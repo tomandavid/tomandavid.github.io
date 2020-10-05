@@ -4,10 +4,10 @@ $(document).ready( function() {
     });
     window.addEventListener("touchend", function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-            movetop(lstpg, 500, 1);
+            movetop(nxtpg, 500, 1);
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-            movetop(lstpg, 500, -1);
+            movetop(nxtpg, 500, -1);
         }
     });
 });
@@ -15,7 +15,7 @@ var max_scroll_ios_fix = 5
 var check = true
 function movetop() {
     var body = $("html, body");
-    if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == max_scroll_ios_fix && arguments[2] == -1)) {
+    /*if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == max_scroll_ios_fix && arguments[2] == -1)) {
         body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
         });
     } 
@@ -24,86 +24,68 @@ function movetop() {
             body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'swing', function() { 
             });
         }
-    };
+    };*/
+    body.stop().animate({scrollTop:window.innerHeight * arguments[0]}, arguments[1], 'swing', function() { 
+    });
 };
 
+function scroll_direction(e) {
+    var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
+    if (window.device == undefined) {
+        window.device = isTouchPad ? "TouchPad" : "Mouse"
+    }
+    if (e.deltaY > 0) {
+        window.scroll_down = true
+    }
+    else {
+        window.scroll_down = false
+    }
+}
+window.addEventListener("mousewheel", scroll_direction, false);
+window.addEventListener("DOMMouseScroll", scroll_direction, false);
+
 window.scroll_timeout = true
-var v
+window.v = 0
 window.lstpg = window.theta
 $(window).scroll(function(){
-    console.log("lstpg: " + lstpg)
+if (window.scroll_down) {
+    window.nxtpg = Math.ceil(theta)
+}
+else {
+    window.nxtpg = Math.floor(theta)
+}
     if (theta % 1 == 0) {
-        clearTimeout(v)
+        clearTimeout(window.v)
         window.check = false
         window.lstpg = theta
     }
     else {
-        if (window.scroll_timeout) {
-            window.scroll_timeout = false
-            setTimeout(function() {
-                scroll_timeout = true
-            }, 1000)
-            movetop(lstpg, 100, 0);
+        if (window.device == "TouchPad") {
+            touchpad_scroll()
+        }
+        else if (window.device == "Mouse") {
+            mouse_scroll()
         }
     }
 }); 
 
-function disableScrolling(){
-    var x=window.scrollX;
-    var y=window.scrollY;
-    window.onscroll=function(){window.scrollTo(x, y);};
-}
 
-function enableScrolling(){
-    window.onscroll=function(){};
-}
 
-/*
-window.lstpg = window.theta
-window.scroll_timeout = true
-$(window).scroll(function() {
+
+function mouse_scroll() {
     if (window.scroll_timeout) {
         window.scroll_timeout = false
         setTimeout(function() {
             scroll_timeout = true
         }, 1000)
-        if (theta > lstpg) {
-            movetop_simple(lstpg, 100, 1)
-            window.lstpg = theta
-            console.log("up")
-        }
-        else {
-            movetop_simple(lstpg, 100, -1)
-            console.log("down")
-            window.lstpg = theta
-        }
+        movetop(nxtpg, 100, 0);
     }
-});
+}
 
-function movetop_simple() {
-    var body = $("html, body");
-    console.log(window.lstpg)
-    body.stop().animate({scrollTop:$(window).height() * (arguments[0] + arguments[2])}, arguments[1], 'swing', function() { 
-    });
-} 
+function touchpad_scroll() {
+    clearTimeout(window.v);
+   window.v = setTimeout(function() {
+        movetop(nxtpg, 100, 0);
+    }, 1000);
+}
 
-
-var v
-window.lstpg = window.theta
-$(window).scroll(function(){
-    console.log("lstpg: " + lstpg)
-    if (theta % 1 == 0) {
-        clearTimeout(v)
-        window.check = false
-        window.lstpg = theta
-    }
-    else {
-        clearTimeout(v);
-        v = setTimeout(function() {
-            movetop(lstpg, 100, 0);
-        }, 100);
-    }
-}); 
-
-
-*/
