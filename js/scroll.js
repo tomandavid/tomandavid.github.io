@@ -34,7 +34,6 @@ function scroll_direction(e) {
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
     }
-    console.log(e.deltaY)
     if (e.deltaY > 0) {
         window.scroll_down = true
     }
@@ -47,6 +46,7 @@ window.addEventListener("DOMMouseScroll", scroll_direction, false);
 
 window.scroll_timeout = true
 window.v = 0
+var ios_fix
 window.lstpg = window.theta
 $(window).scroll(function(){
 if (window.scroll_down) {
@@ -68,10 +68,29 @@ else {
             mouse_scroll()
         }
     }
-}); 
+    if ($(window).width() < 1000) {
+        if (theta < 0.5 && theta != 0 && ios_fix == null) {
+            ios_fix_settimeout()
+        }
+        else {
+            ios_fix_cleartimeout()
+        }
+    }
+});
+
+var myVar;
 
 
+function ios_fix_settimeout() {
+    ios_fix = setTimeout(function(){
+        movetop(0, 100, 0)
+    }, 1000);
+}
 
+function ios_fix_cleartimeout() {
+    clearTimeout(ios_fix)
+    ios_fix = null
+}
 
 function mouse_scroll() {
     if (window.scroll_timeout) {
