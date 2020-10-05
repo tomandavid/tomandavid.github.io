@@ -290,7 +290,7 @@ function scroll_animation() {
             });
             if ($(window).width() < 1000) {
                 $(".line_01").css({
-                    height: 0.75 - 0.25 * Math.abs(Math.sin(theta * Math.PI)) * window.innerHeight + "px",
+                    height: (0.75 - 0.25 * Math.abs(Math.sin(theta * Math.PI))) * window.innerHeight + "px",
                 });
             }
         };
