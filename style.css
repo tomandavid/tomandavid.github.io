@@ -412,6 +412,10 @@ a {
         font-size: 3vw;
         line-height: 4vw;
     }
+
+    .line_01 {
+        height: 75%;
+    }
     
     .grid-container {
         height: 50%;

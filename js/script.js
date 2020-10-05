@@ -288,6 +288,11 @@ function scroll_animation() {
             $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
                 display: "none"
             });
+            if ($(window).width() < 1000) {
+                $(".line_01").css({
+                    height: 75 - 25 * Math.abs(Math.sin(theta * Math.PI)) + "vh",
+                });
+            }
         };
 
 }
