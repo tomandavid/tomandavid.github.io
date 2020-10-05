@@ -11,7 +11,7 @@ $(document).ready(function(){
         rederer: "svg",
         loop: false,
         autoplay: false,
-        path: path_rectangle,
+        path: "rectangle.json",
         rendererSettings: {
             preserveAspectRatio: 'none'
         }
