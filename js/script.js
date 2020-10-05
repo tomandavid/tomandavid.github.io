@@ -45,12 +45,12 @@ $(window).resize(function() {
             height: 90 + "vw"
         });
     }
-    $(".line_01").css({
-        height: 90 + "vh"
-    });
-    $(".my-name").css({
-        top: 0.48 * window.innerHeight - 0.1 * window.innerWidth + "px"
-    })
+    if (theta < 5) {
+        $(".line_01").css({
+            height: 90 + "vh"
+        });
+    }
+
 })
 
 function reload_fix() {
