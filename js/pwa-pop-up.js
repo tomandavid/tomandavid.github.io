@@ -10,6 +10,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 window.addEventListener('click', (e) => {
+    console.log("working")
     // Hide the app provided install promotion
     hideMyInstallPromotion();
     // Show the install prompt
@@ -23,7 +24,3 @@ window.addEventListener('click', (e) => {
       }
     });
   });
-
-  function showInstallPromotion() {
-      console.log("working")
-  }
