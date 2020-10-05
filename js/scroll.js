@@ -4,10 +4,10 @@ $(document).ready( function() {
     });
     window.addEventListener("touchend", function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-            movetop(nxtpg, 500, 1);
+            movetop(nxtpg + 1, 500);
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-            movetop(nxtpg, 500, -1);
+            movetop(nxtpg-1, 500);
         }
     });
 });
@@ -34,6 +34,7 @@ function scroll_direction(e) {
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
     }
+    console.log(e.deltaY)
     if (e.deltaY > 0) {
         window.scroll_down = true
     }
