@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-    scroll-behavior: smooth;
+
 }
 
 html, body {
@@ -391,6 +391,7 @@ a {
     }
     .background-rectangle {
         height: 50%;
+        margin-top: 8%;
     }
     .grid-item h2 {
         font-size: 20%;

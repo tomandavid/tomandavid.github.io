@@ -83,7 +83,7 @@ var myVar;
 
 function ios_fix_settimeout() {
     ios_fix = setTimeout(function(){
-        movetop(0, 100, 0)
+        movetop(0, 200 + "ms", 0)
     }, 1000);
 }
 
@@ -98,14 +98,14 @@ function mouse_scroll() {
         setTimeout(function() {
             scroll_timeout = true
         }, 1000)
-        movetop(nxtpg, 100, 0);
+        movetop(nxtpg, 200 + "ms", 0);
     }
 }
 
 function touchpad_scroll() {
     clearTimeout(window.v);
    window.v = setTimeout(function() {
-        movetop(nxtpg, 100, 0);
-    }, 1000);
+        movetop(nxtpg, 200 + "ms", 0);
+    }, 500);
 }
 
