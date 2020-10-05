@@ -88,7 +88,7 @@ function reload_fix() {
         height: 5 * window.innerHeight + "px"
     });
     $(".my-name").css({
-        top: 0.50 * $(window).height() - 0.1 * $(window).width() + "px"
+        top: 0.49 * $(window).height() - 0.1 * $(window).width() + "px"
     })
 }
 
