@@ -28,7 +28,7 @@ $(window).resize(function() {
     if (theta >= 1) {
         $(".line_02").css({
             marginTop: 0,
-            height: 90 + "vh"
+            height: 0.9 * window.innerHeight + "px"
         });
     }
     else {
@@ -44,7 +44,7 @@ function reload_fix() {
         $(".line_01").css({
             transform: "rotate(" + (- 1 * 180) + "deg)",
             left: "5%",
-            height: 90 + "vh"
+            height: 0.9 * window.innerHeight + "px"
         });
         $(".line_02").css({
             transform: "rotate(" + (90 - 1 * 90) + "deg)",
@@ -75,7 +75,7 @@ function scroll_animation() {
 
         if (theta >= 1) {
             $(".line_01").css({
-                height: 90 + "vh",
+                height: 0.9 * window.innerHeight + "px",
                 left: 5 + "%",
                 transform: "rotate(" + 0 + "deg)",
             });
@@ -265,14 +265,14 @@ function scroll_animation() {
             $(".line_01").css({
                 transform: "rotate(" + (- theta * 180) + "deg)",
                 left: 20 - 10 * theta + 5 * Math.sin(theta * Math.PI * 3/2) + "%",
-                height: 90 - 40 * Math.abs(Math.sin(theta * Math.PI)) + "vh",
+                height: (0.9 - 0.4 * Math.abs(Math.sin(theta * Math.PI))) * window.innerHeight + "px",
                 top: 5 + "%"
             });
             $(".line_02").css({
                 transform: "rotate(" + (90 - theta * 90) + "deg)",
                 right: 50 - 45 * theta + "%",
                 marginTop: - ($(window).width() - $(window).height()) * 0.9 / 2 + ($(window).width() - $(window).height()) *  (- Math.pow(theta - 1, 2) + 1) * 0.9 / 2,
-                height: ($(window).width() - ($(window).width() - $(window).height()) * (- Math.pow(theta - 1, 2) + 1)) * 0.9,
+                height: ($(window).width() - ($(window).width() - window.innerHeight) * (- Math.pow(theta - 1, 2) + 1)) * 0.9,
                 top: 5 + "%"
             });
             $(".book_01").css({
@@ -290,7 +290,7 @@ function scroll_animation() {
             });
             if ($(window).width() < 1000) {
                 $(".line_01").css({
-                    height: 75 - 25 * Math.abs(Math.sin(theta * Math.PI)) + "vh",
+                    height: 0.75 - 0.25 * Math.abs(Math.sin(theta * Math.PI)) * window.innerHeight + "px",
                 });
             }
         };
