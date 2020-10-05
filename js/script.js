@@ -50,7 +50,7 @@ function reload_fix() {
             transform: "rotate(" + (90 - 1 * 90) + "deg)",
             right: "5%",
             marginTop: - ($(window).width() - $(window).height()) * 0.9 / 2 + ($(window).width() - $(window).height()) *  (- Math.pow(1 - 1, 2) + 1) * 0.9 / 2,
-            height: 90 + "vh"
+            height: 0.9 * window.innerHeight + "px"
         });
         $(".my-name").css({
             display: "none"
@@ -290,7 +290,7 @@ function scroll_animation() {
             });
             if ($(window).width() < 1000) {
                 $(".line_01").css({
-                    height: (0.75 - 0.25 * Math.abs(Math.sin(theta * Math.PI))) * window.innerHeight + "px",
+                    height: (0.9 - 0.4 * Math.abs(Math.sin(theta * Math.PI))) * window.innerHeight + "px",
                 });
             }
         };
