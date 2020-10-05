@@ -6,7 +6,7 @@
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
     background-color: #222;
 }
 
