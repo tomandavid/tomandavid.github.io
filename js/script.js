@@ -50,6 +50,9 @@ $(window).resize(function() {
             height: 90 + "vh"
         });
     }
+    $(".my-name").css({
+        top: 0.48 * $(window).height() - 0.1 * $(window).width() + "px"
+    })
 
 })
 
@@ -83,6 +86,9 @@ function reload_fix() {
     $(".second-page").css({
         height: 5 * window.innerHeight + "px"
     });
+    $(".my-name").css({
+        top: 0.48 * $(window).height() - 0.1 * $(window).width() + "px"
+    })
 }
 
 function scroll_animation() {
@@ -294,8 +300,7 @@ function scroll_animation() {
                 opacity: Math.max((theta - 0.8)*5, 0)
             });
             $(".my-name").css({
-                display: "flex",
-                
+                display: "flex"
             })
             if (theta <= 0.5) {
                 animation.goToAndStop(0, true);
