@@ -280,7 +280,8 @@ function scroll_animation() {
                 opacity: Math.max((theta - 0.8)*5, 0)
             });
             $(".my-name").css({
-                display: "flex"
+                display: "flex",
+                top: 0.45 * window.innerHeight + "px"
             })
             if (theta <= 0.5) {
                 animation.goToAndStop(0, true);
