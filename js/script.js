@@ -53,7 +53,7 @@ $(window).resize(function() {
     $(".my-name").css({
         top: 0.48 * $(window).height() - 0.1 * $(window).width() + "px"
     })
-
+    touchpad_scroll()
 })
 
 function reload_fix() {
