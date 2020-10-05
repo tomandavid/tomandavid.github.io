@@ -265,13 +265,15 @@ function scroll_animation() {
             $(".line_01").css({
                 transform: "rotate(" + (- theta * 180) + "deg)",
                 left: 20 - 10 * theta + 5 * Math.sin(theta * Math.PI * 3/2) + "%",
-                height: 90 - 40 * Math.abs(Math.sin(theta * Math.PI)) + "vh"
+                height: 90 - 40 * Math.abs(Math.sin(theta * Math.PI)) + "vh",
+                top: 5 + "%"
             });
             $(".line_02").css({
                 transform: "rotate(" + (90 - theta * 90) + "deg)",
                 right: 50 - 45 * theta + "%",
                 marginTop: - ($(window).width() - $(window).height()) * 0.9 / 2 + ($(window).width() - $(window).height()) *  (- Math.pow(theta - 1, 2) + 1) * 0.9 / 2,
-                height: ($(window).width() - ($(window).width() - $(window).height()) * (- Math.pow(theta - 1, 2) + 1)) * 0.9
+                height: ($(window).width() - ($(window).width() - $(window).height()) * (- Math.pow(theta - 1, 2) + 1)) * 0.9,
+                top: 5 + "%"
             });
             $(".book_01").css({
                 opacity: Math.max((theta - 0.8)*5, 0)
