@@ -295,7 +295,7 @@ function scroll_animation() {
             });
             $(".my-name").css({
                 display: "flex",
-                top: 0.48 * window.innerHeight - 0.1 * window.innerWidth + "px"
+                
             })
             if (theta <= 0.5) {
                 animation.goToAndStop(0, true);
