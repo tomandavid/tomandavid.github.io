@@ -29,7 +29,7 @@ function movetop() {
 var v
 var lstpg = 0
 $(window).scroll(function(){
-    console.log("lstpg: " + theta)
+    console.log("lstpg: " + window.innerHeight)
     if (theta % 1 == 0) {
         clearTimeout(v)
         window.check = false
