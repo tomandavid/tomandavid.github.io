@@ -94,7 +94,8 @@ function scroll_animation() {
     
         if (theta >= 5) {
             $(".contact-grid").css({
-                display: "grid"
+                display: "grid",
+                top: 45 * window.innerHeight + "px"
             });
             $(".line_01").css({
                 transform: "rotate(" + 45 + "deg)",
