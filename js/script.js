@@ -117,7 +117,7 @@ function scroll_animation() {
             if ($(window).width() < 100) {
                 $(".contact-grid").css({
                     display: "grid",
-                    top: 0.45 * window.innerHeight + "px"
+                    top: 0.45 * $(window).height() + "px"
                 });
             }
             $(".line_01").css({
