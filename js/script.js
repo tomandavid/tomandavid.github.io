@@ -1,11 +1,17 @@
 
 $(document).ready(function(){
+    if ($(window).width() > 1000) {
+        var path_rectangle = "recrtangle.json"
+    }
+    else {
+        var path_rectangle = "recrtanglemobile.json"
+    }
     window.animation = bodymovin.loadAnimation({
         container: document.getElementById("background-rectangle"),
         rederer: "svg",
         loop: false,
         autoplay: false,
-        path: "rectanglemobile.json",
+        path: path_rectangle,
         rendererSettings: {
             preserveAspectRatio: 'none'
         }
