@@ -1,29 +1,16 @@
 
 $(document).ready(function(){
-    if ($(window).width() > 1000) {
-        window.animation = bodymovin.loadAnimation({
-            container: document.getElementById("background-rectangle"),
-            rederer: "svg",
-            loop: false,
-            autoplay: false,
-            path: "rectangle.json",
-            rendererSettings: {
-                preserveAspectRatio: 'none'
-            }
-        });
-    }
-    else {
-        window.animation = bodymovin.loadAnimation({
-            container: document.getElementById("background-rectangle"),
-            rederer: "svg",
-            loop: false,
-            autoplay: false,
-            path: "rectangle_mobile.json",
-            rendererSettings: {
-                preserveAspectRatio: 'none'
-            }
-        });
-    };
+    window.animation = bodymovin.loadAnimation({
+        container: document.getElementById("background-rectangle"),
+        rederer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "rectangle_mobile.json",
+        rendererSettings: {
+            preserveAspectRatio: 'none'
+        }
+    });
+
     
     window.theta = Math.round($(window).scrollTop() / ($(window).height()) * 1000) / 1000;
     window.theta = Math.min(window.theta, 5)
