@@ -117,7 +117,7 @@ function scroll_animation() {
         }
     
         if (theta >= 5) {
-            if ($(window).width() < 100) {
+            if ($(window).width() < 1000) {
                 $(".contact-grid").css({
                     display: "grid",
                     top: 0.45 + "%"
