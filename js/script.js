@@ -72,6 +72,7 @@ function reload_fix() {
         $(".my-name").css({
             display: "none"
         });
+        
     }
     if (theta == 5) {
         $(".line_01").css({
@@ -115,7 +116,7 @@ function scroll_animation() {
         if (theta >= 5) {
             $(".contact-grid").css({
                 display: "grid",
-                top: 0.45 * window.innerHeight + "px"
+                top: 0.5 * window.innerHeight + "px"
             });
             $(".line_01").css({
                 transform: "rotate(" + 45 + "deg)",

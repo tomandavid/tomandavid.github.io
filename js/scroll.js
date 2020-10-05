@@ -15,18 +15,8 @@ var max_scroll_ios_fix = 5
 var check = true
 function movetop() {
     var body = $("html, body");
-    /*if ($(window).scrollTop() < $(window).height() * arguments[0] || (theta == max_scroll_ios_fix && arguments[2] == -1)) {
-        body.stop().animate({scrollTop:$(window).height() * (arguments[0] - 1)}, arguments[1], 'swing', function() { 
-        });
-    } 
-    else {
-        if (lstpg != max_scroll_ios_fix) {
-            body.stop().animate({scrollTop:$(window).height() * (arguments[0] + 1)}, arguments[1], 'swing', function() { 
-            });
-        }
-    };*/
-    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() { 
-    });
+    console.log("tady: "+window.innerHeight * arguments[0])
+    body.stop().animate({scrollTop:window.innerHeight * arguments[0]}, arguments[1], 'swing', function() {});
 };
 
 function scroll_direction(e) {
@@ -49,6 +39,9 @@ window.v = 0
 var ios_fix
 window.lstpg = window.theta
 $(window).scroll(function(){
+    console.log(theta)
+    console.log(window.device)
+    console.log("st: "+$(window).scrollTop())
 if (window.scroll_down) {
     window.nxtpg = Math.ceil(theta)
 }
@@ -70,7 +63,7 @@ else {
     }
     if ($(window).width() < 1000) {
         if (theta < 0.5 && theta != 0 && ios_fix == null) {
-            
+            ios_fix_settimeout()
         }
         else {
             ios_fix_cleartimeout()
@@ -91,14 +84,16 @@ function ios_fix_cleartimeout() {
     clearTimeout(ios_fix)
     ios_fix = null
 }
-
+window.scroll_timeout = true
 function mouse_scroll() {
+    console.log("nx"+nxtpg)
     if (window.scroll_timeout) {
         window.scroll_timeout = false
         setTimeout(function() {
             scroll_timeout = true
         }, 1000)
         movetop(nxtpg, 200 + "ms", 0);
+        console.log("ahoj")
     }
 }
 
