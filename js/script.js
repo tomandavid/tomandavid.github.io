@@ -53,6 +53,9 @@ $(window).resize(function() {
     $(".my-name").css({
         top: 0.49 * $(window).height() - 0.1 * $(window).width() + "px"
     })
+    $(".second-page").css({
+        height: 5 * window.innerHeight + "px"
+    });
     touchpad_scroll()
 })
 
