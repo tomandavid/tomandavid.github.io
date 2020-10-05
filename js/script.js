@@ -281,7 +281,7 @@ function scroll_animation() {
             });
             $(".my-name").css({
                 display: "flex",
-                top: 0.45 * window.innerHeight + "px"
+                top: 0.37 * window.innerHeight + "px"
             })
             if (theta <= 0.5) {
                 animation.goToAndStop(0, true);
