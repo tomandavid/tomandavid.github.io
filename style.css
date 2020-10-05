@@ -226,7 +226,7 @@ a {
     position: fixed;
     height: 70vh;
     width: 60vw;
-    top: 45%;
+    top: 50vh;
     left: 50%;
     margin-top: -35vh;
     margin-left: -30vw;
@@ -469,7 +469,7 @@ a {
     .contact-grid {
         display: none;
         height: 50vh;
-        top: 45vh;
+        top: 37vh;
         width: 100vw;
         margin-left: -50vw;
         margin-top: -25vh

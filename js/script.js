@@ -117,12 +117,6 @@ function scroll_animation() {
         }
     
         if (theta >= 5) {
-            if ($(window).width() < 1000) {
-                $(".contact-grid").css({
-                    display: "grid",
-                    top: 45 + "vh"
-                });
-            }
             $(".line_01").css({
                 transform: "rotate(" + 45 + "deg)",
                 left: 5 + 45 + "%"
