@@ -126,11 +126,13 @@ function scroll_animation() {
         if (theta >= 5) {
             $(".line_01").css({
                 transform: "rotate(" + 45 + "deg)",
-                left: 5 + 45 + "%"
+                left: 5 + 45 + "%",
+                height: 0.9 * $(window).height() + "px"
             });
             $(".line_02").css({
                 transform: "rotate(-" + 45 + "deg)",
-                right: 5 + 45 + "%"
+                right: 5 + 45 + "%",
+                height: 0.9 * $(window).height() + "px"
             });
 
         }
