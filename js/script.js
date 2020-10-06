@@ -103,12 +103,12 @@ function scroll_animation() {
 
         if (theta >= 1) {
             $(".line_01").css({
-                height: 0.9 * $(window).height() + "px",
+                height: 0.9 * window.innerHeight + "px",
                 left: 5 + "%",
                 transform: "rotate(" + 0 + "deg)",
             });
             $(".line_02").css({
-                height: 0.9 * $(window).height() + "px",
+                height: 0.9 * window.innerHeight + "px",
                 right: 5 + "%",
                 transform: "rotate(" + 0 + "deg)",
             });
