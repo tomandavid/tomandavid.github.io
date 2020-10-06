@@ -90,7 +90,7 @@ function mouse_scroll() {
     disableScroll()
     if (window.scroll_timeout) {
         window.scroll_timeout = false
-        setTimeout(function() {
+        var a = setTimeout(function() {
             scroll_timeout = true
             enableScroll()
         }, 1000)
