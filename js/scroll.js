@@ -26,23 +26,20 @@ function scroll_direction(e) {
     }
     if (e.deltaY > 0) {
         window.scroll_down = true
-        mouse_scroll("1")
     }
     else {
         window.scroll_down = false
-        mouse_scroll("-1")
     }
 }
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener("DOMMouseScroll", scroll_direction, false);
 
 window.mousescroll_run = true
-function mouse_scroll() {
+function mouse_scrolla() {
     if (window.mousescroll_run) {
         window.mousescroll_run = false
         movetop(theta + arguments[0], 500)
         console.log("a")
-
     }
 }
 
@@ -64,10 +61,10 @@ else {
     }
     else {
         if (window.device == "TouchPad") {
-            touchpad_scroll()
+            touchpad_scroll(500)
         }
         else if (window.device == "Mouse") {
-            mouse_scrolla()
+            touchpad_scroll(100)
         }
     }
     if ($(window).width() < 1000) {
@@ -79,6 +76,15 @@ else {
         }
     }
 });
+
+
+
+
+
+
+
+
+
 
 var myVar;
 
@@ -110,7 +116,7 @@ function touchpad_scroll() {
     clearTimeout(window.v);
    window.v = setTimeout(function() {
         movetop(nxtpg, 200 + "ms", 0);
-    }, 500);
+    }, arguments[0]);
 }
 
 
