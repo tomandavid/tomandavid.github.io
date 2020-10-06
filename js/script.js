@@ -57,7 +57,7 @@ $(window).resize(function() {
         height: 5 * window.innerHeight + "px"
     });
     $(".contact-grid").css({
-        top: 0.5 * window.innerHeight + "px"
+        top: 0.5 * $(window).height() + "px"
     });
     touchpad_scroll()
 })
@@ -119,7 +119,7 @@ function scroll_animation() {
                 width: 5 + "%"
             });
             $(".contact-grid").css({
-                top: 0.5 * window.innerHeight + "px"
+                top: 0.5 * $(window).height() + "px"
             });
         }
     
