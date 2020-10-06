@@ -16,7 +16,7 @@ var check = true
 function movetop() {
     var body = $("html, body");
     console.log("tady: "+window.innerHeight * arguments[0])
-    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {});
+    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() { enableScroll() });
 };
 
 function scroll_direction(e) {
@@ -42,10 +42,6 @@ function scroll_direction(e) {
     }
     movetop(nxtpg, 200)
     disableScroll()
-    var a = setTimeout(function() {
-        scroll_timeout = true
-        enableScroll()
-    }, 1000)
 }
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener("DOMMouseScroll", scroll_direction, false);
