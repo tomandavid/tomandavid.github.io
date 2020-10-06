@@ -30,8 +30,6 @@ $(window).scroll(function(){
     window.theta = Math.min(window.theta, 5)
     scroll_animation()
     name_fade()
-    $(".app-container").removeClass("shake")
-    $(".app-container").addClass("fade-out")
 })
 
 $(window).resize(function() {
@@ -123,6 +121,10 @@ function scroll_animation() {
             $(".contact-grid").css({
                 top: 0.5 * $(window).height() + "px"
             });
+        }
+        if (theta > 0.1) {
+            $(".app-container").removeClass("shake")
+            $(".app-container").addClass("fade-out")
         }
     
         if (theta >= 5) {
@@ -318,6 +320,7 @@ function scroll_animation() {
                     height: (0.9 - 0.4 * Math.abs(Math.sin(theta * Math.PI))) * window.innerHeight + "px",
                 });
             }
+            
         };
 
 }
