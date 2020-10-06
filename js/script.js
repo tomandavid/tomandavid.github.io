@@ -90,6 +90,10 @@ function reload_fix() {
     $(".second-page").css({
         height: 5 * window.innerHeight + "px"
     });
+    $(".contact-grid").css({
+        top: 0.5 * window.innerHeight + "px"
+    });
+
     $(".my-name").css({
         top: 0.49 * $(window).height() - 0.1 * $(window).width() + "px"
     })
