@@ -93,7 +93,7 @@ function mouse_scroll() {
         var a = setTimeout(function() {
             scroll_timeout = true
             enableScroll()
-        }, 1000)
+        }, 3000)
         movetop(nxtpg, 200 + "ms", 0);
         console.log("ahoj")
     }
