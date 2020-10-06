@@ -140,11 +140,13 @@ function scroll_animation() {
             theta_loc = theta - 4
             $(".line_01").css({
                 transform: "rotate(" + 45 * theta_loc + "deg)",
-                left: 5 + 45 * theta_loc + "%"
+                left: 5 + 45 * theta_loc + "%",
+                height: 0.9 * $(window).height() + "px"
             });
             $(".line_02").css({
                 transform: "rotate(-" + 45 * theta_loc + "deg)",
-                right: 5 + 45 * theta_loc + "%"
+                right: 5 + 45 * theta_loc + "%",
+                height: 0.9 * $(window).height() + "px"
             });
             $(".book_01, .book_02, .book_03").css({
                 display: "none"
