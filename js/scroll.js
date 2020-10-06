@@ -1,4 +1,5 @@
 $(document).ready( function() {
+    console.log("novaaaaaaa")
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
     });
@@ -25,22 +26,13 @@ function scroll_direction(e) {
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
     }
-    console.log(e.deltaY)
-    
     
     if (e.deltaY > 0) {
-        window.scroll_down = true
+        movetop(lstpg + 1, 200)
     }
     else {
-        window.scroll_down = false
+        movetop(lstpg - 1, 200)
     }
-    if (window.scroll_down) {
-        window.nxtpg = Math.ceil(theta)
-    }
-    else {
-        window.nxtpg = Math.floor(theta)
-    }
-    movetop(nxtpg, 200)
     disableScroll()
 }
 window.addEventListener("mousewheel", scroll_direction, false);
@@ -54,7 +46,6 @@ window.lstpg = window.theta
 $(window).scroll(function(){
     console.log(theta)
     console.log(window.device)
-    console.log("st: "+$(window).scrollTop())
 
 if (window.scroll_down) {
     window.nxtpg = Math.ceil(theta)
