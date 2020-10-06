@@ -134,7 +134,9 @@ function scroll_animation() {
                 right: 5 + 45 + "%",
                 height: 0.9 * $(window).height() + "px"
             });
-
+            $(".contact-grid").css({
+                opacity: 1
+            });
         }
         else if (theta > 4) {
             theta_loc = theta - 4
@@ -176,6 +178,9 @@ function scroll_animation() {
             });
             $(".contact-grid").css({
                 display: "none"
+            });
+            $(".book_04").css({
+                opacity: 1
             });
         }
         else if (theta > 3) {
@@ -266,6 +271,7 @@ function scroll_animation() {
             });
             $(".book_01").css({
                 display: "block",
+                opacity: 1
             });
             if (theta == 1) {
                 animation.play();
