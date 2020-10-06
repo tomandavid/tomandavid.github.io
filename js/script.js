@@ -125,14 +125,7 @@ function scroll_animation() {
                 transform: "rotate(-" + 45 + "deg)",
                 right: 5 + 45 + "%"
             });
-            if ($(window).width() < 1000) {
-                $(".line_01").css({
-                    top: 0 + "%"
-                });
-                $(".line_02").css({
-                    top: 0 + "%"
-                });
-            }
+
         }
         else if (theta > 4) {
             theta_loc = theta - 4
@@ -154,14 +147,6 @@ function scroll_animation() {
                 display: "grid",
                 opacity: Math.max((theta_loc - 0.8)*5, 0)
             });
-            if ($(window).width() < 1000) {
-                $(".line_01").css({
-                    top: 5 - 5 * theta_loc + "%"
-                });
-                $(".line_02").css({
-                    top: 5 - 5 * theta_loc + "%"
-                });
-            }
         }
         else if (theta > 3.5) {
             theta_loc = theta - 3.5

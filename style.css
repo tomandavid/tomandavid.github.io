@@ -53,9 +53,15 @@ a {
     background-color: #222;
 }
 
-.line_01 {
-    display: block;
+.line-container {
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
     position: fixed;
+}
+
+.line_01 {
+    position: absolute;
     top: 5%;
     border: 0;
     height: 90%;
@@ -63,14 +69,12 @@ a {
     background-image: url("path.png");
     background-size: 100% 100%;
     transform: rotate(0deg);
-    left: 20%;
     z-index: 10
 }
 
 .line_02 {
-    position: fixed;
+    position: absolute;
     top: 5%;
-    right: 5%;
     border: 0;
     height: 90%;
     width: 2px;
@@ -469,7 +473,7 @@ a {
     .contact-grid {
         display: none;
         height: 50vh;
-        top: 37vh;
+        top: 50vh;
         width: 100vw;
         margin-left: -50vw;
         margin-top: -25vh
