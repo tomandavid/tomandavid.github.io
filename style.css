@@ -126,10 +126,10 @@ a {
     opacity: 0;
     position: fixed;
     left: 50%;
-    margin-left: -165.5px;
+    margin-left: -125px;
     bottom: 5%;
-    width: 335px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
     background-color: rgb(200,200,200,0.1);
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -146,19 +146,20 @@ a {
 }
 
 .app-container .app-text .app-icon {
-    height: 70%;
+    height: 50%;
     float: inline-end;
 }
 
 .app-container h3 {
+    font-size: 100%;
     text-align: center;
     color: aliceblue;
-    margin: 4%;
+    margin: 2%;
 }
 
 .app-container p {
-    font-size: 100%;
-    line-height: 200%;
+    font-size: 70%;
+    line-height: 150%;
     margin: 0 3% 0 5%;
 }
 
@@ -166,10 +167,11 @@ a {
     height: 40%;
     width: 6%;
     margin-top: 2%;
+    text-align: center;
     border: 1px solid aliceblue;
     border-radius: 50%;
-    font-size: 80%;
-    font-weight: 200;
+    font-size: 50%;
+    font-weight: 300;
 }
 
 .book {
