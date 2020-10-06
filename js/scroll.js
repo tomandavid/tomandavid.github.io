@@ -1,5 +1,4 @@
 $(document).ready( function() {
-    console.log("novaaaaaaa")
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
     });
@@ -17,72 +16,78 @@ var check = true
 function movetop() {
     var body = $("html, body");
     console.log("tady: "+window.innerHeight * arguments[0])
-    body.stop().animate(
-        {scrollTop:$(window).height() * arguments[0]}, 
-        arguments[1], 
-        'swing', 
-        function() { 
-            var a = setTimeout(function() {
-                enableScroll()
-            }, 500)
-        });
+    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {
+        var vv = setTimeout(function() {
+            enableScroll(); 
+            window.mousescroll_run = true;
+        window.mouse_lstpg = theta});
+        }, 500);
+        
 };
 
 function scroll_direction(e) {
-    
+    disableScroll()
+    if (e.deltaY > 0) {
+        window.scroll_down = true
+        window.nxtpg = Math.ceil(theta)
+        movetop(nxtpg, 500)
+    }
+    else {
+        window.scroll_down = false
+        window.nxtpg = Math.floor(theta)
+        movetop(nxtpg, 500)
+    }
     var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
     }
-    
-    if (e.deltaY > 0) {
-        movetop(lstpg + 1, 200)
-    }
-    else {
-        movetop(lstpg - 1, 200)
-    }
-    disableScroll()
 }
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener("DOMMouseScroll", scroll_direction, false);
+
+window.mousescroll_run = true
+function mouse_scrollx() {
+    disableScroll()
+    if (window.mousescroll_run) {
+        movetop(nxtpg, 500)
+        window.mousescroll_run = false
+    }
+}
 
 window.scroll_timeout = true
 window.v = 0
 var ios_fix
 window.lstpg = window.theta
-
-$(window).scroll(function(){
-    console.log(theta)
-    console.log(window.device)
-
-if (window.scroll_down) {
-    window.nxtpg = Math.ceil(theta)
-}
-else {
-    window.nxtpg = Math.floor(theta)
-}
-    if (theta % 1 == 0) {
-        clearTimeout(window.v)
-        window.check = false
-        window.lstpg = theta
+function scroll_main() {
+    if (window.scroll_down) {
+        window.nxtpg = Math.ceil(theta)
     }
     else {
-        if (window.device == "TouchPad") {
-            touchpad_scroll()
-        }
-        else if (window.device == "Mouse") {
-            
-        }
+        window.nxtpg = Math.floor(theta)
     }
-    if ($(window).width() < 1000) {
-        if (theta < 0.5 && theta != 0 && ios_fix == null) {
-            ios_fix_settimeout()
+        if (theta % 1 == 0) {
+            clearTimeout(window.v)
+            window.check = false
+            window.lstpg = theta
         }
         else {
-            ios_fix_cleartimeout()
+            if (window.device == "TouchPad") {
+                touchpad_scroll()
+            }
+            else if (window.device == "Mouse") {
+                mouse_scrolla()
+            }
         }
-    }
-});
+        if ($(window).width() < 1000) {
+            if (theta < 0.5 && theta != 0 && ios_fix == null) {
+                ios_fix_settimeout()
+            }
+            else {
+                ios_fix_cleartimeout()
+            }
+        }
+    };
+
 
 var myVar;
 
@@ -98,15 +103,13 @@ function ios_fix_cleartimeout() {
     ios_fix = null
 }
 window.scroll_timeout = true
-function mouse_scroll() {
+function mouse_scrolla() {
     console.log("nx"+nxtpg)
-    disableScroll()
     if (window.scroll_timeout) {
         window.scroll_timeout = false
-        var a = setTimeout(function() {
+        setTimeout(function() {
             scroll_timeout = true
-            enableScroll()
-        }, 5000)
+        }, 1000)
         movetop(nxtpg, 200 + "ms", 0);
         console.log("ahoj")
     }
@@ -118,6 +121,9 @@ function touchpad_scroll() {
         movetop(nxtpg, 200 + "ms", 0);
     }, 500);
 }
+
+
+
 
 
 
