@@ -22,6 +22,7 @@ $(document).ready(function(){
     window.theta = Math.min(window.theta, 5)
     movetop(Math.round(window.theta)-1)
     scroll_animation()
+    scroll_main()
     reload_fix()
 });
 
