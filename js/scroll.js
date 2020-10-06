@@ -17,7 +17,15 @@ var check = true
 function movetop() {
     var body = $("html, body");
     console.log("tady: "+window.innerHeight * arguments[0])
-    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() { enableScroll() });
+    body.stop().animate(
+        {scrollTop:$(window).height() * arguments[0]}, 
+        arguments[1], 
+        'swing', 
+        function() { 
+            var a = setTimeout(function() {
+                enableScroll()
+            }, 500)
+        });
 };
 
 function scroll_direction(e) {
