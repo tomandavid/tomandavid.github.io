@@ -1,0 +1,23 @@
+<svg id="Vrstva_2" data-name="Vrstva 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #4593ff;
+        stroke-miterlimit: 10;
+        stroke-width: 30px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <title>ios_share</title>
+  <path class="cls-1" d="M313.78,173.33h70.69a30,30,0,0,1,30,30v226.8a30,30,0,0,1-30,30H127.53a30,30,0,0,1-30-30V203.33a30,30,0,0,1,30-30h72.6"/>
+  <g>
+    <line class="cls-2" x1="256.67" y1="307.39" x2="256.67" y2="51.87"/>
+    <line class="cls-2" x1="327.58" y1="120.71" x2="256.67" y2="51.87"/>
+    <line class="cls-2" x1="187.65" y1="122.04" x2="256.67" y2="51.87"/>
+  </g>
+</svg>

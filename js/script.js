@@ -30,6 +30,8 @@ $(window).scroll(function(){
     window.theta = Math.min(window.theta, 5)
     scroll_animation()
     name_fade()
+    $(".app-container").removeClass("shake")
+    $(".app-container").addClass("fade-out")
 })
 
 $(window).resize(function() {
@@ -369,5 +371,7 @@ function pop_down() {
         opacity: 0
     });
 }
+
+
 
 
