@@ -118,6 +118,9 @@ function scroll_animation() {
             $(".curtain_02").css({
                 width: 5 + "%"
             });
+            $(".contact-grid").css({
+                top: 0.5 * window.innerHeight + "px"
+            });
         }
     
         if (theta >= 5) {
