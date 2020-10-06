@@ -373,9 +373,10 @@ a {
   .card__face--back {
       display: table;
     background: rgb(44,44,44, 0.5);
-    width: 70%;
     border-radius: 30px;
     transform: rotateY( 180deg );
+    width: 90%;
+    left: 5%
   }
 
   .card__face--back p {
