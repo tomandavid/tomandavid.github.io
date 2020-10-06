@@ -36,7 +36,7 @@ $(window).resize(function() {
     if (theta >= 1) {
         $(".line_02").css({
             marginTop: 0,
-            height: 0.9 * $(window).height() + "px"
+            height: 0.9 * window.innerHeight + "px"
         });
     }
     else {
@@ -47,7 +47,7 @@ $(window).resize(function() {
     }
     if (theta < 5) {
         $(".line_01").css({
-            height: 90 + "vh"
+            height: 0.9 * window.innerHeight + "px"
         });
     }
     $(".my-name").css({
