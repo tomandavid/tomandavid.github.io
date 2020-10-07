@@ -6,6 +6,7 @@ $(document).ready(function(){
     else {
         var path_rectangle = "recrtanglemobile.json"
     }
+
     window.animation = bodymovin.loadAnimation({
         container: document.getElementById("background-rectangle"),
         rederer: "svg",
@@ -16,18 +17,15 @@ $(document).ready(function(){
             preserveAspectRatio: 'none'
         }
     });
-
     
-    window.theta = Math.round($(window).scrollTop() / ($(window).height()) * 1000) / 1000;
-    window.theta = Math.min(window.theta, 5)
+    comp_theta()
     movetop(Math.round(window.theta)-1)
     scroll_animation()
     reload_fix()
 });
 
 $(window).scroll(function(){
-    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 1000) / 1000;
-    window.theta = Math.min(window.theta, 5)
+    comp_theta()
     scroll_animation()
     name_fade()
 })
@@ -61,6 +59,11 @@ $(window).resize(function() {
     });
     touchpad_scroll()
 })
+
+function comp_theta() {
+    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 1000) / 1000;
+    window.theta = Math.min(window.theta, 5)
+}
 
 function reload_fix() {
     if (theta >= 1) {
@@ -374,7 +377,3 @@ function pop_down() {
         opacity: 0
     });
 }
-
-
-
-

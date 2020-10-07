@@ -1,3 +1,7 @@
+:root {
+    --main-bg-color: #181818;
+}
+
 * {
     margin:0;
     padding: 0;
@@ -7,7 +11,7 @@
 }
 
 html, body {
-    background-color: #222;
+    background-color: var(--main-bg-color);
 }
 
 ::-webkit-scrollbar {
@@ -41,16 +45,20 @@ a {
     font-weight: 200;
 }
 
+strong {
+    font-weight: 400;
+}
+
 .landing-page {
     width: 100vw;
     height: 100vh;
-    background-color: #222;
+    background: var(--main-bg-color);
 }
 
 .second-page {
     width: 100vw;
     height: 500vh;
-    background-color: #222;
+    background-color: var(--main-bg-color);
 }
 
 .line-container {
@@ -66,7 +74,7 @@ a {
     border: 0;
     height: 90%;
     width: 2px;
-    background-image: url("path.png");
+    background-image: url("img/path.svg");
     background-size: 100% 100%;
     transform: rotate(0deg);
     z-index: 10
@@ -81,7 +89,7 @@ a {
     transform: rotate(90deg);
     margin-top: -22%;
     right: 50%;
-    background-image: url("path.png");
+    background-image: url("img/path.svg");
     background-size: 100% 100%;
     z-index: 10
 }
@@ -92,7 +100,7 @@ a {
     width: 5%;
     top: 0;
     left: 0;
-    background-color:#222;
+    background-color:var(--main-bg-color);
     z-index: 10;
 }
 
@@ -102,7 +110,7 @@ a {
     width: 5%;
     top: 0;
     right: 0;
-    background-color: #222;
+    background-color: var(--main-bg-color);
     z-index: 10;
 }
 
@@ -171,9 +179,11 @@ a {
     text-align: center;
     border: 1px solid aliceblue;
     border-radius: 50%;
-    font-size: 50%;
+    font-size: 40%;
     font-weight: 300;
 }
+
+
 
 .book {
     display: none;
@@ -183,9 +193,6 @@ a {
     height: 90%;
     margin: 0 5% 0 5%;
     background-color: rgb(255,0,0,0);
-}
-
-.book {
     text-align: center;
     color: aliceblue;
     font-size: 50px;
@@ -214,6 +221,8 @@ a {
     z-index: -10;
 }
 
+
+
 .grid-container {
     position: absolute;
     height: 70%;
@@ -235,7 +244,6 @@ a {
 
 }
 
-
 .grid-item h2{
     font-size: 50%;
     font-weight: 300;
@@ -249,6 +257,8 @@ a {
 .item-box {
     height: 100%;
 }
+
+
 
 .flex-container {
     display: flex;
@@ -270,14 +280,13 @@ a {
 }
 
 
+
 .contact-container {
     position: fixed;
     height: 30%;
     width: 30vh;
     background-color: rgb(255,0,0,0.5);
 }
-
-
 
 .contact-grid {
     padding: 0% 5%;
@@ -299,11 +308,6 @@ a {
     z-index: 10;
 }
 
-.blur-me {
-    filter: blur(2px);
-    transition: 0.5s;
-}
-
 .contact-grid div {
     display: table;
     height: 100%;
@@ -312,23 +316,23 @@ a {
     width: 100%;
 }
 
-
 .contact-item {
     opacity: 0;
     height: 50%;
     background: radial-gradient(circle, rgba(51,51,51,1) 0%, rgba(191,212,234,0) 100%);
 }
 
-
-
+.blur-me {
+    filter: blur(2px);
+    transition: 0.5s;
+}
 
 .message-me {
     height: 50px;
 }
-.contact-click:hover {
+.hover-pointer:hover {
     cursor: pointer;
 }
-
 
 .contact-icon {
     height: 8vh;
@@ -347,6 +351,9 @@ a {
     height: 50px;
     transform: rotate3d(0, 1, 0, 0deg);
 }
+
+
+
 
 .message-container {
     opacity: 0;
@@ -368,20 +375,6 @@ a {
     left: 20%
 }
 
-@keyframes pop_up {
-    0% {
-        height: 50%;
-        opacity: 0;
-    }
-    50% {
-        height: 125%;
-        opacity: 1;
-    }
-    100% {
-        height: 100%;
-    }
-}
-
 .shake {
     animation: shake 1000ms cubic-bezier(.36,.07,.19,.97) both;
     animation-fill-mode: forwards;
@@ -396,6 +389,20 @@ a {
     animation-fill-mode: forwards;
 }
 
+
+@keyframes pop_up {
+    0% {
+        height: 50%;
+        opacity: 0;
+    }
+    50% {
+        height: 125%;
+        opacity: 1;
+    }
+    100% {
+        height: 100%;
+    }
+}
 
 @keyframes pop_up_hover {
     0% {
@@ -452,41 +459,45 @@ a {
 .scene {
     height: 100%;
     perspective: 1000px;
-  }
-  .card {
+}
+.card {
     width: 100%;
     height: 100%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
-  }
+}
 
-  .card__face {
+.card__face {
     position: absolute;
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     padding: 2vh;
-  }
+}
 
-  .card__face--back {
-      display: table;
+.card__face--back {
+    display: table;
     background: rgb(44,44,44, 0.5);
     border-radius: 30px;
     transform: rotateY( 180deg );
     width: 90%;
     left: 5%
-  }
+}
 
-  .card__face--back p {
+.card__face--back p {
     display: table-cell;
     vertical-align: middle;
 }
 
-  .card.is-flipped {
+.card.is-flipped {
     transform: rotateY(180deg);
-  }
+}
+
+.card-cancel {
+    float: left;
+}
 
 
 @media only all and (max-height: 800px) {
@@ -576,7 +587,8 @@ a {
         top: 50vh;
         width: 100vw;
         margin-left: -50vw;
-        margin-top: -25vh
+        margin-top: -25vh;
+        font-size: 2vh;
     }
 
     .contact-click a {
