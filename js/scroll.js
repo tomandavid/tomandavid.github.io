@@ -22,7 +22,6 @@ $(document).ready( function() {
     });
 });
 
-
 $(window).scroll(function(){
     if (window.scroll_down) {
         window.nxtpg = Math.ceil(theta)
