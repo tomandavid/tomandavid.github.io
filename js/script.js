@@ -303,7 +303,6 @@ function scroll_animation() {
             display: "none"
         });
         $(".scroller").css({
-            display: "block",
             opacity: 1
         });
     }

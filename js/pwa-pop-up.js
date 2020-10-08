@@ -4,6 +4,9 @@ $(document).ready(function(){
 function showAppInstallBanner() {
       let userAgent = navigator.userAgent;
       if (userAgent.match(/iPhone/i) || userAgent.match(/iPad/i)) {
+        $(".scroller").css({
+          display: "none"
+        })
         // dont show if PWA is installed
         if (window.matchMedia('(display-mode: standalone)').matches == false) {
           var app_enable = true
