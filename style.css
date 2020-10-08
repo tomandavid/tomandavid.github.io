@@ -466,8 +466,9 @@ strong {
     perspective: 1000px;
 }
 .card {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    left: 5%;
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
@@ -479,7 +480,6 @@ strong {
     width: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    padding-bottom: 2vh;
 }
 
 .card__face--back {
@@ -488,7 +488,6 @@ strong {
     border-radius: 30px;
     transform: rotateY( 180deg );
     width: 90%;
-    left: 5%
 }
 
 .card__face--back p {
@@ -562,13 +561,15 @@ strong {
         ". .";
     }
 
-    .card__face--back {
-        width: 100%;
-    }
-
     .background-rectangle {
         height: 75%;
-        margin-top: 2% ;
+    }
+
+    .card__face--front {
+        margin-top: 3vh;
+    }
+    .card__face--back {
+        padding: 10px;
     }
 
     .flex-container {
