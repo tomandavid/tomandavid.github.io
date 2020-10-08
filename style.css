@@ -8,14 +8,16 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none; 
 }
 
 html, body {
     background-color: var(--main-bg-color);
+    scrollbar-color: #990000
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 0px;
     background: transparent; 
     display: none;
@@ -633,7 +635,7 @@ strong {
     height: 100%;
     width: 5%;
     position: fixed;
-    right: 0;
+    left: 0;
     top: 40%;
     z-index: 12;
     transition: 500ms;
@@ -642,7 +644,6 @@ strong {
 .scroller div {
     display: block;
     height: 100%;
-
     text-align: center;
     cursor: default;
 }
