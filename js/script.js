@@ -298,7 +298,11 @@ function scroll_animation() {
         }
         $(".my-name").css({
             display: "none"
-        })
+        });
+        $(".scroller").css({
+            display: "block",
+            opacity: 1
+        });
     }
     else if (theta >= 0) {
         $(".curtain_01, .curtain_02").css({
@@ -323,6 +327,9 @@ function scroll_animation() {
         $(".my-name").css({
             display: "flex"
         })
+        $(".scroller").css({
+            opacity: Math.max((theta - 0.8)*5, 0)
+        });
         if (theta <= 0.5) {
             animation.goToAndStop(0, true);
             pop_down()

@@ -34,28 +34,29 @@ $(window).scroll(function(){
     else {
         window.nxtpg = Math.floor(theta)
     }
-        if (theta % 1 == 0) {
-            clearTimeout(window.v)
-            window.check = false
-            window.lstpg = theta
+    if (theta % 1 == 0) {
+        clearTimeout(window.v)
+        window.check = false
+        window.lstpg = theta
+    }
+    else {
+        if (window.device == "TouchPad") {
+            touchpad_scroll(500)
+        }
+        else if (window.device == "Mouse") {
+            touchpad_scroll(100)
+        }
+    }
+    if ($(window).width() < 1000) {
+        if (theta < 0.5 && theta != 0 && ios_fix == null) {
+            ios_fix_settimeout()
         }
         else {
-            if (window.device == "TouchPad") {
-                touchpad_scroll(500)
-            }
-            else if (window.device == "Mouse") {
-                touchpad_scroll(100)
-            }
+            ios_fix_cleartimeout()
         }
-        if ($(window).width() < 1000) {
-            if (theta < 0.5 && theta != 0 && ios_fix == null) {
-                ios_fix_settimeout()
-            }
-            else {
-                ios_fix_cleartimeout()
-            }
-        }
-    });
+    }
+    dot_slider()
+});
 
 function movetop() {
     var body = $("html, body");
@@ -93,9 +94,19 @@ function touchpad_scroll() {
     }, arguments[0]);
 }
 
-    
+function dot_slider() {
 
-$( window ).on( "orientationchange", function( event ) {
-    animation.destroy()
-    rectangle_animation()
-  });
+    var dot_select = theta
+
+    for (j = 1; j <= 5; j++) {
+        $(".dot_0" + j).css({
+            fill: "transparent",
+            transition: "all 250ms ease-in-out"
+        });
+    };
+    $(".dot_0" + dot_select).css({
+        fill: "rgb(225, 225, 225)",
+        transition: "all 250ms ease-in-out"
+    });
+        
+};
