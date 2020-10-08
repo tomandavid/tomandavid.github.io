@@ -135,6 +135,9 @@ function scroll_animation() {
         $(".contact-grid").css({
             top: 0.5 * $(window).height() + "px"
         });
+        $(".scroller").css({
+            opacity: 1
+        });
     }
 
     if (theta > 0.1) {

@@ -17,7 +17,7 @@ html, body {
 
 ::-webkit-scrollbar {
     width: 0px;
-    background: transparent;
+    background: transparent; /* make scrollbar transparent */
 }
 h2 {
     color: aliceblue;
