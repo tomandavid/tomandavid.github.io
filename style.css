@@ -515,7 +515,7 @@ strong {
     }
 }
 
-@media only screen and (max-width: 100) and (orientation: portrait) {
+@media only screen and (max-width: 1000) and (orientation: portrait) {
     .book h2 {
         font-size: 5vw;
         margin: 1vw
