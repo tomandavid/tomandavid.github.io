@@ -14,7 +14,7 @@ $(document).ready( function() {
         console.log("start: "+$(window).scrollTop())
     });
     window.addEventListener("touchend", function() {
-        console.log("end: "+$(window.scrollTop))
+        console.log("end: "+$(window.scrollTop()))
         if ($(window).scrollTop() < 1) {
             movetop(1, 500)
         }
