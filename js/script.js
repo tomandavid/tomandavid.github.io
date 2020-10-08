@@ -44,7 +44,6 @@ $(window).resize(function() {
     var resize_scroll = setTimeout(function(){
         touchpad_scroll()
     }, 500);
-    rectangle_animation()
 })
 
 function comp_theta() {
@@ -88,6 +87,12 @@ function reload_fix() {
         top: 0.49 * $(window).height() - 0.1 * $(window).width() + "px"
     })
 }
+
+
+$( window ).on( "orientationchange", function( event ) {
+    window.animation.destroy()
+    rectangle_animation()
+});
 
 function rectangle_animation() {
     if ($(window).width() < 1000 && window.orientation == 0) {
