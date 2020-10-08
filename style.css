@@ -17,8 +17,10 @@ html, body {
 
 ::-webkit-scrollbar {
     width: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: transparent; 
+    display: none;
 }
+
 h2 {
     color: aliceblue;
     font-size: 4vh;
