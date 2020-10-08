@@ -1,23 +1,6 @@
 
 $(document).ready(function(){
-    if ($(window).width() > 1000) {
-        var path_rectangle = "rectangle.json"
-    }
-    else {
-        var path_rectangle = "recrtanglemobile.json"
-    }
-
-    window.animation = bodymovin.loadAnimation({
-        container: document.getElementById("background-rectangle"),
-        rederer: "svg",
-        loop: false,
-        autoplay: false,
-        path: path_rectangle,
-        rendererSettings: {
-            preserveAspectRatio: 'none'
-        }
-    });
-    
+    rectangle_animation()
     comp_theta()
     movetop(Math.round(window.theta)-1)
     scroll_animation()
@@ -60,7 +43,8 @@ $(window).resize(function() {
     clearTimeout(resize_scroll);
     var resize_scroll = setTimeout(function(){
         touchpad_scroll()
-    }, 1000);
+    }, 500);
+    rectangle_animation()
 })
 
 function comp_theta() {
@@ -103,6 +87,26 @@ function reload_fix() {
     $(".my-name").css({
         top: 0.49 * $(window).height() - 0.1 * $(window).width() + "px"
     })
+}
+
+function rectangle_animation() {
+    if ($(window).width() < 1000 && window.matchMedia("(orientation: portrait)").matches) {
+        var path_rectangle = "rectanglemobile.json"
+    }
+    else {
+        var path_rectangle = "rectangle.json"
+    }
+
+    window.animation = bodymovin.loadAnimation({
+        container: document.getElementById("background-rectangle"),
+        rederer: "svg",
+        loop: false,
+        autoplay: false,
+        path: path_rectangle,
+        rendererSettings: {
+            preserveAspectRatio: 'none'
+        }
+    });
 }
 
 function scroll_animation() {
