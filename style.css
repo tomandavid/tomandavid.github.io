@@ -1,5 +1,6 @@
 :root {
     --main-bg-color: #181818;
+    --mobile-width: 10000
 }
 
 * {
@@ -514,7 +515,7 @@ strong {
     }
 }
 
-@media only all and (max-width: 1000px) {
+@media only screen and (max-width: 100) and (orientation: portrait) {
     .book h2 {
         font-size: 5vw;
         margin: 1vw

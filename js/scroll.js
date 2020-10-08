@@ -16,13 +16,13 @@ $(document).ready( function() {
     window.addEventListener("touchend", function() {
         console.log("end: "+$(window).scrollTop())
         if ($(window).scrollTop() < 1) {
-            movetop(1, 500)
+            movetop(1, 500 + "ms")
         }
         else if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-            movetop(lstpg + 1, 500);
+            movetop(lstpg + 1, 500 + "ms");
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-            movetop(lstpg - 1, 500);
+            movetop(lstpg - 1, 500 + "ms");
         }
     });
 });
@@ -84,18 +84,6 @@ function ios_fix_settimeout() {
 function ios_fix_cleartimeout() {
     clearTimeout(ios_fix)
     ios_fix = null
-}
-
-function mouse_scrolla() {
-    console.log("nx"+nxtpg)
-    if (window.scroll_timeout) {
-        window.scroll_timeout = false
-        setTimeout(function() {
-            scroll_timeout = true
-        }, 1000)
-        movetop(nxtpg, 200 + "ms", 0);
-        console.log("ahoj")
-    }
 }
 
 function touchpad_scroll() {
