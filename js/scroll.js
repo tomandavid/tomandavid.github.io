@@ -13,7 +13,10 @@ $(document).ready( function() {
         window.touchstart_scroll = $(window).scrollTop()
     });
     window.addEventListener("touchend", function() {
-        if ($(window).scrollTop() - window.touchstart_scroll > 0) {
+        if ($(window).scrollTop() < 1) {
+            movetop(1, 500)
+        }
+        else if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg + 1, 500);
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
