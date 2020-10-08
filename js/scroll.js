@@ -92,3 +92,12 @@ function touchpad_scroll() {
         movetop(nxtpg, 200 + "ms", 0);
     }, arguments[0]);
 }
+
+
+var supportsOrientationChange = "onorientationchange" in window,
+    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+window.addEventListener(orientationEvent, function() {
+    rectangle_animation()
+    console.log(window.orientation)
+}, false);

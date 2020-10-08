@@ -90,7 +90,7 @@ function reload_fix() {
 }
 
 function rectangle_animation() {
-    if ($(window).width() < 1000 && window.matchMedia("(orientation: portrait)").matches) {
+    if ($(window).width() < 1000 && window.orientation == 0) {
         var path_rectangle = "rectanglemobile.json"
     }
     else {
