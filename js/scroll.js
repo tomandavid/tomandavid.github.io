@@ -6,15 +6,15 @@ var ios_fix
 window.lstpg = window.theta
 
 window.addEventListener("mousewheel", scroll_direction, false);
-window.addEventListener("DOMMouseScroll", scroll_direction, false);
+window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
+window.addEventListener('keydown', scroll_direction, false);
+
 
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
-        console.log("start: "+$(window).scrollTop())
     });
     window.addEventListener("touchend", function() {
-        console.log("end: "+$(window).scrollTop())
         if ($(window).scrollTop() < 1) {
             movetop(1, 500 + "ms")
         }
@@ -28,6 +28,14 @@ $(document).ready( function() {
 });
 
 $(window).scroll(function(){
+    //mozilla fix
+    if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
+        window.scroll_down = true
+    }
+    else if (window.scroll_down == null && $(window).scrollTop() < window.last_scrolltop) {
+        window.scroll_down = false
+    }
+
     if (window.scroll_down) {
         window.nxtpg = Math.ceil(theta)
     }
@@ -56,6 +64,7 @@ $(window).scroll(function(){
         }
     }
     dot_slider()
+    window.last_scrolltop = $(window).scrollTop()
 });
 
 function movetop() {
@@ -71,8 +80,11 @@ function scroll_direction(e) {
     if (e.deltaY > 0) {
         window.scroll_down = true
     }
-    else {
+    else if (e.deltaY < 0) {
         window.scroll_down = false
+    }
+    else {
+        window.scroll_down = null
     }
 }
 
