@@ -57,7 +57,10 @@ $(window).resize(function() {
     $(".contact-grid").css({
         top: 0.5 * $(window).height() + "px"
     });
-    
+    clearTimeout(resize_scroll);
+    var resize_scroll = setTimeout(function(){
+        touchpad_scroll()
+    }, 1000);
 })
 
 function comp_theta() {
