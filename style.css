@@ -228,6 +228,41 @@ strong {
 
 
 
+.scroller {
+    opacity: 0;
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    left: 0;
+    top: 40%;
+    z-index: 12;
+    transition: 500ms;
+}
+
+.scroller div {
+    display: block;
+    height: 100%;
+    text-align: center;
+    cursor: default;
+}
+.scroller div img,
+.scroller div svg {
+    height: 10px;
+}
+
+.dot {
+    fill: transparent;
+    stroke: #eee;
+    stroke-miterlimit: 10;
+    stroke-width: 22px;
+    opacity: 0.7;
+}
+.dot_01 {
+    fill: #eee
+}
+
+
+
 .grid-container {
     position: absolute;
     height: 70%;
@@ -629,38 +664,3 @@ strong {
 }
     
 }
-
-
-.scroller {
-    opacity: 0;
-    height: 100%;
-    width: 5%;
-    position: fixed;
-    left: 0;
-    top: 40%;
-    z-index: 12;
-    transition: 500ms;
-}
-
-.scroller div {
-    display: block;
-    height: 100%;
-    text-align: center;
-    cursor: default;
-}
-.scroller div img,
-.scroller div svg {
-    height: 10px;
-}
-
-.dot {
-    fill: transparent;
-    stroke: #eee;
-    stroke-miterlimit: 10;
-    stroke-width: 22px;
-    opacity: 0.7;
-}
-.dot_01 {
-    fill: #eee
-}
-
