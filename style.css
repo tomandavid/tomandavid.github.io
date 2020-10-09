@@ -18,7 +18,7 @@ html, body {
 }
 
 html::-webkit-scrollbar {
-    width: auto;
+    width: 0;
     background: transparent; 
     display: block;
 }
