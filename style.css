@@ -17,7 +17,7 @@ html, body {
     scrollbar-color: #990000
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: auto;
     background: transparent; 
     display: block;
