@@ -138,6 +138,13 @@ function scroll_animation() {
         $(".scroller").css({
             opacity: 1
         });
+        $(".info-button").css({
+            opacity: 0
+        });
+        $(".info-button").css({
+            "background-color": "#222",
+            color: "#999"
+        })
     }
 
     if (theta > 0.1) {
@@ -305,6 +312,9 @@ function scroll_animation() {
         $(".scroller").css({
             opacity: 1
         });
+        $(".info-button").css({
+            opacity: 0
+        });
     }
     else if (theta >= 0) {
         $(".curtain_01, .curtain_02").css({
@@ -332,9 +342,18 @@ function scroll_animation() {
         $(".scroller").css({
             opacity: Math.max((theta - 0.8)*5, 0)
         });
+        $(".info-button").css({
+            opacity: 1 * (1 - theta)
+        });
         if (theta <= 0.5) {
             animation.goToAndStop(0, true);
             pop_down()
+            $(".info-container").addClass("scale")
+            document.getElementById("i").innerHTML = "i"
+            $(".info-button").css({
+                "background-color": "#222",
+                color: "#999"
+            })
         }
         $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
             display: "none"

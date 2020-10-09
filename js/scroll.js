@@ -15,10 +15,7 @@ $(document).ready( function() {
         window.touchstart_scroll = $(window).scrollTop()
     });
     window.addEventListener("touchend", function() {
-        if ($(window).scrollTop() < 1) {
-            movetop(1, 500 + "ms")
-        }
-        else if ($(window).scrollTop() - window.touchstart_scroll > 0) {
+        if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg + 1, 500 + "ms");
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
@@ -29,6 +26,7 @@ $(document).ready( function() {
 
 $(window).scroll(function(){
     //mozilla fix
+    console.log($(window).scrollTop())
     if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
     }
@@ -49,10 +47,11 @@ $(window).scroll(function(){
     }
     else {
         if (window.device == "TouchPad") {
-            touchpad_scroll(500)
+            touchpad_scroll(300)
         }
         else if (window.device == "Mouse") {
             touchpad_scroll(100)
+            console.log("ag")
         }
     }
     if ($(window).width() < 1000) {

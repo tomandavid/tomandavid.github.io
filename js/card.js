@@ -242,6 +242,28 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+    var info_button = document.querySelector('.info-button');
+    var info_container = document.querySelector('.info-container');
+    info_button.addEventListener( 'click', function() {
+        info_container.classList.toggle("scale");
+        var x = document.getElementById("i");
+        if (x.innerHTML === "X") {
+          x.innerHTML = "i"
+          $(".info-button").css({
+              "background-color": "#222",
+              color: "#999"
+          })
+        } else {
+          x.innerHTML = "X"
+          $(".info-button").css({
+            "background-color": "#666",
+            color: "#444",
+            "border-color": "#666"
+        })
+        }
+    });
+});
 
 $(document).ready(function(){
     window.addEventListener( 'touchstart', function() {
