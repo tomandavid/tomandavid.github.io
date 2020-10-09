@@ -164,6 +164,7 @@ strong {
     padding: 5px;
 }
 .info-button {
+    display: "none";
     position: fixed;
     height: 30px;
     width: 30px;

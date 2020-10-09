@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     rectangle_animation()
     comp_theta()
@@ -139,7 +138,7 @@ function scroll_animation() {
             opacity: 1
         });
         $(".info-button").css({
-            opacity: 0,
+            display: "none",
             "background-color": "#222",
             color: "#999"
         })
@@ -310,9 +309,6 @@ function scroll_animation() {
         $(".scroller").css({
             opacity: 1
         });
-        $(".info-button").css({
-            opacity: 0
-        });
     }
     else if (theta >= 0) {
         $(".curtain_01, .curtain_02").css({
@@ -349,8 +345,10 @@ function scroll_animation() {
             $(".info-container").addClass("scale")
             document.getElementById("i").innerHTML = "i"
             $(".info-button").css({
+                opacity: 1 * (1 - theta),
+                display: "block",
                 "background-color": "#222",
-                color: "#999"
+                color: "#999",
             })
         }
         $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
