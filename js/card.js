@@ -251,7 +251,7 @@ $(document).ready(function(){
         if (x.innerHTML === "X") {
           x.innerHTML = "i"
           $(".info-button").css({
-              "background-color": "#222",
+              "background-color": "var(--main-bg-color)",
               color: "#999"
           })
         } else {
