@@ -139,7 +139,7 @@ function scroll_animation() {
         });
         $(".info-button").css({
             display: "none",
-            "background-color": "#222",
+            "background-color": "var(--main-bg-color)",
             color: "#999"
         })
     }
