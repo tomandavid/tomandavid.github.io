@@ -139,9 +139,7 @@ function scroll_animation() {
             opacity: 1
         });
         $(".info-button").css({
-            opacity: 0
-        });
-        $(".info-button").css({
+            opacity: 0,
             "background-color": "#222",
             color: "#999"
         })
