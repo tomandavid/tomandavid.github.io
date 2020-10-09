@@ -605,21 +605,6 @@ strong {
         font-size: 20%;
         margin: 0;
     }
-    .info-container {
-        width: 85%;
-        padding: 10px;
-        max-height: 80vh;
-        overflow-y: scroll;
-    }
-    .info-container h2{
-        padding-top: 20px;
-        padding-bottom: 0;
-        margin-bottom: 10px;
-    }
-    .info-container p{
-        font-size: 15px;
-        line-height: 25px;
-    }
 }
 
 @media only screen and (max-width: 1000px) and (orientation: portrait) {
