@@ -144,7 +144,7 @@ function scroll_animation() {
         })
     }
 
-    if (theta > 0.1) {
+    if (theta > 0.5) {
         $(".app-container").removeClass("shake")
         $(".app-container").addClass("fade-out")
     }
