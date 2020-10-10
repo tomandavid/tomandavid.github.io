@@ -10,6 +10,7 @@ window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
 window.addEventListener('keydown', scroll_direction, false);
 
+
 window.addEventListener( 'touchstart', function() {
     window.touchstart_scroll = $(window).scrollTop()
     console.log("start "+lstpg+" "+theta)
@@ -23,11 +24,6 @@ window.addEventListener("touchend", function() {
         movetop(lstpg - 1, 500 + "ms");
     }
 });
-
-window.addEventListener("touchmove", function() {
-    movetop(nxtpg, 500 + "ms");
-}, false);
-
 
 $(window).scroll(function(){
     //mozilla fix
@@ -50,11 +46,11 @@ $(window).scroll(function(){
         window.lstpg = theta
     }
     else {
-        if (window.device == "TouchPad") {
-            touchpad_scroll(300)
-        }
-        else if (window.device == "Mouse") {
+        if (window.device == "Mouse") {
             touchpad_scroll(100)
+        }
+        else {
+            touchpad_scroll(300)
         }
     }
     if ($(window).width() < 1000) {
