@@ -4,25 +4,19 @@ window.scroll_timeout = true
 window.v = 0
 var ios_fix
 window.lstpg = window.theta
-window.touchstart_check = false
 
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
 window.addEventListener('keydown', scroll_direction, false);
-
+object.addEventListener("touchmove", scroll_direction, false);
 
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
-        if (window.touchstart_check) {
-            movetop(nxtpg, 500 + "ms");
-        }
-        window.touchstart_check = true
         window.touchstart_scroll = $(window).scrollTop()
         console.log("start "+lstpg+" "+theta)
     });
     window.addEventListener("touchend", function() {
         console.log("end "+lstpg+" "+theta)
-        window.touchstart_check = false
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg + 1, 500 + "ms");
         } 
@@ -78,6 +72,7 @@ function movetop() {
 };
 
 function scroll_direction(e) {
+    console.log("touchmove")
     var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
