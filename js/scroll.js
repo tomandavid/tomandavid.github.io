@@ -16,17 +16,18 @@ $(document).ready( function() {
     });
     window.addEventListener("touchend", function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
+            console.log("start "+lstpg)
             movetop(lstpg + 1, 500 + "ms");
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
             movetop(lstpg - 1, 500 + "ms");
+            console.log("end "+lstpg)
         }
     });
 });
 
 $(window).scroll(function(){
     //mozilla fix
-    console.log($(window).scrollTop())
     if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
     }
