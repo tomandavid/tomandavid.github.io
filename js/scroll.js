@@ -16,12 +16,12 @@ $(document).ready( function() {
     });
     window.addEventListener("touchend", function() {
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-            console.log("up "+lstpg+" "+"theta")
+            console.log("up "+lstpg+" "+theta)
             movetop(lstpg + 1, 500 + "ms");
         } 
         else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
             movetop(lstpg - 1, 500 + "ms");
-            console.log("up "+lstpg+" "+"theta")
+            console.log("up "+lstpg+" "+theta)
         }
     });
 });
