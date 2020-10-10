@@ -8,7 +8,7 @@ window.lstpg = window.theta
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
 window.addEventListener('keydown', scroll_direction, false);
-object.addEventListener("touchmove", scroll_direction, false);
+window.addEventListener("touchmove", scroll_direction, false);
 
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
