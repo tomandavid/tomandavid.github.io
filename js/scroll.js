@@ -13,9 +13,10 @@ window.addEventListener('keydown', scroll_direction, false);
 $(document).ready( function() {
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
-        console.log("up "+lstpg+" "+theta)
+        console.log("start "+lstpg+" "+theta)
     });
     window.addEventListener("touchend", function() {
+        console.log("end "+lstpg+" "+theta)
         if ($(window).scrollTop() - window.touchstart_scroll > 0) {
             movetop(lstpg + 1, 500 + "ms");
         } 
