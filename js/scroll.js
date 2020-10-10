@@ -4,13 +4,14 @@ window.scroll_timeout = true
 window.v = 0
 var ios_fix
 window.lstpg = window.theta
+window.nxtpg = 1
 
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
 window.addEventListener('keydown', scroll_direction, false);
-window.addEventListener("touchmove", scroll_direction, false);
+window.addEventListener("touchmove", touchmove, false);
 
-$(document).ready( function() {
+function touchmove() {
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
         console.log("start "+lstpg+" "+theta)
@@ -24,7 +25,7 @@ $(document).ready( function() {
             movetop(lstpg - 1, 500 + "ms");
         }
     });
-});
+}
 
 $(window).scroll(function(){
     //mozilla fix
