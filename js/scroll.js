@@ -13,10 +13,8 @@ window.addEventListener('keydown', scroll_direction, false);
 
 window.addEventListener( 'touchstart', function() {
     window.touchstart_scroll = $(window).scrollTop()
-    console.log("start "+lstpg+" "+theta)
 });
 window.addEventListener("touchend", function() {
-    console.log("end "+lstpg+" "+theta)
     if ($(window).scrollTop() - window.touchstart_scroll > 0) {
         movetop(lstpg + 1, 500 + "ms");
     } 
@@ -36,6 +34,9 @@ $(window).scroll(function(){
 
     if (window.scroll_down) {
         window.nxtpg = Math.ceil(theta)
+        if (theta == 0) {
+            window.nxtpg = 1
+        }
     }
     else {
         window.nxtpg = Math.floor(theta)
@@ -71,7 +72,6 @@ function movetop() {
 };
 
 function scroll_direction(e) {
-    console.log("touchmove")
     var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
