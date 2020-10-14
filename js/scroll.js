@@ -5,6 +5,7 @@ window.v = 0
 var ios_fix
 window.lstpg = window.theta
 window.nxtpg = 1
+var theta
 
 window.addEventListener("mousewheel", scroll_direction, false);
 window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
@@ -24,6 +25,8 @@ window.addEventListener("touchend", function() {
 });
 
 $(window).scroll(function(){
+    a[100] = 0
+    console.log(a.length)
     //mozilla fix
     if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
