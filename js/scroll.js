@@ -25,8 +25,6 @@ window.addEventListener("touchend", function() {
 });
 
 $(window).scroll(function(){
-    a[100] = 0
-    console.log(a.length)
     //mozilla fix
     if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
