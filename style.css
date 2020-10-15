@@ -170,7 +170,6 @@ strong {
     border-radius: 50%;
     background-color: var(--main-bg-color);
     z-index: 12;
-
 }
 
 .info-button:hover {
@@ -468,9 +467,6 @@ strong {
 .shake {
     animation: shake 1000ms cubic-bezier(.36,.07,.19,.97) both;
     animation-fill-mode: forwards;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px;
 }
 
 .fade-out {
@@ -560,7 +556,6 @@ strong {
 
 @keyframes shake {
     0% {
-
     }
     10% {
         transform: translate3d(-1px, 0, 0);
@@ -580,13 +575,15 @@ strong {
 
     50% {
         transform: translate3d(-4px, 0, 0);
-        opacity: 1;
+
     }
 
     90% {
         transform: translate3d(-1px, 0, 0);
-        opacity: 1;
+
         
+    }
+    100% {
     }
   }
 
