@@ -346,7 +346,7 @@ function scroll_animation() {
             opacity: Math.max((theta - 0.8)*5, 0)
         });
         $(".info-button").css({
-            opacity: 1 * (1 - theta)
+            opacity: (1 - theta)
         });
         if (theta >= 0.5) {
             animation.goToAndStop(0, true);
