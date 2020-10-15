@@ -345,6 +345,9 @@ function scroll_animation() {
         $(".scroller").css({
             opacity: Math.max((theta - 0.8)*5, 0)
         });
+        $(".shake").css({
+            opacity: (1 - theta),
+        })
         if (theta >= 0.5) {
             animation.goToAndStop(0, true);
             pop_down()
@@ -352,15 +355,8 @@ function scroll_animation() {
             document.getElementById("i").innerHTML = "i"
             $(".info-button").css({
                 display: "block",
-                opacity: Math.max(1 - theta * 2, 0),
                 color: "#c4c4c4c4",
                 "background-color": "var(--main-bg-color)",
-            })
-        }
-        else{
-            $(".info-button").css({
-                display: "block",
-                opacity: 1
             })
         }
         $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
