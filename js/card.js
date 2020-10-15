@@ -204,7 +204,6 @@ $(document).ready(function(){
     var line_01 = document.querySelector('.line_01');
     var line_02 = document.querySelector('.line_02');
     var cancel_01 = document.querySelector('.contact-cancel');
-    var cancel_02 = document.querySelector('.second-page');
     grid.addEventListener( 'click', function() {
         card.classList.add('message-show');
         blur.classList.add('blur-me');
@@ -212,12 +211,6 @@ $(document).ready(function(){
         line_02.classList.add('blur-me');
     });
     cancel_01.addEventListener( 'click', function() {
-        card.classList.remove('message-show');
-        blur.classList.remove('blur-me');
-        line_01.classList.remove('blur-me');
-        line_02.classList.remove('blur-me');
-    });
-    cancel_02.addEventListener( 'click', function() {
         card.classList.remove('message-show');
         blur.classList.remove('blur-me');
         line_01.classList.remove('blur-me');
@@ -254,7 +247,8 @@ $(document).ready(function(){
               "background-color": "var(--main-bg-color)",
               color: "#999"
           })
-        } else {
+        } 
+        else {
           x.innerHTML = "X"
           $(".info-button").css({
             "background-color": "#666",
@@ -268,9 +262,6 @@ $(document).ready(function(){
 $(document).ready(function(){
     window.addEventListener( 'touchstart', function() {
         window.touchstart_scroll = $(window).scrollTop()
-    });
-    window.addEventListener( 'touchleave', function() {
-       console.log("touch")
     });
 });
 

@@ -8,8 +8,8 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/lottie.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/card.js"></script>
     <script src="js/scroll.js"></script>
+    <script src="js/card.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact.css">
@@ -37,290 +37,327 @@
         gtag('config', 'UA-180334839-1');
     </script>
 
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/498242db729e65ad254f1b48c/02125bfc8c97e97814acf8760.js");</script>
 
+    <script>
+        $(document).ready(function(){
+            sendMail()
+        })
+    function sendMail() {
+    $.ajax({
+      type: 'POST',
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      data: {
+        'key': 'YOUR API KEY HERE',
+        'message': {
+          'from_email': 'YOUR@EMAIL.HERE',
+          'to': [
+              {
+                'email': 'toman.david@me.com',
+                'name': 'RECIPIENT NAME (OPTIONAL)',
+                'type': 'to'
+              }
+            ],
+          'autotext': 'true',
+          'subject': 'YOUR SUBJECT HERE!',
+          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
+        }
+      }
+     }).done(function(response) {
+       console.log(response); // if you're into that sorta thing
+     });
+}
+    </script>
 </head>
 
 <body>
-    <div class="landing-page">
-        <div class="my-name">
-            <h1>D</h1>
-            <h1>a</h1>
-            <h1>v</h1>
-            <h1>i</h1>
-            <h1>d</h1>
-            <h1>&nbsp</h1>
-            <h1>T</h1>
-            <h1>o</h1>
-            <h1>m</h1>
-            <h1>a</h1>
-            <h1>n</h>
-        </div>
-        <div class="line-container">
-            <div class="line_01"></div>
-            <div class="line_02"></div>
-        </div>
-        <div class="curtain_01"></div>
-        <div class="curtain_02"></div>
-        <div class="info-container scale">
-            <h2 class="hide">Welcome to my website!</h2>      
-            <p class="hide">This is a demonstration of one week full-time working on one project. Each line of HTML5, CSS3 and JavaScript is written from scratch without using any templates and third-party libraries but jQuery for listening to scroll events and editing CSS classes and Lottie library for running animations rendered in Adobe After Effects.</p>
-            <p class="hide">Also Illustrator and XD are used for creating vector graphics and for defining design and layout in pre-development phase. This website is using most recent technologies which make it installable as Progressive Web Application. You can also find some of  my templates in the portfolio below.</p>
-        </div>
-        <div class="info-button shake" id="i">
-            i
-        </div>
-        <div class="app-container shake">
-            <h3>Install the App!</h3>
-            <div class="app-text">
-                <div class="app-number">1</div>
-                <p>Click on Share</p>
-                <img class="app-icon" src="img/ios_share.svg">
+    <div class="snap-container" id="snap">
+        <div class="snap-block">
+        <div class="landing-page">
+            <div class="my-name">
+                <h1>D</h1>
+                <h1>a</h1>
+                <h1>v</h1>
+                <h1>i</h1>
+                <h1>d</h1>
+                <h1>&nbsp</h1>
+                <h1>T</h1>
+                <h1>o</h1>
+                <h1>m</h1>
+                <h1>a</h1>
+                <h1>n</h>
             </div>
-            <div class="app-text">
-                <div class="app-number">2</div>
-                <p>Add to Home Screen</p>
-                <img class="app-icon" src="img/ios_add.svg">
+            <div class="line-container">
+                <div class="line_01"></div>
+                <div class="line_02"></div>
             </div>
-            <div class="app-text">
-                <div class="app-number">3</div>
-                <p>Click on</p>
-                <p style="color: #3399FF; font-size: 70%; line-height: 150%; font-weight: 300; margin-left: 0;">Add</p>
+            <div class="curtain_01"></div>
+            <div class="curtain_02"></div>
+            <div class="info-container scale">
+                <h2 class="hide">Welcome to my website!</h2>      
+                <p class="hide">This is a demonstration of one week full-time working on one project. Each line of HTML5, CSS3 and JavaScript is written from scratch without using any templates and third-party libraries but jQuery for listening to scroll events and editing CSS classes and Lottie library for running animations rendered in Adobe After Effects.</p>
+                <p class="hide">Also Illustrator and XD are used for creating vector graphics and for defining design and layout in pre-development phase. This website is using most recent technologies which make it installable as Progressive Web Application. You can also find some of  my templates in the portfolio below.</p>
             </div>
-        </div>
+            <div class="info-button shake" id="i">
+                i
+            </div>
+            <div class="app-container shake">
+                <h3>Install the App!</h3>
+                <div class="app-text">
+                    <div class="app-number">1</div>
+                    <p>Click on Share</p>
+                    <img class="app-icon" src="img/ios_share.svg">
+                </div>
+                <div class="app-text">
+                    <div class="app-number">2</div>
+                    <p>Add to Home Screen</p>
+                    <img class="app-icon" src="img/ios_add.svg">
+                </div>
+                <div class="app-text">
+                    <div class="app-number">3</div>
+                    <p>Click on</p>
+                    <p style="color: #3399FF; font-size: 70%; line-height: 150%; font-weight: 300; margin-left: 0;">Add</p>
+                </div>
+            </div>
 
-        <div class="scroller">
-            <div>
-                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
-                    <circle class="dot dot_01" cx="245.33" cy="245.33" r="93"/>
-                </svg><br>
-                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
-                    <circle class="dot dot_02" cx="245.33" cy="245.33" r="93"/>
-                </svg><br>
-                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
-                    <circle class="dot dot_03" cx="245.33" cy="245.33" r="93"/>
-                </svg><br>
-                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
-                    <circle class="dot dot_04" cx="245.33" cy="245.33" r="93"/>
-                </svg><br>
-                <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
-                    <circle class="dot dot_05" cx="245.33" cy="245.33" r="93"/>
-                </svg>
+            <div class="scroller">
+                <div>
+                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
+                        <circle class="dot dot_01" cx="245.33" cy="245.33" r="93"/>
+                    </svg><br>
+                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
+                        <circle class="dot dot_02" cx="245.33" cy="245.33" r="93"/>
+                    </svg><br>
+                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
+                        <circle class="dot dot_03" cx="245.33" cy="245.33" r="93"/>
+                    </svg><br>
+                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
+                        <circle class="dot dot_04" cx="245.33" cy="245.33" r="93"/>
+                    </svg><br>
+                    <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490.67 490.67">
+                        <circle class="dot dot_05" cx="245.33" cy="245.33" r="93"/>
+                    </svg>
+                </div>
             </div>
-        </div>
 
-    </div>
-    <div class="book book_01">
-        <h2>Clean, Functional & Fancy Feathered Website</h1>
-        <h3>Cross Platform Full-Stack Developement</h3>
-        <div class="background-rectangle" id="background-rectangle"></div>
-        <div class="grid-container" id="grid-container">
-            <div class="grid-item grid-item-one scene">
-                <div class="card card-one">
-                    <div class="card__face card__face--front">
-                        <img src="img/javascript.png">
-                        <h2>(JavaScript)</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Using jQuery library makes your website stable and supported by all browsers on all devices.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item grid-item-two scene">
-                <div class="card card-two">
-                    <div class="card__face card__face--front">
-                        <img src="img/html5.png">
-                        <h2>&#60;HTML5&#62;</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Layout of your website designed by newest version of HTML. </p>
+        </div>
+        <div class="book book_01">
+            <h2>Clean, Functional & Fancy Feathered Website</h1>
+            <h3>Cross Platform Full-Stack Developement</h3>
+            <div class="background-rectangle" id="background-rectangle"></div>
+            <div class="grid-container" id="grid-container">
+                <div class="grid-item grid-item-one scene">
+                    <div class="card card-one">
+                        <div class="card__face card__face--front">
+                            <img src="img/javascript.png">
+                            <h2>(JavaScript)</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Using jQuery library makes your website stable and supported by all browsers on all devices.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item grid-item-three scene">
-                <div class="card card-three">
-                    <div class="card__face card__face--front">
-                        <img src="img/css3.png">
-                        <h2>&#123;CSS3&#125;</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Most efficient way to make browser visualisation and animation controlled by JavaScript.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item grid-item-four scene">
-                <div class="card card-four">
-                    <div class="card__face card__face--front">
-                        <img src="img/sql.png">
-                        <h2>(SQL)</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>MySQL and PostgreSQL database development and connection to website active elements. </p>
+                <div class="grid-item grid-item-two scene">
+                    <div class="card card-two">
+                        <div class="card__face card__face--front">
+                            <img src="img/html5.png">
+                            <h2>&#60;HTML5&#62;</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Layout of your website designed by newest version of HTML. </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item grid-item-five scene">
-                <div class="card card-five">
-                    <div class="card__face card__face--front">
-                        <img src="img/python.png">
-                        <h2>[Python3]</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Data processing and visualisation with Data Science libraries Pandas, NumPy, Scikit-learn, Seaborn, etc. </p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item grid-item-six scene">
-                <div class="card card-six">
-                    <div class="card__face card__face--front">
-                        <img src="img/php.png">
-                        <h2>(PHP)</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Content Management System, Live chat, Mail form, Login box and other server-side processes.</p>
+                <div class="grid-item grid-item-three scene">
+                    <div class="card card-three">
+                        <div class="card__face card__face--front">
+                            <img src="img/css3.png">
+                            <h2>&#123;CSS3&#125;</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Most efficient way to make browser visualisation and animation controlled by JavaScript.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item grid-item-seven scene">
-                <div class="card card-seven">
-                    <div class="card__face card__face--front">
-                        <img src="img/ai.png">
-                        <h2>Illustrator</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Vector graphic makes website design sharp and clean looking.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item grid-item-eight scene">
-                <div class="card card-eight">
-                    <div class="card__face card__face--front">
-                        <img src="img/ps.png">
-                        <h2>PhotoShop</h2>
-                    </div>
-                    <div class="card__face card__face--back">
-                        <p>Editing your photos to make them naturally fit to the website content.</p>
+                <div class="grid-item grid-item-four scene">
+                    <div class="card card-four">
+                        <div class="card__face card__face--front">
+                            <img src="img/sql.png">
+                            <h2>(SQL)</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>MySQL and PostgreSQL database development and connection to website active elements. </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="grid-item grid-item-nine scene">
-                <div class="card card-nine">
-                    <div class="card__face card__face--front">
-                        <img src="img/xd.png">
-                        <h2>XD</h2>
+                <div class="grid-item grid-item-five scene">
+                    <div class="card card-five">
+                        <div class="card__face card__face--front">
+                            <img src="img/python.png">
+                            <h2>[Python3]</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Data processing and visualisation with Data Science libraries Pandas, NumPy, Scikit-learn, Seaborn, etc. </p>
+                        </div>
                     </div>
-                    <div class="card__face card__face--back">
-                        <p>Designing your website with most recent tool.</p>
+                </div>
+                <div class="grid-item grid-item-six scene">
+                    <div class="card card-six">
+                        <div class="card__face card__face--front">
+                            <img src="img/php.png">
+                            <h2>(PHP)</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Content Management System, Live chat, Mail form, Login box and other server-side processes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item grid-item-seven scene">
+                    <div class="card card-seven">
+                        <div class="card__face card__face--front">
+                            <img src="img/ai.png">
+                            <h2>Illustrator</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Vector graphic makes website design sharp and clean looking.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item grid-item-eight scene">
+                    <div class="card card-eight">
+                        <div class="card__face card__face--front">
+                            <img src="img/ps.png">
+                            <h2>PhotoShop</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Editing your photos to make them naturally fit to the website content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item grid-item-nine scene">
+                    <div class="card card-nine">
+                        <div class="card__face card__face--front">
+                            <img src="img/xd.png">
+                            <h2>XD</h2>
+                        </div>
+                        <div class="card__face card__face--back">
+                            <p>Designing your website with most recent tool.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="book book_02">
-        <h2>Art Company Website</h2>
-        <h3>Three core values represented as three sides of the Penrose triangle. <strong>Client's idea</strong> of triangle theory is reflected in <strong>impressing animation</strong> which makes artistic company unique and easy to remember.</h3>
-        <div class="flex-container">
-            <div class="flex-item one-fix">
-                <p>Desktop version</p>
-                <video id="ddd" height="100%" controls loop stop playsinline preload="metadata">
-                    <source src="video/banana.mp4#t=0.001" type="video/mp4" poster="images/logo-96x96.png">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="flex-item two-fix">
-                <p>Mobile version</p>
-                <video id="ddd_mobile" height="100%" controls loop stop playsinline auto preload="metadata">
-                    <source src="video/banana_mobile.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-    <div class="book book_03">
-        <h2>Business Website</h2>
-        <h3>Emphasis is placed on simple page navigation, <strong>banners with custom graphics</strong> to attract customer's attention. <strong>SEO customization</strong> highlights your website on <strong>Google</strong> above a competition companies.</h3>
-        <div class="flex-container">
-            <div class="flex-item one-fix">
-                <p>Desktop version</p>
-                <video id="ddd" height="100%" controls loop stop preload="metadata">
-                    <source src="video/ddd.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="flex-item two-fix">
-                <p>Mobile version</p>
-                <video id="ddd_mobile" height="100%" controls loop stop preload="metadata">
-                    <source src="video/ddd_mobile.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="book book_02">
+            <h2>Art Company Website</h2>
+            <h3>Three core values represented as three sides of the Penrose triangle. <strong>Client's idea</strong> of triangle theory is reflected in <strong>impressing animation</strong> which makes artistic company unique and easy to remember.</h3>
+            <div class="flex-container">
+                <div class="flex-item one-fix">
+                    <p>Desktop version</p>
+                    <video id="ddd" height="100%" controls loop stop playsinline preload="metadata">
+                        <source src="video/banana.mp4#t=0.001" type="video/mp4" poster="images/logo-96x96.png">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="flex-item two-fix">
+                    <p>Mobile version</p>
+                    <video id="ddd_mobile" height="100%" controls loop stop playsinline auto preload="metadata">
+                        <source src="video/banana_mobile.mp4#t=0.001" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="book book_04">
-        <h2>Restaurant Website</h2>
-        <h3><strong>Budget friendly website</strong> based on simple mission - show customers <strong>Menú del Día</strong>. With <strong>Content Management System</strong> you are able to update your website, <strong>post blog articles</strong> or post other business messages even from your <strong>mobile phone</strong>.</h3>
-        <div class="flex-container">
-            <div class="flex-item one-fix">
-                <p>Desktop version</p>
-                <video id="ddd" height="100%" controls loop stop preload="metadata">
-                    <source src="video/bufet.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="flex-item two-fix">
-                <p>Mobile version</p>
-                <video id="ddd_mobile" height="100%" controls loop stop preload="metadata">
-                    <source src="video/bufet_mobile.mp4#t=0.001" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+        <div class="book book_03">
+            <h2>Business Website</h2>
+            <h3>Emphasis is placed on simple page navigation, <strong>banners with custom graphics</strong> to attract customer's attention. <strong>SEO customization</strong> highlights your website on <strong>Google</strong> above a competition companies.</h3>
+            <div class="flex-container">
+                <div class="flex-item one-fix">
+                    <p>Desktop version</p>
+                    <video id="ddd" height="100%" controls loop stop preload="metadata">
+                        <source src="video/ddd.mp4#t=0.001" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="flex-item two-fix">
+                    <p>Mobile version</p>
+                    <video id="ddd_mobile" height="100%" controls loop stop preload="metadata">
+                        <source src="video/ddd_mobile.mp4#t=0.001" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="contact-grid">
-        <div></div>
-        <div class="contact-click">
-            <img class="contact-icon mail hover-pointer" src="img/mail.svg"><br>
-            <a>toman.david@me.com</a>
-        </div>
-        <div></div>
-        <div class="contact-click linkedin hover-pointer">
-            <img class="contact-icon" src="img/linkedin.svg"><br>
-            <a href="https://www.linkedin.com/in/tomandavid/" target="_blank" class="contact-form">in/tomandavid</a>
-        </div>
-        <div></div>
-        <div class="contact-click message-me hover-pointer">
-            <img class="contact-icon" src="img/contact-form.svg"><br>
-            <a class="contact-form">Message me!</a>
-        </div>
-        <div></div>
-        <div class="contact-click">
-            <img class="contact-icon phone hover-pointer" src="img/phone.svg"><br>
-            <a>+34 610 931 610</a>
-        </div>
-        <div></div>
-    </div>
-    <div class="message-container">
-        <img class="contact-cancel" src="img/contact-cancel.svg">
-        <div class="container">
-            <form action="https://formspree.io/f/moqpjprb" method="post" id="contact_form">
-            <div class="name">
-                <label for="name"></label>
-                <input type="text" placeholder="Name" name="name" id="name_input" required>
+        <div class="book book_04">
+            <h2>Restaurant Website</h2>
+            <h3><strong>Budget friendly website</strong> based on simple mission - show customers <strong>Menú del Día</strong>. With <strong>Content Management System</strong> you are able to update your website, <strong>post blog articles</strong> or post other business messages even from your <strong>mobile phone</strong>.</h3>
+            <div class="flex-container">
+                <div class="flex-item one-fix">
+                    <p>Desktop version</p>
+                    <video id="ddd" height="100%" controls loop stop preload="metadata">
+                        <source src="video/bufet.mp4#t=0.001" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="flex-item two-fix">
+                    <p>Mobile version</p>
+                    <video id="ddd_mobile" height="100%" controls loop stop preload="metadata">
+                        <source src="video/bufet_mobile.mp4#t=0.001" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
-            <div class="email">
-                <label for="email"></label>
-                <input type="email" placeholder="E-mail" name="email" id="email_input" required>
+        </div>
+        <div class="contact-grid">
+            <div></div>
+            <div class="contact-click">
+                <img class="contact-icon mail hover-pointer" src="img/mail.svg"><br>
+                <a>toman.david@me.com</a>
             </div>
-            <div class="message">
-                <label for="message"></label>
-                <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+            <div></div>
+            <div class="contact-click linkedin hover-pointer">
+                <img class="contact-icon" src="img/linkedin.svg"><br>
+                <a href="https://www.linkedin.com/in/tomandavid/" target="_blank" class="contact-form">in/tomandavid</a>
             </div>
-            <div class="submit">
-                <input type="submit" value="Submit" id="form_button" />
+            <div></div>
+            <div class="contact-click message-me hover-pointer">
+                <img class="contact-icon" src="img/contact-form.svg"><br>
+                <a class="contact-form">Message me!</a>
             </div>
-            </form><!-- // End form -->
-        </div><!-- // End #container -->
-    </div>
-    <div class="second-page"></div>
+            <div></div>
+            <div class="contact-click">
+                <img class="contact-icon phone hover-pointer" src="img/phone.svg"><br>
+                <a>+34 610 931 610</a>
+            </div>
+            <div></div>
+        </div>
+        <div class="message-container">
+            <img class="contact-cancel" src="img/contact-cancel.svg">
+            <div class="container">
+                <form action="https://formspree.io/f/moqpjprb" method="post" id="contact_form">
+                <div class="name">
+                    <label for="name"></label>
+                    <input type="text" placeholder="Name" name="name" id="name_input" required>
+                </div>
+                <div class="email">
+                    <label for="email"></label>
+                    <input type="email" placeholder="E-mail" name="email" id="email_input" required>
+                </div>
+                <div class="message">
+                    <label for="message"></label>
+                    <textarea name="message" placeholder="Message" id="message_input" cols="30" rows="5" required></textarea>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit" id="form_button" />
+                </div>
+                </form><!-- // End form -->
+            </div><!-- // End #container -->
+        </div>
+        <div class="snap-block"></div>
+        <div class="snap-block"></div>
+        <div class="snap-block"></div>
+        <div class="snap-block"></div>
+        <div class="snap-block"></div>
+        <div class="snap-block"></div>
     </div>
 </body>
 

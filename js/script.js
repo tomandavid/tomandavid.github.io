@@ -1,12 +1,18 @@
 $(document).ready(function(){
     rectangle_animation()
     comp_theta()
-    movetop(Math.round(window.theta)-1)
     scroll_animation()
     reload_fix()
+
+    setInterval(function() {
+        scroll_animation()
+        name_fade()
+        dot_slider()
+    }, 20);
+
 });
 
-$(window).scroll(function(){
+$(".snap-container").scroll(function(){
     comp_theta()
     scroll_animation()
     name_fade()
@@ -41,12 +47,11 @@ $(window).resize(function() {
     });
     clearTimeout(resize_scroll);
     var resize_scroll = setTimeout(function(){
-        touchpad_scroll()
     }, 500);
 })
 
 function comp_theta() {
-    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 1000) / 1000;
+    window.theta = Math.round($(".snap-container").scrollTop() / $(".snap-container").height() * 1000) / 1000;
     window.theta = Math.min(window.theta, 5)
 }
 
@@ -78,8 +83,11 @@ function reload_fix() {
             right: 5 + 45 + "%"
         });
     }
-    $(".second-page").css({
-        height: 5 * window.innerHeight + "px"
+    $(".snap-block").css({
+        height: window.innerHeight + "px"
+    });
+    $(".snap-container").css({
+        height: window.innerHeight + "px"
     });
 
     $(".my-name").css({
@@ -114,6 +122,7 @@ function rectangle_animation() {
 }
 
 function scroll_animation() {
+    comp_theta()
     if (theta >= 1) {
         $(".line_01").css({
             height: 0.9 * window.innerHeight + "px",
@@ -339,7 +348,7 @@ function scroll_animation() {
         $(".info-button").css({
             opacity: 1 * (1 - theta)
         });
-        if (theta <= 0.5) {
+        if (theta >= 0.5) {
             animation.goToAndStop(0, true);
             pop_down()
             $(".info-container").addClass("scale")

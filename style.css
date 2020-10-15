@@ -55,16 +55,9 @@ strong {
 }
 
 .landing-page {
-    width: 100vw;
-    height: 100vh;
     background: var(--main-bg-color);
 }
 
-.second-page {
-    width: 100vw;
-    height: 500vh;
-    background-color: var(--main-bg-color);
-}
 
 .line-container {
     height: 100vh;
@@ -734,4 +727,20 @@ strong {
         }
 }
     
+}
+
+
+
+.snap-container {
+    position: fixed;
+    height: 95vh;
+    width: 100vw;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.snap-block {
+    height: 100vh;
+    scroll-snap-align: start;
+    z-index: 100;
 }
