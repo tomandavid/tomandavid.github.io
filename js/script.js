@@ -352,9 +352,15 @@ function scroll_animation() {
             document.getElementById("i").innerHTML = "i"
             $(".info-button").css({
                 display: "block",
-                opacity: (1 - theta),
+                opacity: Math.max(1 - theta * 2, 0),
                 color: "#c4c4c4c4",
                 "background-color": "var(--main-bg-color)",
+            })
+        }
+        else{
+            $(".info-button").css({
+                display: "block",
+                opacity: 1
             })
         }
         $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
