@@ -355,6 +355,7 @@ function scroll_animation() {
             document.getElementById("i").innerHTML = "i"
             $(".info-button").css({
                 display: "block",
+                opacity: (1 - theta),
                 "background-color": "var(--main-bg-color)",
                 color: "#999",
             })
