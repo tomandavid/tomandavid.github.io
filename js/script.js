@@ -353,8 +353,8 @@ function scroll_animation() {
             $(".info-button").css({
                 display: "block",
                 opacity: (1 - theta),
+                color: "#c4c4c4c4",
                 "background-color": "var(--main-bg-color)",
-                
             })
         }
         $(".book_01, .book_02, .book_03, .book_04, .contact-grid").css({
