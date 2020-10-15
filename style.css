@@ -170,7 +170,11 @@ strong {
     border-radius: 50%;
     background-color: var(--main-bg-color);
     z-index: 12;
-    transition: 500ms;
+
+}
+
+.info-button:hover {
+    cursor: pointer;
 }
 
 .scale {
