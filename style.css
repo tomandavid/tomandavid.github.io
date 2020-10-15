@@ -462,7 +462,7 @@ strong {
 }
 
 .shake {
-    animation: shake 1000ms cubic-bezier(.36,.07,.19,.97) ;
+    animation: shake 1000ms cubic-bezier(.36,.07,.19,.97) both;
     animation-fill-mode: forwards;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
