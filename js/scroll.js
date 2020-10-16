@@ -1,83 +1,109 @@
-var fix_timeout
+var max_scroll_ios_fix = 5
+var check = true
+window.scroll_timeout = true
+window.v = 0
+var ios_fix
+window.lstpg = window.theta
+window.nxtpg = 1
+var theta
 
-window.addEventListener("mousewheel", mouseHandle, true);
-window.addEventListener('DOMMouseScroll', mouseHandle, true); 
-window.addEventListener('wheelEvent', mouseHandle, true);
-window.addEventListener('touchmove', mouseHandle, true); 
-window.addEventListener('keydown', mouseHandle, true);
+window.addEventListener("mousewheel", scroll_direction, false);
+window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
+window.addEventListener('keydown', scroll_direction, false);
 
-var scrolling = false;
-var oldTime = 0;
-var newTime = 0;
-var isTouchPad;
-var eventCount = 0;
-var eventCountStart;
 
-function mouseHandle(evt) {
-    var isTouchPadDefined = isTouchPad || typeof isTouchPad !== "undefined";
-    console.log(isTouchPadDefined);
-    if (!isTouchPadDefined) {
-        if (eventCount === 0) {
-            eventCountStart = new Date().getTime();
-        }
+window.addEventListener( 'touchstart', function() {
+    window.touchstart_scroll = $(window).scrollTop()
+});
+window.addEventListener("touchend", function() {
+    if ($(window).scrollTop() - window.touchstart_scroll > 0) {
+        movetop(lstpg + 1, 500 + "ms");
+    } 
+    else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
+        movetop(lstpg - 1, 500 + "ms");
+    }
+});
 
-        eventCount++;
-
-        if (new Date().getTime() - eventCountStart > 100) {
-                if (eventCount > 10) {
-                    isTouchPad = true;
-                } else {
-                    isTouchPad = false;
-                }
-            isTouchPadDefined = true;
-        }
+$(window).scroll(function(){
+    //mozilla fix
+    if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
+        window.scroll_down = true
+    }
+    else if (window.scroll_down == null && $(window).scrollTop() < window.last_scrolltop) {
+        window.scroll_down = false
     }
 
-    if (isTouchPadDefined) {
-        // here you can do what you want
-        // i just wanted the direction, for swiping, so i have to prevent
-        // the multiple event calls to trigger multiple unwanted actions (trackpad)
-        if (!evt) evt = event;
-        var direction = (evt.detail<0 || evt.wheelDelta>0) ? 1 : -1;
-
-        if (isTouchPad) {
-            snap_scroll_fix()
-        } 
+    if (window.scroll_down) {
+        window.nxtpg = Math.ceil(theta)
+        if (theta == 0) {
+            window.nxtpg = 1
+        }
+    }
+    else {
+        window.nxtpg = Math.floor(theta)
+    }
+    if (theta % 1 == 0) {
+        clearTimeout(window.v)
+        window.check = false
+        window.lstpg = theta
+    }
+    else {
+        if (window.device == "Mouse") {
+            touchpad_scroll(100)
+        }
         else {
-            if (direction < 0) {
-                nxtpg = Math.ceil(theta)
-                movetop(theta + 1)
-            } else {
-                nxtpg = Math.ceil(theta)
-                movetop(theta - 1)
-            }
+            touchpad_scroll(300)
         }
+    }
+    if ($(window).width() < 1000) {
+        if (theta < 0.5 && theta != 0 && ios_fix == null) {
+            ios_fix_settimeout()
+        }
+        else {
+            ios_fix_cleartimeout()
+        }
+    }
+    dot_slider()
+    window.last_scrolltop = $(window).scrollTop()
+});
+
+function movetop() {
+    var body = $("html, body");
+    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {});
+};
+
+function scroll_direction(e) {
+    var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
+    if (window.device == undefined) {
+        window.device = isTouchPad ? "TouchPad" : "Mouse"
+    }
+    if (e.deltaY > 0) {
+        window.scroll_down = true
+    }
+    else if (e.deltaY < 0) {
+        window.scroll_down = false
+    }
+    else {
+        window.scroll_down = null
     }
 }
 
-function log() {
-    console.log(arguments[0])
-}
-
-function snap_scroll_fix() {
-    $(".snap-block > *").css({
-        pointerEvents: "none"
-    })
-    fix_cleartimeout()
-    fix_settimeout()
-}
-
-function fix_settimeout() {
-    fix_timeout = setTimeout(function(){
-        $(".snap-block > *").css({
-            pointerEvents: "all"
-        })
+function ios_fix_settimeout() {
+    ios_fix = setTimeout(function(){
+        movetop(0, 200 + "ms", 0)
     }, 1000);
 }
 
-function fix_cleartimeout() {
-    clearTimeout(fix_timeout)
-    fix_timeout = null
+function ios_fix_cleartimeout() {
+    clearTimeout(ios_fix)
+    ios_fix = null
+}
+
+function touchpad_scroll() {
+    clearTimeout(window.v);
+   window.v = setTimeout(function() {
+        movetop(nxtpg, 200 + "ms", 0);
+    }, arguments[0]);
 }
 
 function dot_slider() {
@@ -95,34 +121,4 @@ function dot_slider() {
         transition: "all 250ms ease-in-out"
     });
         
-};
-
-function scroll_direction(e) {
-    var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
-    if (window.device == undefined) {
-        window.device = isTouchPad ? "TouchPad" : "Mouse"
-    }
-    if (device != "Touchpad") {
-        if (e.deltaY > 0) {
-            nxtpg = Math.ceil(theta)
-            console.log(nxtpg)
-            movetop(theta + 1)
-        }
-        else if (e.deltaY < 0) {
-            nxtpg = Math.floor(theta)
-            movetop(theta - 1)
-            console.log(nxtpg)
-        }
-        else {
-            window.scroll_down = null
-        }
-    }
-    else {
-        snap_scroll_fix()
-    }
-    
-}
-
-function movetop() {
-    $(".snap-container").stop().animate({scrollTop:$(window).height() * arguments[0]}, 300, 'swing', function() {});
 };
