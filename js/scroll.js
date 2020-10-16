@@ -1,11 +1,63 @@
 var fix_timeout
 
-window.addEventListener("mousewheel", scroll_direction, true);
-window.addEventListener("mousewheel", scroll_direction, true);
-window.addEventListener('DOMMouseScroll', scroll_direction, true); 
-window.addEventListener('wheelEvent', scroll_direction, true);
-window.addEventListener('touchmove', scroll_direction, true); 
-window.addEventListener('keydown', scroll_direction, true);
+window.addEventListener("mousewheel", mouseHandle, true);
+window.addEventListener('DOMMouseScroll', mouseHandle, true); 
+window.addEventListener('wheelEvent', mouseHandle, true);
+window.addEventListener('touchmove', mouseHandle, true); 
+window.addEventListener('keydown', mouseHandle, true);
+
+var scrolling = false;
+var oldTime = 0;
+var newTime = 0;
+var isTouchPad;
+var eventCount = 0;
+var eventCountStart;
+
+function mouseHandle(evt) {
+    var isTouchPadDefined = isTouchPad || typeof isTouchPad !== "undefined";
+    console.log(isTouchPadDefined);
+    if (!isTouchPadDefined) {
+        if (eventCount === 0) {
+            eventCountStart = new Date().getTime();
+        }
+
+        eventCount++;
+
+        if (new Date().getTime() - eventCountStart > 100) {
+                if (eventCount > 10) {
+                    isTouchPad = true;
+                } else {
+                    isTouchPad = false;
+                }
+            isTouchPadDefined = true;
+        }
+    }
+
+    if (isTouchPadDefined) {
+        // here you can do what you want
+        // i just wanted the direction, for swiping, so i have to prevent
+        // the multiple event calls to trigger multiple unwanted actions (trackpad)
+        if (!evt) evt = event;
+        var direction = (evt.detail<0 || evt.wheelDelta>0) ? 1 : -1;
+
+        if (isTouchPad) {
+            snap_scroll_fix()
+        } 
+        else {
+            if (direction < 0) {
+                nxtpg = Math.ceil(theta)
+                movetop(theta + 1)
+            } else {
+                nxtpg = Math.ceil(theta)
+                movetop(theta - 1)
+            }
+        }
+    }
+}
+
+function log() {
+    console.log(arguments[0])
+}
 
 function snap_scroll_fix() {
     $(".snap-block > *").css({
@@ -50,7 +102,7 @@ function scroll_direction(e) {
     if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
     }
-    if (device == "Mouse") {
+    if (device != "Touchpad") {
         if (e.deltaY > 0) {
             nxtpg = Math.ceil(theta)
             console.log(nxtpg)
