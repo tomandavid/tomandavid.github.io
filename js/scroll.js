@@ -1,11 +1,11 @@
 var fix_timeout
 
-
-window.addEventListener("mousewheel", snap_scroll_fix, true);
-window.addEventListener('DOMMouseScroll', snap_scroll_fix, true); 
-window.addEventListener('wheelEvent', snap_scroll_fix, true);
-window.addEventListener('touchmove', snap_scroll_fix, true); 
-window.addEventListener('keydown', snap_scroll_fix, true);
+window.addEventListener("mousewheel", scroll_direction, true);
+window.addEventListener("mousewheel", scroll_direction, true);
+window.addEventListener('DOMMouseScroll', scroll_direction, true); 
+window.addEventListener('wheelEvent', scroll_direction, true);
+window.addEventListener('touchmove', scroll_direction, true); 
+window.addEventListener('keydown', scroll_direction, true);
 
 function snap_scroll_fix() {
     $(".snap-block > *").css({
@@ -43,4 +43,32 @@ function dot_slider() {
         transition: "all 250ms ease-in-out"
     });
         
+};
+
+function scroll_direction(e) {
+    var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
+        window.device = isTouchPad ? "TouchPad" : "Mouse"
+    if (device == "Mouse") {
+        if (e.deltaY > 0) {
+            nxtpg = Math.ceil(theta)
+            console.log(nxtpg)
+            movetop(theta + 1)
+        }
+        else if (e.deltaY < 0) {
+            nxtpg = Math.floor(theta)
+            movetop(theta - 1)
+            console.log(nxtpg)
+        }
+        else {
+            window.scroll_down = null
+        }
+    }
+    else {
+        snap_scroll_fix()
+    }
+    
+}
+
+function movetop() {
+    $(".snap-container").stop().animate({scrollTop:$(window).height() * arguments[0]}, 500, 'swing', function() {});
 };
