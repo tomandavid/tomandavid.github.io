@@ -47,7 +47,9 @@ function dot_slider() {
 
 function scroll_direction(e) {
     var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
+    if (window.device == undefined) {
         window.device = isTouchPad ? "TouchPad" : "Mouse"
+    }
     if (device == "Mouse") {
         if (e.deltaY > 0) {
             nxtpg = Math.ceil(theta)
@@ -70,5 +72,5 @@ function scroll_direction(e) {
 }
 
 function movetop() {
-    $(".snap-container").stop().animate({scrollTop:$(window).height() * arguments[0]}, 500, 'swing', function() {});
+    $(".snap-container").stop().animate({scrollTop:$(window).height() * arguments[0]}, 300, 'swing', function() {});
 };
