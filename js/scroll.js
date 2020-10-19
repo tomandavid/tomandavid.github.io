@@ -9,7 +9,7 @@ var theta
 window.scroll_down = theta
 window.moved = false
 
-
+$(window).scroll(function(){
     if (window.scroll_down == null || $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
     }
@@ -22,7 +22,6 @@ window.moved = false
         if (theta < 0.5) {
             window.nxtpg = 1
         }
-
     }
     else {
         window.nxtpg = Math.floor(theta)
