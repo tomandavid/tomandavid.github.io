@@ -114,7 +114,6 @@ function rectangle_animation() {
 }
 
 function scroll_animation() {
-    document.getElementById("theta").innerHTML = theta
     if (theta >= 1) {
         $(".line_01").css({
             height: 0.9 * window.innerHeight + "px",

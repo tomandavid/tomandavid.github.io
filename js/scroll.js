@@ -9,18 +9,22 @@ var theta
 window.scroll_down = theta
 
 $(window).scroll(function(){
-    if (window.scroll_down == null || $(window).scrollTop() > window.last_scrolltop || theta == 0) {
+    console.log(theta)
+    if (window.scroll_down == null || $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
+        console.log("d")
     }
     else if (window.scroll_down == $(window).scrollTop() < window.last_scrolltop) {
         window.scroll_down = false
+        console.log("u")
     }
 
     if (window.scroll_down) {
         window.nxtpg = Math.round(theta)
-        if (theta < 1) {
+        if (theta < 0.5) {
             window.nxtpg = 1
         }
+        console.log(nxtpg)
     }
     else {
         window.nxtpg = Math.floor(theta)
@@ -51,7 +55,7 @@ function fix_cleartimeout() {
 
 function dot_slider() {
 
-    var dot_select = theta
+    var dot_select = Math.round(theta)
 
     for (j = 1; j <= 5; j++) {
         $(".dot_0" + j).css({
