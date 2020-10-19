@@ -46,7 +46,7 @@ $(window).resize(function() {
 })
 
 function comp_theta() {
-    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 1000) / 1000;
+    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 100) / 100;
     window.theta = Math.min(window.theta, 5)
 }
 
@@ -165,8 +165,8 @@ function scroll_animation() {
             opacity: 1
         });
     }
-    else if (theta > 4) {
-        theta_loc = theta - 4
+    else if (theta > 4.5) {
+        theta_loc = (theta - 4.5) * 2
         $(".line_01").css({
             transform: "rotate(" + 45 * theta_loc + "deg)",
             left: 5 + 45 * theta_loc + "%",
@@ -188,6 +188,13 @@ function scroll_animation() {
             opacity: Math.max((theta_loc - 0.8)*5, 0)
         });
     }
+    else if (theta > 4) {
+        $(".book_04").css({
+            display: "block",
+            top: 5 + "%"
+        });
+    }
+    
     else if (theta > 3.5) {
         theta_loc = (theta - 3.5) * 2
         $(".book_04").css({

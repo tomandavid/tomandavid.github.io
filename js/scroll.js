@@ -6,64 +6,29 @@ var ios_fix
 window.lstpg = window.theta
 window.nxtpg = 1
 var theta
-
-window.addEventListener("mousewheel", scroll_direction, false);
-window.addEventListener('DOMMouseScroll', scroll_direction, false); // older FF
-window.addEventListener('keydown', scroll_direction, false);
-
-
-window.addEventListener( 'touchstart', function() {
-    window.touchstart_scroll = $(window).scrollTop()
-});
-window.addEventListener("touchend", function() {
-    if ($(window).scrollTop() - window.touchstart_scroll > 0) {
-        movetop(lstpg + 1, 500 + "ms");
-    } 
-    else if ($(window).scrollTop() - window.touchstart_scroll < 0) {
-        movetop(lstpg - 1, 500 + "ms");
-    }
-});
+window.scroll_down = theta
 
 $(window).scroll(function(){
-    //mozilla fix
-    if (window.scroll_down == null && $(window).scrollTop() > window.last_scrolltop) {
+    if (window.scroll_down == null || $(window).scrollTop() > window.last_scrolltop || theta == 0) {
         window.scroll_down = true
     }
-    else if (window.scroll_down == null && $(window).scrollTop() < window.last_scrolltop) {
+    else if (window.scroll_down == $(window).scrollTop() < window.last_scrolltop) {
         window.scroll_down = false
     }
 
     if (window.scroll_down) {
-        window.nxtpg = Math.ceil(theta)
-        if (theta == 0) {
+        window.nxtpg = Math.round(theta)
+        if (theta < 1) {
             window.nxtpg = 1
         }
     }
     else {
         window.nxtpg = Math.floor(theta)
     }
-    if (theta % 1 == 0) {
-        clearTimeout(window.v)
-        window.check = false
-        window.lstpg = theta
-    }
-    else {
-        if (window.device == "Mouse") {
-            touchpad_scroll(100)
-        }
-        else {
-            touchpad_scroll(300)
-        }
-    }
-    if ($(window).width() < 1000) {
-        if (theta < 0.5 && theta != 0 && ios_fix == null) {
-            ios_fix_settimeout()
-        }
-        else {
-            ios_fix_cleartimeout()
-        }
-    }
+    fix_cleartimeout()
+    fix_settimeout()
     dot_slider()
+
     window.last_scrolltop = $(window).scrollTop()
 });
 
@@ -72,39 +37,17 @@ function movetop() {
     body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {});
 };
 
-function scroll_direction(e) {
-    var isTouchPad = e.wheelDeltaY ? e.wheelDeltaY === -3 * e.deltaY : e.deltaMode === 0
-    if (window.device == undefined) {
-        window.device = isTouchPad ? "TouchPad" : "Mouse"
-    }
-    if (e.deltaY > 0) {
-        window.scroll_down = true
-    }
-    else if (e.deltaY < 0) {
-        window.scroll_down = false
-    }
-    else {
-        window.scroll_down = null
-    }
-}
-
-function ios_fix_settimeout() {
+function fix_settimeout() {
     ios_fix = setTimeout(function(){
-        movetop(0, 200 + "ms", 0)
+        movetop(nxtpg, 200 + "ms", 0)
     }, 1000);
 }
 
-function ios_fix_cleartimeout() {
+function fix_cleartimeout() {
     clearTimeout(ios_fix)
     ios_fix = null
 }
 
-function touchpad_scroll() {
-    clearTimeout(window.v);
-   window.v = setTimeout(function() {
-        movetop(nxtpg, 200 + "ms", 0);
-    }, arguments[0]);
-}
 
 function dot_slider() {
 
