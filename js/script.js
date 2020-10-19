@@ -1,7 +1,6 @@
 $(document).ready(function(){
     rectangle_animation()
     comp_theta()
-    movetop(Math.round(window.theta)-1)
     scroll_animation()
     reload_fix()
 });
@@ -46,7 +45,7 @@ $(window).resize(function() {
 })
 
 function comp_theta() {
-    window.theta = Math.round($(window).scrollTop() / ($(window).height() ) * 100) / 100;
+    window.theta = ($(window).scrollTop() / $(window).height());
     window.theta = Math.min(window.theta, 5)
 }
 

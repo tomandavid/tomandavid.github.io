@@ -33,6 +33,15 @@ $(window).scroll(function(){
     fix_settimeout()
     dot_slider()
 
+    if ($(window).width() < 1000) {
+        if (theta < 0.5 && theta != 0 && ios_fix == null) {
+            ios_fix_settimeout()
+        }
+        else {
+            ios_fix_cleartimeout()
+        }
+    }
+
     window.last_scrolltop = $(window).scrollTop()
 });
 
@@ -48,6 +57,17 @@ function fix_settimeout() {
 }
 
 function fix_cleartimeout() {
+    clearTimeout(ios_fix)
+    ios_fix = null
+}
+
+function ios_fix_settimeout() {
+    ios_fix = setTimeout(function(){
+        movetop(0, 200 + "ms", 0)
+    }, 1000);
+}
+
+function ios_fix_cleartimeout() {
     clearTimeout(ios_fix)
     ios_fix = null
 }
