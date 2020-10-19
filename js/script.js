@@ -1,6 +1,5 @@
 $(document).ready(function(){
     rectangle_animation()
-    
     scroll_animation()
     reload_fix()
     var v = setInterval(function() {
@@ -38,6 +37,9 @@ $(window).resize(function() {
     })
     $(".second-page").css({
         height: 5 * $(window).height() + "px"
+    });
+    $(".book").css({
+        height: $(window).height() + "px"
     });
     $(".contact-grid").css({
         top: 0.5 * $(window).height() + "px"
@@ -300,6 +302,8 @@ function scroll_animation() {
             display: "block",
             top: moved_fix - theta_loc * 100 + "%"
         });
+        animation.play();
+        call_pop_up();
     }
     else if (theta >= 1) {
         theta_loc = (theta - 1) * 2
