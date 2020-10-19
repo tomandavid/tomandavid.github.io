@@ -3,6 +3,11 @@ $(document).ready(function(){
     comp_theta()
     scroll_animation()
     reload_fix()
+    setInterval(function() {
+        scroll_animation()
+        name_fade()
+        dot_slider()
+    }, 20);
 });
 
 $(window).scroll(function(){
