@@ -28,12 +28,11 @@ console.log(moved)
     else {
         window.nxtpg = Math.floor(theta)
     }
-    fix_cleartimeout()
     dot_slider()
-    if (theta > 0) {
+    fix_cleartimeout()
+    if (theta > 0) {
         fix_settimeout()
     }
-
     window.last_scrolltop = $(window).scrollTop()
 });
 
