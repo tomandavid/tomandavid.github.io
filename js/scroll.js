@@ -7,16 +7,15 @@ window.lstpg = window.theta
 window.nxtpg = 0
 var theta
 window.scroll_down = theta
+window.moved = false
 
 $(window).scroll(function(){
-    console.log(theta)
+console.log(moved)
     if (window.scroll_down == null || $(window).scrollTop() > window.last_scrolltop) {
         window.scroll_down = true
-        console.log("d")
     }
     else if (window.scroll_down == $(window).scrollTop() < window.last_scrolltop) {
         window.scroll_down = false
-        console.log("u")
     }
 
     if (window.scroll_down) {
@@ -38,7 +37,7 @@ $(window).scroll(function(){
 
 function movetop() {
     var body = $("html, body");
-    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {});
+    body.stop().animate({scrollTop:$(window).height() * arguments[0]}, arguments[1], 'swing', function() {window.moved = true});
 };
 
 function fix_settimeout() {

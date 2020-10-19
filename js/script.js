@@ -118,6 +118,12 @@ function rectangle_animation() {
 }
 
 function scroll_animation() {
+    if (window.moved) {
+        moved_fix = 0
+    }
+    else {
+        moved_fix = 5
+    }
     if (theta >= 1) {
         $(".line_01").css({
             height: 0.9 * window.innerHeight + "px",
@@ -148,9 +154,13 @@ function scroll_animation() {
         })
     }
 
-    if (theta > 0.5) {
+    if (theta >= 0.5) {
         $(".app-container").removeClass("shake")
         $(".app-container").addClass("fade-out")
+    }
+
+    if (theta % 1 > 0.6) {
+        window.moved = false
     }
 
     if (theta >= 5) {
@@ -168,7 +178,7 @@ function scroll_animation() {
             opacity: 1
         });
     }
-    else if (theta > 4.5) {
+    else if (theta >= 4.5) {
         theta_loc = (theta - 4.5) * 2
         $(".line_01").css({
             transform: "rotate(" + 45 * theta_loc + "deg)",
@@ -191,11 +201,19 @@ function scroll_animation() {
             opacity: Math.max((theta_loc - 0.8)*5, 0)
         });
     }
-    else if (theta > 4) {
+    else if (theta >= 4) {
+        theta_loc = (theta - 4) * 2
         $(".book_04").css({
             display: "block",
             top: 5 + "%"
         });
+        if (moved) {
+            $(".book_04").css({
+                display: "block",
+                opacity: 1,
+                top: 5 - 5 * theta_loc + "%"
+            });
+        }
     }
     
     else if (theta > 3.5) {
@@ -216,10 +234,11 @@ function scroll_animation() {
         });
         $(".book_03").css({
             display: "block",
-            top: 5 - theta_loc * 100 + "%",
+            top: moved_fix - theta_loc * 100 + "%",
         });
     }
-    else if (theta > 3) {
+    else if (theta >= 3) {
+        theta_loc = (theta - 3) * 2
         $(".book_03").css({
             display: "block",
             top: 5 + "%"
@@ -227,6 +246,13 @@ function scroll_animation() {
         $(".book_01, .book_02, .book_04").css({
             display: "none"
         });
+        if (moved) {
+            $(".book_03").css({
+                display: "block",
+                opacity: 1,
+                top: 5 - 5 * theta_loc + "%"
+            });
+        }
     }
     else if (theta > 2.5) {
         theta_loc = (theta - 2.5) * 2
@@ -236,11 +262,12 @@ function scroll_animation() {
         });
         $(".book_02").css({
             display: "block",
-            top: 5 - theta_loc * 100 + "%"
+            top: moved_fix - theta_loc * 100 + "%"
         });
 
     }
-    else if (theta > 2) {
+    else if (theta >= 2) {
+        theta_loc = (theta - 2) * 2
         $(".book_02").css({
             display: "block",
             top: 5 + "%"
@@ -249,11 +276,19 @@ function scroll_animation() {
             display: "none",
         });
 
+        if (moved) {
+            $(".book_02").css({
+                display: "block",
+                opacity: 1,
+                top: 5 - 5 * theta_loc + "%"
+            });
+        }
+
         $('#ddd').trigger('pause');
         animation.goToAndStop(0, true);
         pop_down()
     }
-    else if (theta >= 1.5) {
+    else if (theta > 1.5) {
         theta_loc = (theta - 1.5) * 2
         $(".book_02").css({
             display: "block",
@@ -264,12 +299,11 @@ function scroll_animation() {
         });
         $(".book_01").css({
             display: "block",
-            top: 5 - theta_loc * 100 + "%"
+            top: moved_fix - theta_loc * 100 + "%"
         });
-
-        
     }
     else if (theta >= 1) {
+        theta_loc = (theta - 1) * 2
         $(".line_01").css({
             transform: "rotate(-180deg)",
         });
@@ -284,6 +318,13 @@ function scroll_animation() {
             opacity: 1,
             top: 5 + "%"
         });
+        if (moved) {
+            $(".book_01").css({
+                display: "block",
+                opacity: 1,
+                top: 5 - 5 * theta_loc + "%"
+            });
+        }
         $(".my-name").css({
             display: "none"
         });
