@@ -1,9 +1,10 @@
 $(document).ready(function(){
     rectangle_animation()
-    comp_theta()
+    
     scroll_animation()
     reload_fix()
-    setInterval(function() {
+    var v = setInterval(function() {
+        comp_theta()
         scroll_animation()
         name_fade()
         dot_slider()
@@ -11,9 +12,7 @@ $(document).ready(function(){
 });
 
 $(window).scroll(function(){
-    comp_theta()
-    scroll_animation()
-    name_fade()
+
 })
 
 $(window).resize(function() {
@@ -230,7 +229,7 @@ function scroll_animation() {
         $(".book_04").css({
             opacity: 1,
             display: "block",
-            top: 105 - theta_loc * 100 + "%",
+            top: 100 + moved_fix - theta_loc * 100 + "%",
         });
         $(".book_03").css({
             display: "block",
@@ -258,7 +257,7 @@ function scroll_animation() {
         theta_loc = (theta - 2.5) * 2
         $(".book_03").css({
             display: "block",
-            top: 105 - theta_loc * 100 + "%",
+            top: 100 + moved_fix - theta_loc * 100 + "%",
         });
         $(".book_02").css({
             display: "block",
