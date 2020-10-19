@@ -4,7 +4,7 @@ window.scroll_timeout = true
 window.v = 0
 var ios_fix
 window.lstpg = window.theta
-window.nxtpg = 1
+window.nxtpg = 0
 var theta
 window.scroll_down = theta
 
