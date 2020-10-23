@@ -369,6 +369,8 @@ function scroll_animation() {
         if (theta <= 0.5) {
             animation.goToAndStop(0, true);
             pop_down()
+        }
+        else {
             $(".info-container").addClass("scale")
             document.getElementById("i").innerHTML = "i"
             $(".info-button").css({
